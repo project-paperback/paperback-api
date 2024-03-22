@@ -1,21 +1,8 @@
 import mongoose from "mongoose";
 import data from "../info_books.json" assert { type: "json" };
 import Book from "../schema/BookSchema.js";
-// import { ObjectId } from "mongodb";
+import User from "../schema/UserSchema.js";
 
-// await Book.create({
-//   title: "To Kill a Mockingbird",
-//   author: "Harper Lee",
-//   year: 1960,
-//   pages: 281,
-//   genres: ["Fiction", "Coming-of-Age"],
-//   language: "English",
-//   isFiction: true,
-//   publisher: "J. B. Lippincott & Co.",
-//   bookPrice: 14.99,
-//   isbn: 9780061120084,
-//   qty: 159,
-// });
 const dataLong = Object.keys(data).length;
 async function saveBooks() {
   try {
