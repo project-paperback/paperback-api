@@ -1,0 +1,598 @@
+[{
+  "_id": {
+    "$oid": "65fd5c9e3bcd3a7c958b8758"
+  },
+  "title": "1984",
+  "author": "George Orwell",
+  "year": 1949,
+  "pages": 328,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": true,
+  "publisher": "Secker & Warburg",
+  "isbn": {
+    "$numberLong": "9780451524935"
+  },
+  "qty": 13,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9e3bcd3a7c958b875a"
+  },
+  "title": "Pride and Prejudice",
+  "author": "Jane Austen",
+  "year": 1813,
+  "pages": 279,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": true,
+  "publisher": "T. Egerton, Whitehall",
+  "isbn": {
+    "$numberLong": "9780141439518"
+  },
+  "qty": 34,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9e3bcd3a7c958b875c"
+  },
+  "title": "The Catcher in the Rye",
+  "author": "J. D. Salinger",
+  "year": 1951,
+  "pages": 234,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": true,
+  "publisher": "Little, Brown and Company",
+  "isbn": {
+    "$numberLong": "9780316769488"
+  },
+  "qty": 62,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9e3bcd3a7c958b8760"
+  },
+  "title": "Moby-Dick",
+  "author": "Herman Melville",
+  "year": 1851,
+  "pages": 585,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": true,
+  "publisher": "Richard Bentley (UK), Harper & Brothers (US)",
+  "isbn": {
+    "$numberLong": "9780142437247"
+  },
+  "qty": 57,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9e3bcd3a7c958b8762"
+  },
+  "title": "The Lord of the Rings",
+  "author": "J. R. R. Tolkien",
+  "year": null,
+  "pages": null,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": true,
+  "publisher": "George Allen & Unwin",
+  "isbn": {
+    "$numberLong": "9780618640157"
+  },
+  "qty": 35,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9e3bcd3a7c958b8764"
+  },
+  "title": "Crime and Punishment",
+  "author": "Fyodor Dostoevsky",
+  "year": 1866,
+  "pages": 671,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": true,
+  "publisher": "The Russian Messenger",
+  "isbn": {
+    "$numberLong": "9780140449136"
+  },
+  "qty": 47,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9e3bcd3a7c958b8768"
+  },
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "year": 1925,
+  "pages": 180,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": true,
+  "publisher": "Scribner",
+  "isbn": {
+    "$numberLong": "9780743273565"
+  },
+  "qty": 33,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9e3bcd3a7c958b8766"
+  },
+  "title": "To Kill a Mockingbird",
+  "author": "Harper Lee",
+  "year": 1960,
+  "pages": 281,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": true,
+  "publisher": "J. B. Lippincott & Co.",
+  "isbn": {
+    "$numberLong": "9780446310789"
+  },
+  "qty": 44,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9f3bcd3a7c958b876a"
+  },
+  "title": "Educated",
+  "author": "Tara Westover",
+  "year": 2018,
+  "pages": 334,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": false,
+  "publisher": "Random House",
+  "isbn": {
+    "$numberLong": "9780399590504"
+  },
+  "qty": 94,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9f3bcd3a7c958b876e"
+  },
+  "title": "Sapiens: A Graphic History",
+  "author": "Yuval Noah Harari",
+  "year": 2020,
+  "pages": 256,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": false,
+  "publisher": "Harper",
+  "isbn": {
+    "$numberLong": "9780063051331"
+  },
+  "qty": 93,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9f3bcd3a7c958b876c"
+  },
+  "title": "Becoming",
+  "author": "Michelle Obama",
+  "year": 2018,
+  "pages": 426,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": false,
+  "publisher": "Crown Publishing Group",
+  "isbn": {
+    "$numberLong": "9780241334140"
+  },
+  "qty": 67,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9f3bcd3a7c958b8776"
+  },
+  "title": "The C Programming Language",
+  "author": "Brian Kernighan, Dennis Ritchie",
+  "year": 1978,
+  "pages": 228,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": false,
+  "publisher": "Prentice Hall",
+  "isbn": {
+    "$numberLong": "9780131103627"
+  },
+  "qty": 66,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9f3bcd3a7c958b8774"
+  },
+  "title": "Artificial Intelligence: A Modern Approach",
+  "author": "Stuart Russell, Peter Norvig",
+  "year": 1995,
+  "pages": null,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": false,
+  "publisher": "Prentice Hall",
+  "isbn": {
+    "$numberLong": "9780136042594"
+  },
+  "qty": 73,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9f3bcd3a7c958b8770"
+  },
+  "title": "The Elements of Style",
+  "author": "William Strunk Jr., E. B. White",
+  "year": 1918,
+  "pages": 105,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": false,
+  "publisher": "Cornell University Press",
+  "isbn": {
+    "$numberLong": "9780205309023"
+  },
+  "qty": 23,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9f3bcd3a7c958b8772"
+  },
+  "title": "Introduction to Algorithms",
+  "author": "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein",
+  "year": 1990,
+  "pages": null,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": false,
+  "publisher": "MIT Press",
+  "isbn": {
+    "$numberLong": "9780262033848"
+  },
+  "qty": 44,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9f3bcd3a7c958b8778"
+  },
+  "title": "The Design of Everyday Things",
+  "author": "Don Norman",
+  "year": 1988,
+  "pages": 347,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": false,
+  "publisher": "Basic Books",
+  "isbn": {
+    "$numberLong": "9780465050659"
+  },
+  "qty": 79,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9f3bcd3a7c958b877a"
+  },
+  "title": "Thinking, Fast and Slow",
+  "author": "Daniel Kahneman",
+  "year": 2011,
+  "pages": 499,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": false,
+  "publisher": "Farrar, Straus and Giroux",
+  "isbn": {
+    "$numberLong": "9780374533557"
+  },
+  "qty": 5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9f3bcd3a7c958b877e"
+  },
+  "title": "Sapiens: A Graphic History",
+  "author": "Yuval Noah Harari",
+  "year": 2020,
+  "pages": 256,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": false,
+  "publisher": "Harper",
+  "isbn": {
+    "$numberLong": "9780063051331"
+  },
+  "qty": 43,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9f3bcd3a7c958b877c"
+  },
+  "title": "Freakonomics",
+  "author": "Steven D. Levitt, Stephen J. Dubner",
+  "year": 2005,
+  "pages": 315,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": false,
+  "publisher": "William Morrow",
+  "isbn": {
+    "$numberLong": "9780060731335"
+  },
+  "qty": 44,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9f3bcd3a7c958b8780"
+  },
+  "title": "The Elements of Style",
+  "author": "William Strunk Jr., E. B. White",
+  "year": 1918,
+  "pages": 105,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": false,
+  "publisher": "Cornell University Press",
+  "isbn": {
+    "$numberLong": "9780205309023"
+  },
+  "qty": 12,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9f3bcd3a7c958b8782"
+  },
+  "title": "Introduction to Algorithms",
+  "author": "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein",
+  "year": 1990,
+  "pages": null,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": false,
+  "publisher": "MIT Press",
+  "isbn": {
+    "$numberLong": "9780262033848"
+  },
+  "qty": 79,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9f3bcd3a7c958b8784"
+  },
+  "title": "The C Programming Language",
+  "author": "Brian Kernighan, Dennis Ritchie",
+  "year": 1978,
+  "pages": 228,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": false,
+  "publisher": "Prentice Hall",
+  "isbn": {
+    "$numberLong": "9780131103627"
+  },
+  "qty": 93,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9f3bcd3a7c958b8788"
+  },
+  "title": "Thinking, Fast and Slow",
+  "author": "Daniel Kahneman",
+  "year": 2011,
+  "pages": 499,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": false,
+  "publisher": "Farrar, Straus and Giroux",
+  "isbn": {
+    "$numberLong": "9780374533557"
+  },
+  "qty": 88,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9f3bcd3a7c958b8786"
+  },
+  "title": "Artificial Intelligence: A Modern Approach",
+  "author": "Stuart Russell, Peter Norvig",
+  "year": 1995,
+  "pages": null,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": false,
+  "publisher": "Prentice Hall",
+  "isbn": {
+    "$numberLong": "9780136042594"
+  },
+  "qty": 1,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9f3bcd3a7c958b878a"
+  },
+  "title": "The Design of Everyday Things",
+  "author": "Don Norman",
+  "year": 1988,
+  "pages": 347,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": false,
+  "publisher": "Basic Books",
+  "isbn": {
+    "$numberLong": "9780465050659"
+  },
+  "qty": 22,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9f3bcd3a7c958b878c"
+  },
+  "title": "Freakonomics",
+  "author": "Steven D. Levitt, Stephen J. Dubner",
+  "year": 2005,
+  "pages": 315,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": false,
+  "publisher": "William Morrow",
+  "isbn": {
+    "$numberLong": "9780060731335"
+  },
+  "qty": 56,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9f3bcd3a7c958b878e"
+  },
+  "title": "Sapiens: A Brief History of Humankind",
+  "author": "Yuval Noah Harari",
+  "year": 2011,
+  "pages": 443,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": false,
+  "publisher": "Harper",
+  "isbn": {
+    "$numberLong": "9780062316097"
+  },
+  "qty": 7,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9f3bcd3a7c958b8790"
+  },
+  "title": "The Elements of Style",
+  "author": "William Strunk Jr., E. B. White",
+  "year": 1918,
+  "pages": 105,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": false,
+  "publisher": "Cornell University Press",
+  "isbn": {
+    "$numberLong": "9780205309023"
+  },
+  "qty": 81,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9f3bcd3a7c958b8792"
+  },
+  "title": "The Odyssey",
+  "author": "Homer",
+  "year": null,
+  "pages": 374,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": true,
+  "publisher": "null",
+  "isbn": null,
+  "qty": 26,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fd5c9e3bcd3a7c958b875e"
+  },
+  "title": "To the Lighthouse",
+  "author": "Virginia Woolf",
+  "year": 1927,
+  "pages": 209,
+  "genres": [
+    "Computer Science, Textbook"
+  ],
+  "language": "English",
+  "isFiction": true,
+  "publisher": "Hogarth Press",
+  "isbn": {
+    "$numberLong": "9780156907392"
+  },
+  "qty": 4,
+  "__v": 0
+}]
