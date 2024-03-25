@@ -3,11 +3,10 @@ import data from "../info_books.json" assert { type: "json" };
 import Book from "../schema/BookSchema.js";
 import User from "../schema/UserSchema.js";
 
-const dataLong = Object.keys(data).length;
 async function saveBooks() {
   try {
     await mongoose.connect(
-      "mongodb+srv://agvzprofessionalacc:ZcTkE3bybY9cD5t9@cluster0.bfswy29.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+      "mongodb+srv://agvzprofessionalacc:1IyWNBpgLL5AJhLi@cluster0.bfswy29.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
     ); // Await connection completion
 
     const promises = data.map(async (book) => {
@@ -42,5 +41,3 @@ async function saveBooks() {
 }
 
 saveBooks();
-
-console.log(dataLong);

@@ -1,6 +1,4 @@
-import mongoose from "mongoose";
-
-const { Schema, model } = mongoose;
+import { Schema, model } from "mongoose";
 
 const bookSchema = new Schema({
   title: { type: String, immutable: true },
@@ -14,6 +12,7 @@ const bookSchema = new Schema({
   bookPrice: Number,
   isbn: Number,
   qty: Number,
+  rating: { type: Number, default: 0 },
 });
 
 const Book = model("Book", bookSchema);
