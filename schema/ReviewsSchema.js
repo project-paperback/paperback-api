@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+const { Schema, model } = require("mongoose");
 
 const reviewSchema = new Schema({
   bookId: String,
@@ -10,4 +10,4 @@ const reviewSchema = new Schema({
 
 const Review = model("Review", reviewSchema);
 
-export default Review;
+module.exports = Review;

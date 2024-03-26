@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+const { Schema, model } = require("mongoose");
 
 const bookSchema = new Schema({
   title: { type: String, immutable: true },
@@ -17,4 +17,4 @@ const bookSchema = new Schema({
 
 const Book = model("Book", bookSchema);
 
-export default Book;
+module.exports = Book
