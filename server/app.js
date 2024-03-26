@@ -1,4 +1,8 @@
 const express = require("express");
+const { getBooks } = require("./controllers/controller");
 const app = express();
 
-module.exports = app;
+
+app.get('/api/books', getBooks)
+
+module.exports = app
