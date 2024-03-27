@@ -1,4 +1,4 @@
-const { fetchBooks, saveNewUser } = require("../models/model");
+const { fetchBooks, saveNewUser, fetchBookById } = require("../models/model");
 
 async function postNewUser(request, response, next) {
   try {
@@ -18,4 +18,11 @@ async function getBooks(req, res) {
   res.status(200).send({ books: books });
 }
 
-module.exports = { getBooks, postNewUser };
+async function getBookById(req, res) {
+  const { book_id } = req.params
+  const book = await fetchBookById(book_id);
+
+  res.status(200).send({ book: book })
+}
+
+module.exports = { getBooks, postNewUser, getBookById };

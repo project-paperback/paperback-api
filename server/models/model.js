@@ -50,4 +50,18 @@ async function fetchBooks() {
   }
 }
 
-module.exports = { fetchBooks, saveNewUser };
+async function fetchBookById(id){
+  try {
+    mongoose.connect(
+      "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
+    );
+    const book = await Book.findById(id);
+    return book;
+  } catch (error) {
+    console.log(error);
+  } finally {
+    mongoose.connection.close()
+  }
+}
+
+module.exports = { fetchBooks, saveNewUser, fetchBookById };
