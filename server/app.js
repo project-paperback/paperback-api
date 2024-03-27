@@ -1,8 +1,12 @@
 const express = require("express");
-const { getBooks } = require("./controllers/controller");
+const { getBooks, postNewUser } = require("./controllers/controller");
+const { customErrorHandler } = require("./errorHandling/customErrors");
 const app = express();
 
+app.use(express.json());
 
-app.get('/api/books', getBooks)
+app.post("/api/create_user", postNewUser);
 
-module.exports = app
+app.get("/api/books", getBooks);
+app.use(customErrorHandler);
+module.exports = app;

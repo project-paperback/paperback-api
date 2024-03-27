@@ -1,9 +1,10 @@
 const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema({
-  user: String,
+  fbUid: String,
   userName: String,
-  bio: String,
+  userEmail: String,
+  userBio: String,
 });
 
 const User = model("User", userSchema);
