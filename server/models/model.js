@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
-const Book = require("../../schema/BookSchema.js");
 const { auth, newUser } = require("../../authentication/FBauthentication.js");
+const { Book, Review, User } = require("../../schema/schemaIndex.js");
 
-const User = require("../../schema/UserSchema.js");
+mongoose.connect(
+  "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
+);
 
 async function saveNewUser(password, email, userName, userBio) {
   try {
@@ -16,9 +18,9 @@ async function saveNewUser(password, email, userName, userBio) {
 
     const addUser = await newUser(auth, email, password);
 
-    mongoose.connect(
-      "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
-    );
+    // mongoose.connect(
+    //   "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
+    // );
 
     const newUserMongo = new User({
       fbUid: addUser.user.uid,
@@ -32,36 +34,73 @@ async function saveNewUser(password, email, userName, userBio) {
   } catch (error) {
     return Promise.reject(error.customData._tokenResponse.error);
   } finally {
-    mongoose.connection.close();
+    // mongoose.connection.close();
   }
 }
 
 async function fetchBooks() {
   try {
-    mongoose.connect(
-      "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
-    );
+    // mongoose.connect(
+    //   "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
+    // );
     const books = await Book.find({});
     return books;
   } catch (error) {
     console.log(error);
   } finally {
-    mongoose.connection.close();
+    // mongoose.connection.close();
   }
 }
 
-async function fetchBookById(id){
+async function fetchBookById(id) {
   try {
-    mongoose.connect(
-      "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
-    );
+    // mongoose.connect(
+    //   "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
+    // );
+
     const book = await Book.findById(id);
     return book;
   } catch (error) {
     console.log(error);
   } finally {
-    mongoose.connection.close()
+    // mongoose.connection.close()
   }
 }
 
-module.exports = { fetchBooks, saveNewUser, fetchBookById };
+async function sendBookReview(book_id, userName, reviewBody, rating) {
+  try {
+    const reviewsInCollection = await Review.find({ userName: userName });
+    if (reviewsInCollection.length > 0) {
+      return Promise.reject({
+        status: 400,
+        msg: "You cannot review this item again",
+      });
+    }
+
+    const review = new Review({
+      bookId: book_id,
+      userName: userName, //This value is going to change based on logged in user
+      reviewBody: reviewBody,
+      createdAt: new Date(),
+      rating: rating,
+    });
+    await review.save();
+
+    // Get all the reviews
+    const allReviews = await Review.find({ bookId: book_id });
+    let ratingsSum = 0;
+    const aggregate = allReviews.forEach(
+      (review) => (ratingsSum += review.rating)
+    );
+
+    const ratingAverage = ratingsSum / allReviews.length;
+    const averageResult = Number(ratingAverage.toFixed(1));
+    console.log(averageResult);
+    // get the book by id
+    await Book.findByIdAndUpdate(book_id, { $set: { rating: averageResult } });
+
+    return review;
+  } catch (error) {}
+}
+
+module.exports = { fetchBooks, saveNewUser, fetchBookById, sendBookReview };
