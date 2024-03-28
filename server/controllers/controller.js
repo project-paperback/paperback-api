@@ -1,4 +1,9 @@
-const { fetchBooks, saveNewUser, fetchBookById } = require("../models/model");
+const {
+  fetchBooks,
+  saveNewUser,
+  fetchBookById,
+  sendBookReview,
+} = require("../models/model");
 
 async function postNewUser(request, response, next) {
   try {
@@ -19,10 +24,22 @@ async function getBooks(req, res) {
 }
 
 async function getBookById(req, res) {
-  const { book_id } = req.params
+  const { book_id } = req.params;
   const book = await fetchBookById(book_id);
 
-  res.status(200).send({ book: book })
+  res.status(200).send({ book: book });
 }
 
-module.exports = { getBooks, postNewUser, getBookById };
+async function postReviewByBookId(req, res, next) {
+  try {
+    const { book_id } = req.params;
+    const { userName, reviewBody, rating } = req.body;
+
+    const review = await sendBookReview(book_id, userName, reviewBody, rating);
+
+    res.status(201).send({ review: review });
+  } catch (error) {
+    next(error);
+  }
+}
+module.exports = { getBooks, postNewUser, getBookById, postReviewByBookId };

@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
-const Book = require("../../schema/BookSchema.js");
 const { auth, newUser } = require("../../authentication/FBauthentication.js");
-
-const User = require("../../schema/UserSchema.js");
+const { Book, Review, User } = require("../../schema/schemaIndex.js");
 
 mongoose.connect(
   "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
@@ -59,6 +57,7 @@ async function fetchBookById(id) {
     // mongoose.connect(
     //   "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
     // );
+
     const book = await Book.findById(id);
     return book;
   } catch (error) {
@@ -68,4 +67,40 @@ async function fetchBookById(id) {
   }
 }
 
-module.exports = { fetchBooks, saveNewUser, fetchBookById };
+async function sendBookReview(book_id, userName, reviewBody, rating) {
+  try {
+    const reviewsInCollection = await Review.find({ userName: userName });
+    if (reviewsInCollection.length > 0) {
+      return Promise.reject({
+        status: 400,
+        msg: "You cannot review this item again",
+      });
+    }
+
+    const review = new Review({
+      bookId: book_id,
+      userName: userName, //This value is going to change based on logged in user
+      reviewBody: reviewBody,
+      createdAt: new Date(),
+      rating: rating,
+    });
+    await review.save();
+
+    // Get all the reviews
+    const allReviews = await Review.find({ bookId: book_id });
+    let ratingsSum = 0;
+    const aggregate = allReviews.forEach(
+      (review) => (ratingsSum += review.rating)
+    );
+
+    const ratingAverage = ratingsSum / allReviews.length;
+    const averageResult = Number(ratingAverage.toFixed(1));
+    console.log(averageResult);
+    // get the book by id
+    await Book.findByIdAndUpdate(book_id, { $set: { rating: averageResult } });
+
+    return review;
+  } catch (error) {}
+}
+
+module.exports = { fetchBooks, saveNewUser, fetchBookById, sendBookReview };
