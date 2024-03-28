@@ -4,6 +4,10 @@ const { auth, newUser } = require("../../authentication/FBauthentication.js");
 
 const User = require("../../schema/UserSchema.js");
 
+mongoose.connect(
+  "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
+);
+
 async function saveNewUser(password, email, userName, userBio) {
   try {
     if (!userName) {
@@ -16,9 +20,9 @@ async function saveNewUser(password, email, userName, userBio) {
 
     const addUser = await newUser(auth, email, password);
 
-    mongoose.connect(
-      "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
-    );
+    // mongoose.connect(
+    //   "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
+    // );
 
     const newUserMongo = new User({
       fbUid: addUser.user.uid,
@@ -32,35 +36,35 @@ async function saveNewUser(password, email, userName, userBio) {
   } catch (error) {
     return Promise.reject(error.customData._tokenResponse.error);
   } finally {
-    mongoose.connection.close();
+    // mongoose.connection.close();
   }
 }
 
 async function fetchBooks() {
   try {
-    mongoose.connect(
-      "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
-    );
+    // mongoose.connect(
+    //   "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
+    // );
     const books = await Book.find({});
     return books;
   } catch (error) {
     console.log(error);
   } finally {
-    mongoose.connection.close();
+    // mongoose.connection.close();
   }
 }
 
-async function fetchBookById(id){
+async function fetchBookById(id) {
   try {
-    mongoose.connect(
-      "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
-    );
+    // mongoose.connect(
+    //   "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
+    // );
     const book = await Book.findById(id);
     return book;
   } catch (error) {
     console.log(error);
   } finally {
-    mongoose.connection.close()
+    // mongoose.connection.close()
   }
 }
 
