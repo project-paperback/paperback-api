@@ -1,12 +1,20 @@
 const mongoose = require("mongoose");
-const { auth, newUser } = require("../../authentication/FBauthentication.js");
+const {
+  auth,
+  newUser,
+} = require("../../Firebase/authentication/FBauthentication.js");
 const { Book, Review, User } = require("../../schema/schemaIndex.js");
-
+const {
+  ref,
+  storage,
+  getDownloadURL,
+  uploadBytesResumable,
+} = require("../../Firebase/firebaseStorage/fbStorage.js");
 mongoose.connect(
   "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
 );
 
-async function saveNewUser(password, email, userName, userBio) {
+async function saveNewUser(password, email, userName, userBio, req) {
   try {
     if (!userName) {
       return Promise.reject({ status: 400, msg: "Username is required" });
@@ -18,15 +26,27 @@ async function saveNewUser(password, email, userName, userBio) {
 
     const addUser = await newUser(auth, email, password);
 
-    // mongoose.connect(
-    //   "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
-    // );
+    const imagesRef = ref(
+      storage,
+      `profileImages/${
+        req.file.originalname +
+        addUser.user.uid +
+        Math.ceil(Math.random() * 1000)
+      }`
+    );
+    const buffer = req.file.buffer;
+    const metadata = { contentType: req.file.mimetype };
+    const uploadTask = uploadBytesResumable(imagesRef, buffer, metadata);
+    const snapshot = await uploadTask;
+    const downloadURL = await getDownloadURL(snapshot.ref);
+    console.log(downloadURL);
 
     const newUserMongo = new User({
       fbUid: addUser.user.uid,
       userName: userName,
       userBio: userBio,
       userEmail: addUser.user.email,
+      profileImg: downloadURL,
     });
 
     await newUserMongo.save();
@@ -34,30 +54,21 @@ async function saveNewUser(password, email, userName, userBio) {
   } catch (error) {
     return Promise.reject(error.customData._tokenResponse.error);
   } finally {
-    // mongoose.connection.close();
   }
 }
 
 async function fetchBooks() {
   try {
-    // mongoose.connect(
-    //   "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
-    // );
     const books = await Book.find({});
     return books;
   } catch (error) {
     console.log(error);
   } finally {
-    // mongoose.connection.close();
   }
 }
 
 async function fetchBookById(id) {
   try {
-    // mongoose.connect(
-    //   "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
-    // );
-
     const book = await Book.findById(id);
     return book;
   } catch (error) {
@@ -103,4 +114,25 @@ async function sendBookReview(book_id, userName, reviewBody, rating) {
   } catch (error) {}
 }
 
-module.exports = { fetchBooks, saveNewUser, fetchBookById, sendBookReview };
+async function uploadImage(req) {
+  try {
+    const buffer = req.file.buffer;
+    const metadata = { contentType: req.file.mimetype };
+    const uploadTask = uploadBytesResumable(imagesRef, buffer, metadata);
+    const snapshot = await uploadTask;
+    // Get download URL after completion
+    const downloadURL = await getDownloadURL(snapshot.ref);
+    console.log("Image uploaded to profileImg:", downloadURL);
+    return downloadURL;
+  } catch (error) {
+    console.error("Error uploading image:", error);
+  }
+}
+
+module.exports = {
+  fetchBooks,
+  saveNewUser,
+  fetchBookById,
+  sendBookReview,
+  uploadImage,
+};
