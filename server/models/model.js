@@ -53,7 +53,6 @@ async function saveNewUser(password, email, userName, userBio, req) {
     return newUserMongo;
   } catch (error) {
     return Promise.reject(error.customData._tokenResponse.error);
-  } finally {
   }
 }
 
@@ -63,7 +62,6 @@ async function fetchBooks() {
     return books;
   } catch (error) {
     console.log(error);
-  } finally {
   }
 }
 
@@ -73,8 +71,6 @@ async function fetchBookById(id) {
     return book;
   } catch (error) {
     console.log(error);
-  } finally {
-    // mongoose.connection.close()
   }
 }
 
@@ -114,25 +110,9 @@ async function sendBookReview(book_id, userName, reviewBody, rating) {
   } catch (error) {}
 }
 
-async function uploadImage(req) {
-  try {
-    const buffer = req.file.buffer;
-    const metadata = { contentType: req.file.mimetype };
-    const uploadTask = uploadBytesResumable(imagesRef, buffer, metadata);
-    const snapshot = await uploadTask;
-    // Get download URL after completion
-    const downloadURL = await getDownloadURL(snapshot.ref);
-    console.log("Image uploaded to profileImg:", downloadURL);
-    return downloadURL;
-  } catch (error) {
-    console.error("Error uploading image:", error);
-  }
-}
-
 module.exports = {
   fetchBooks,
   saveNewUser,
   fetchBookById,
   sendBookReview,
-  uploadImage,
 };
