@@ -3,7 +3,6 @@ const {
   saveNewUser,
   fetchBookById,
   sendBookReview,
-  uploadImage,
 } = require("../models/model");
 
 async function postNewUser(req, res, next) {
@@ -44,15 +43,9 @@ async function postReviewByBookId(req, res, next) {
   }
 }
 
-async function postImage(req, res, next) {
-  try {
-    const imageUrl = await uploadImage(req);
-  } catch (error) {}
-}
 module.exports = {
   getBooks,
   postNewUser,
   getBookById,
   postReviewByBookId,
-  postImage,
 };
