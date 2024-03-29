@@ -1,10 +1,4 @@
 const { initializeApp } = require("firebase/app");
-const {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} = require("firebase/auth");
-
 const firebaseConfig = {
   apiKey: "AIzaSyAgfO2y1ssCUiWsIRQQhW_O6MsVg0Pdsx4",
   authDomain: "bookstore-578c6.firebaseapp.com",
@@ -16,11 +10,5 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const newUser = createUserWithEmailAndPassword;
 
-module.exports = {
-  app,
-  auth,
-  newUser,
-};
+module.exports = app;

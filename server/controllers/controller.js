@@ -3,13 +3,14 @@ const {
   saveNewUser,
   fetchBookById,
   sendBookReview,
+  uploadImage,
 } = require("../models/model");
 
-async function postNewUser(request, response, next) {
+async function postNewUser(req, res, next) {
   try {
-    const { password, email, userName, userBio } = request.body;
-    const userNew = await saveNewUser(password, email, userName, userBio);
-    response.status(201).send({ user: userNew });
+    const { password, email, userName, userBio } = req.body;
+    const userNew = await saveNewUser(password, email, userName, userBio, req);
+    res.status(201).send({ user: userNew });
   } catch (error) {
     //The error here comes from the promise reject.
     //Then the error is gonna be passed into the next() function
@@ -42,4 +43,16 @@ async function postReviewByBookId(req, res, next) {
     next(error);
   }
 }
-module.exports = { getBooks, postNewUser, getBookById, postReviewByBookId };
+
+async function postImage(req, res, next) {
+  try {
+    const imageUrl = await uploadImage(req);
+  } catch (error) {}
+}
+module.exports = {
+  getBooks,
+  postNewUser,
+  getBookById,
+  postReviewByBookId,
+  postImage,
+};
