@@ -102,7 +102,6 @@ async function sendBookReview(book_id, userName, reviewBody, rating) {
 
     const ratingAverage = ratingsSum / allReviews.length;
     const averageResult = Number(ratingAverage.toFixed(1));
-    console.log(averageResult);
     // get the book by id
     await Book.findByIdAndUpdate(book_id, { $set: { rating: averageResult } });
 
@@ -110,9 +109,22 @@ async function sendBookReview(book_id, userName, reviewBody, rating) {
   } catch (error) {}
 }
 
+async function fetchReviewsById(book_id){
+  try {
+    const reviews = await Review.find({ bookId: book_id })
+    if (reviews.length === 0) {
+      return Promise.reject({ status: 400, msg: "This book hasn't been reviewed yet" });
+    }
+    return reviews
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 module.exports = {
   fetchBooks,
   saveNewUser,
   fetchBookById,
   sendBookReview,
+  fetchReviewsById
 };

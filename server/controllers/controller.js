@@ -3,6 +3,7 @@ const {
   saveNewUser,
   fetchBookById,
   sendBookReview,
+  fetchReviewsById,
 } = require("../models/model");
 
 async function postNewUser(req, res, next) {
@@ -43,9 +44,20 @@ async function postReviewByBookId(req, res, next) {
   }
 }
 
+async function getReviewsById(req, res, next) {
+  try {
+    const { book_id } = req.params;
+    const reviews = await fetchReviewsById(book_id)
+    res.status(200).send({ reviews : reviews })
+  } catch (error) {
+    next(error)
+  }
+}
+
 module.exports = {
   getBooks,
   postNewUser,
   getBookById,
   postReviewByBookId,
+  getReviewsById
 };
