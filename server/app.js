@@ -3,6 +3,7 @@ const {
   getBooks,
   postNewUser,
   getBookById,
+  postReviewByBookId,
 } = require("./controllers/controller");
 const { customErrorHandler } = require("./utilities/customErrors");
 const app = express();

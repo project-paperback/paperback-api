@@ -3,7 +3,7 @@ const {
   auth,
   newUser,
 } = require("../../Firebase/authentication/FBauthentication.js");
-const { Book, Review, User } = require("../../schema/schemaIndex.js");
+const { Book, Review, User } = require("../../database/schema/schemaIndex.js");
 const {
   ref,
   storage,
