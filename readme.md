@@ -16,7 +16,7 @@ Once cloned, get into the root directory of the project and run the following co
 npm install
 ```
 
-### Tools and packages
+## Tools and packages
 
 The following section is a description of the tools used and how to install them individually. All of them are included in this project already and will work once you install the node modules. See the **Installation** section if in doubt about how to install the node modules.
 
