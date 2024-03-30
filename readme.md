@@ -20,7 +20,7 @@ npm install
 
 The following section is a description of the tools used and how to install them individually. All of them are included in this project already and will work once you install the node modules. See the **Installation** section if in doubt about how to install the node modules.
 
-**Firebase**  
+### Firebase  
 Firebase allowed this project to add authentication functionalities. It also provided storage services to upload images for user profile.
 
 The [Firebase documentation](https://firebase.google.com/docs/build) provides a clear guidance on authentication and storage services.
@@ -46,7 +46,7 @@ You will need to install mongoose to interact and query the database:
 npm install mongoose --save
 ```
 
-**Testing**  
+### Testing  
 For testing this project uses jest. Additionally, supertest is required.
 
 Install jest witht the following command:
