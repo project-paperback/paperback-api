@@ -31,7 +31,7 @@ Installation of Firebase:
 npm install firebase
 ```
 
-**Database**  
+### Database
 This project uses MongoDB as primary database. Other services were used to store images, like Firebase storage. To know more about them, go to the relevant sections and find links to documentation.
 
 To install MongoDB run the following command on your terminal:
