@@ -65,3 +65,15 @@ Follow these links to access the relevant documentation:
 
 - [Jest Documentation](https://jestjs.io/docs/getting-started)
 - [Supertest on NPM](https://www.npmjs.com/package/supertest)
+
+#### Summary of tools
+
+| Tool       | Description                                          | Installation                       |
+| :--------- | :--------------------------------------------------- | :--------------------------------- |
+| Express js | Framework for building APIs                          | `npm install express`              |
+| MongoDB    | Database                                             | `npm install mongodb`              |
+| Mongoose   | Interface for interacting with MongoDB database      | `npm install mongoose --save`      |
+| Firebase   | Backend application development platforms            | `npm install firebase`             |
+| Multer     | Node.js middleware for handling multipart/form-data  | `npm install --save multer`        |
+| Jest       | A JavaScript Testing Framework                       | `npm install --save-dev jest`      |
+| Supertest  | A JavaScript HTTP client for Node.js and the browser | `npm install supertest --save-dev` |
