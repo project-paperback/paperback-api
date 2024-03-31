@@ -1,0 +1,83 @@
+[
+  {
+    "_id": "66059d1222d02d34b58e0664",
+    "bookId": "6602968a7b60b6e6e3b6a9c9",
+    "userName": "Spiderman",
+    "reviewBody": "What a terrible book! Not a masterpiece.",
+    "createdAt": "2024-03-28T16:38:42.462Z",
+    "rating": 3,
+    "__v": 0
+  },
+  {
+    "_id": "66059fed1f23f37cce61c573",
+    "bookId": "6602968a7b60b6e6e3b6a9c9",
+    "userName": "Riccardo",
+    "reviewBody": "What an amazing book! A masterpiece.",
+    "createdAt": "2024-03-28T16:50:53.982Z",
+    "rating": 5,
+    "__v": 0
+  },
+  {
+    "_id": "6605a09899f1d915ecc7d0bd",
+    "bookId": "6602968a7b60b6e6e3b6a9c9",
+    "userName": "Alfredo",
+    "reviewBody": "What a horrible book! not a masterpiece.",
+    "createdAt": "2024-03-28T16:53:44.284Z",
+    "rating": 2,
+    "__v": 0
+  },
+  {
+    "_id": "6605a100d2938c264e29240a",
+    "bookId": "6602968a7b60b6e6e3b6a9c9",
+    "userName": "Naruto",
+    "reviewBody": "What a horrible book! not a masterpiece.",
+    "createdAt": "2024-03-28T16:55:28.562Z",
+    "rating": 1,
+    "__v": 0
+  },
+  {
+    "_id": "6605a22bc6e89bf92f8dccb9",
+    "bookId": "6602968a7b60b6e6e3b6a9c9",
+    "userName": "Kakashi",
+    "reviewBody": "What a so book! not a masterpiece.",
+    "createdAt": "2024-03-28T17:00:27.945Z",
+    "rating": 4,
+    "__v": 0
+  },
+  {
+    "_id": "6605a278c6e89bf92f8dccbd",
+    "bookId": "6602968a7b60b6e6e3b6a9c9",
+    "userName": "Hinata",
+    "reviewBody": "What a so book! not a masterpiece.",
+    "createdAt": "2024-03-28T17:01:44.586Z",
+    "rating": 5,
+    "__v": 0
+  },
+  {
+    "_id": "6605a589adfea4991e25d4ee",
+    "bookId": "6602968a7b60b6e6e3b6a9c9",
+    "userName": "Tanjiro",
+    "reviewBody": "What a so book! not a masterpiece.",
+    "createdAt": "2024-03-28T17:14:49.902Z",
+    "rating": 5,
+    "__v": 0
+  },
+  {
+    "_id": "6605a5b6adfea4991e25d4f3",
+    "bookId": "6602968a7b60b6e6e3b6a9c9",
+    "userName": "Nezuko",
+    "reviewBody": "mmm... ",
+    "createdAt": "2024-03-28T17:15:34.860Z",
+    "rating": 2,
+    "__v": 0
+  },
+  {
+    "_id": "660696311305888d6a3d884b",
+    "bookId": "6602968a7b60b6e6e3b6a9c9",
+    "userName": "Pablo",
+    "reviewBody": "Nice book ",
+    "createdAt": "2024-03-29T10:21:37.087Z",
+    "rating": 2,
+    "__v": 0
+  }
+]
