@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "seed": "node database/seed/run-seed.js"
   },
   "type": "commonjs",
   "keywords": [],

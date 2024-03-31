@@ -1,17 +1,32 @@
 const { testDb, endConnection } = require("../connection/dbConnection");
-const Book = require("../schema/BookSchema");
+const Book = require("../schemaTest/bookSchemaTest");
+const Review = require("../schemaTest/reviewSchemaTes");
 
 testDb();
-async function books() {
+async function dropBookCollection() {
   try {
-    const result = await Book.find({});
-    console.log(result);
-    return result;
+    const deletedBooks = await Book.deleteMany({});
+    return deletedBooks;
   } catch (error) {
     console.log(error);
   } finally {
-    endConnection();
+    console.log("🟢 ~ Books collection whiped out.");
   }
 }
 
-books();
+async function dropReviewsCollection() {
+  try {
+    const deletedReviews = await Review.deleteMany({});
+    return deletedReviews;
+  } catch (error) {
+  } finally {
+    console.log("🟢 ~ Reviews collection whiped out.");
+  }
+}
+
+// dropReviewsCollection();
+// dropBookCollection();
+module.exports = {
+  dropReviewsCollection,
+  dropBookCollection,
+};
