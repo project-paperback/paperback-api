@@ -10,6 +10,7 @@ const {
   getDownloadURL,
   uploadBytesResumable,
 } = require("../../Firebase/firebaseStorage/fbStorage.js");
+const { updateBookRating } = require("../utilities/utils.js");
 mongoose.connect(
   "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
 );
@@ -93,21 +94,34 @@ async function sendBookReview(book_id, userName, reviewBody, rating) {
     });
     await review.save();
 
-    // Get all the reviews
-    const allReviews = await Review.find({ bookId: book_id });
-    let ratingsSum = 0;
-    const aggregate = allReviews.forEach(
-      (review) => (ratingsSum += review.rating)
-    );
-
-    const ratingAverage = ratingsSum / allReviews.length;
-    const averageResult = Number(ratingAverage.toFixed(1));
-    console.log(averageResult);
-    // get the book by id
-    await Book.findByIdAndUpdate(book_id, { $set: { rating: averageResult } });
+    await updateBookRating(book_id)
 
     return review;
   } catch (error) {}
+}
+
+async function fetchReviewsById(book_id){
+  try {
+    const reviews = await Review.find({ bookId: book_id })
+    if (reviews.length === 0) {
+      return Promise.reject({ status: 400, msg: "This book hasn't been reviewed yet" });
+    }
+    return reviews
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+async function removeReviewById(review_id){
+  try {
+    const findReview = await Review.findById(review_id)
+    const bookId = findReview.bookId
+    const deletedReview = await Review.findByIdAndDelete(review_id)
+    await updateBookRating(bookId)
+    return deletedReview
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 module.exports = {
@@ -115,4 +129,6 @@ module.exports = {
   saveNewUser,
   fetchBookById,
   sendBookReview,
+  fetchReviewsById,
+  removeReviewById
 };

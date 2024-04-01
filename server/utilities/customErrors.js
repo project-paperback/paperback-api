@@ -10,6 +10,8 @@ function customErrorHandler(error, request, response, next) {
     error.msg === "You cannot review this item again"
   ) {
     response.status(400).send({ msg: "You cannot review this item again" });
+  } else if (error.status === 400 && error.msg === "This book hasn't been reviewed yet") {
+    response.status(400).send({ msg: "This book hasn't been reviewed yet"});
   }
 }
 
