@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "66065c3605b53489776f2c5d"
+  },
+  "fbUid": "5bWaQeVeuQReQkobEwEbuaSHPIg1",
+  "userName": "Sad Alfredo :(",
+  "userEmail": "lemons@gmail.com",
+  "userBio": "Lemonade is the best!",
+  "profileImg": "https://firebasestorage.googleapis.com/v0/b/bookstore-578c6.appspot.com/o/profileImages%2Fnorway.jpg5bWaQeVeuQReQkobEwEbuaSHPIg1?alt=media&token=5041242b-73df-4a5f-81b8-3bb3935352fc",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66065cf12753bea75bb9697e"
+  },
+  "fbUid": "84FFp2yxHiewWDDE8eYMzv350Pq1",
+  "userName": "Alfredo :(",
+  "userEmail": "lemonssweet@gmail.com",
+  "userBio": "Lemonade is the best!",
+  "profileImg": "https://firebasestorage.googleapis.com/v0/b/bookstore-578c6.appspot.com/o/profileImages%2Fnorway.jpg84FFp2yxHiewWDDE8eYMzv350Pq15.189474822754359?alt=media&token=15c129c4-b7b8-4c7c-8ccf-d38e907c5885",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66065e7760329e2fd5511b56"
+  },
+  "fbUid": "Vuq97caUmKXl9TConQKsN5tNOIf1",
+  "userName": "Riccardo",
+  "userEmail": "testdb@gmail.com",
+  "userBio": "Limes are the best!",
+  "profileImg": "https://firebasestorage.googleapis.com/v0/b/bookstore-578c6.appspot.com/o/profileImages%2FKeyboard-Sizes-Blank-Overclockers-UK-Blog-Feature-Image-Bottom-Text-Blog-1600x900Light-TextTwitter-.jpgVuq97caUmKXl9TConQKsN5tNOIf1272?alt=media&token=bb3a7c38-1d95-418b-aef4-adcee1798e4b",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66068d4cb7017314fb47b4cb"
+  },
+  "fbUid": "ygo28hPblIePXIxDIpukdRux93j2",
+  "userName": "Riccardo",
+  "userEmail": "bananas@gmail.com",
+  "userBio": "Limes are the best!",
+  "profileImg": "https://firebasestorage.googleapis.com/v0/b/bookstore-578c6.appspot.com/o/profileImages%2FKeyboard-Sizes-Blank-Overclockers-UK-Blog-Feature-Image-Bottom-Text-Blog-1600x900Light-TextTwitter-.jpgygo28hPblIePXIxDIpukdRux93j2321?alt=media&token=cb0098cd-92bf-4f4f-b957-e1ac5b3738e8",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6606a61722228e5c291d9169"
+  },
+  "fbUid": "ksr7rQmnPhVhgLwkgmJyZdftubZ2",
+  "userName": "Tom",
+  "userEmail": "apples@gmail.com",
+  "userBio": "Limes are the best!",
+  "profileImg": "https://firebasestorage.googleapis.com/v0/b/bookstore-578c6.appspot.com/o/profileImages%2FKeyboard-Sizes-Blank-Overclockers-UK-Blog-Feature-Image-Bottom-Text-Blog-1600x900Light-TextTwitter-.jpgksr7rQmnPhVhgLwkgmJyZdftubZ2743?alt=media&token=729e847e-dfcd-4aed-a88c-210bd15a979f",
+  "__v": 0
+}]
