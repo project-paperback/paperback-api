@@ -1,0 +1,18 @@
+const mongoose = require("mongoose");
+const { Book, Review, User } = require("../../schema/schemaIndex.js");
+
+async function updateBookRating(book_id){
+  // Get all the reviews
+  const allReviews = await Review.find({ bookId: book_id });
+  let ratingsSum = 0;
+  const aggregate = allReviews.forEach(
+    (review) => (ratingsSum += review.rating)
+  );
+
+  const ratingAverage = ratingsSum / allReviews.length;
+  const averageResult = Number(ratingAverage.toFixed(1));
+  // get the book by id
+  await Book.findByIdAndUpdate(book_id, { $set: { rating: averageResult } });
+}
+
+module.exports = { updateBookRating }
