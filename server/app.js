@@ -5,7 +5,8 @@ const {
   getBookById,
   postReviewByBookId,
   getReviewsById,
-  deleteReviewById
+  deleteReviewById,
+  updateReviewById
 } = require("./controllers/controller");
 const customErrorHandler = require("./utilities/customErrors");
 const app = express();
@@ -25,6 +26,7 @@ app.get("/api/books/:book_id", getBookById);
 app.post("/api/reviews/:book_id", postReviewByBookId);
 app.get("/api/reviews/:book_id", getReviewsById)
 app.delete("/api/reviews/:review_id", deleteReviewById)
+app.patch("/api/reviews/:review_id", updateReviewById)
 
 app.use(customErrorHandler);
 

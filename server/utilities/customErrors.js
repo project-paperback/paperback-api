@@ -28,6 +28,8 @@ function customErrorHandler(error, request, response, next) {
     error.msg === "This book hasn't been reviewed yet"
   ) {
     response.status(400).send({ msg: "This book hasn't been reviewed yet" });
+  } else if (error.status === 404 && error.msg === "Review not found") {
+    response.status(404).send({ msg: "Review not found" });
   }
 }
 
