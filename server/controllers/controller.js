@@ -5,6 +5,7 @@ const {
   sendBookReview,
   fetchReviewsById,
   removeReviewById,
+  amendReviewById,
 } = require("../models/model");
 
 async function postNewUser(req, res, next) {
@@ -66,9 +67,20 @@ async function deleteReviewById(req, res, next) {
   try {
     const { review_id } = req.params;
     const deletedReview = await removeReviewById(review_id)
-    res.status(200).send({ deletedReview })
+    res.status(200).send({ deletedReview : deletedReview })
   } catch (error) {
-    console.log(error)
+    next(error)
+  }
+}
+
+async function updateReviewById(req, res, next) {
+  try {
+    const { review_id } = req.params;
+    const { reviewBody, rating } = req.body
+    const updatedReview = await amendReviewById(review_id, reviewBody, rating)
+    res.status(200).send({ updatedReview : updatedReview})
+  } catch (error) {
+    next(error)
   }
 }
 
@@ -78,5 +90,6 @@ module.exports = {
   getBookById,
   postReviewByBookId,
   getReviewsById,
-  deleteReviewById
+  deleteReviewById,
+  updateReviewById
 };
