@@ -1,9 +1,9 @@
-const { testDb } = require("../connection/dbConnection");
+const { dataBase } = require("../connection/dbConnection");
 const { bookData, reviewData } = require("./jsonData/dataIndex");
-const Book = require("../schemaTest/bookSchemaTest");
-const Review = require("../schemaTest/reviewSchemaTes");
-
-testDb();
+// const TestBook = require("../schemaTest/bookSchemaTest");
+// const TestReview = require("../schemaTest/reviewSchemaTes");
+const { Book, Review } = require("../schema/schemaIndex");
+dataBase();
 async function restoreBookCollection() {
   try {
     await Book.insertMany(bookData);
@@ -25,9 +25,9 @@ async function restoreReviewCollection() {
   }
 }
 // restoreBookCollection();
-// restoreReviewCollection();
 
-module.exports = {
-  restoreBookCollection,
-  restoreReviewCollection,
-};
+async function restoreColletions() {
+  await restoreBookCollection();
+  await restoreReviewCollection();
+}
+module.exports = restoreColletions;

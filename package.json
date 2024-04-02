@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "seed": "node database/seed/run-seed.js"
+    "seed": "node database/seed/run-seed.js",
+    "start": "nodemon /home/natsu/Documents/side-project-backend/paperback/listen.js"
   },
   "type": "commonjs",
   "keywords": [],

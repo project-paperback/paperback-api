@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 const {
   auth,
   newUser,
@@ -10,9 +10,15 @@ const {
   getDownloadURL,
   uploadBytesResumable,
 } = require("../../Firebase/firebaseStorage/fbStorage.js");
-mongoose.connect(
-  "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
-);
+const {
+  dataBase,
+  endConnection,
+} = require("../../database/connection/dbConnection.js");
+// mongoose.connect(
+//   "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
+// );
+
+dataBase();
 
 async function saveNewUser(password, email, userName, userBio, req) {
   try {
@@ -39,7 +45,6 @@ async function saveNewUser(password, email, userName, userBio, req) {
     const uploadTask = uploadBytesResumable(imagesRef, buffer, metadata);
     const snapshot = await uploadTask;
     const downloadURL = await getDownloadURL(snapshot.ref);
-    console.log(downloadURL);
 
     const newUserMongo = new User({
       fbUid: addUser.user.uid,
@@ -59,23 +64,45 @@ async function saveNewUser(password, email, userName, userBio, req) {
 async function fetchBooks() {
   try {
     const books = await Book.find({});
+    if (books.length === 0) {
+      return Promise.reject({
+        status: 200,
+        msg: "More books coming soon!",
+      });
+    }
     return books;
   } catch (error) {
-    console.log(error);
+    if (error.name === "ValidationError") {
+      return { status: 400, message: "Invalid request parameters" }; // Adjust message as needed
+    } else {
+      console.log(error); // Log other errors
+      // You can throw the error again for further handling (optional)
+    }
   }
 }
 
 async function fetchBookById(id) {
   try {
     const book = await Book.findById(id);
-    return book;
+    if (book === null) {
+      return Promise.reject({ status: 404, msg: "Book not found" });
+    } else {
+      return book;
+    }
   } catch (error) {
-    console.log(error);
+    if (error.kind === "ObjectId") {
+      return Promise.reject({ status: 400, msg: "Invalid book id" });
+    }
   }
 }
 
 async function sendBookReview(book_id, userName, reviewBody, rating) {
   try {
+    if (!userName) {
+      return Promise.reject({ status: 400, msg: "Missing username" });
+    } else if (!rating) {
+      return Promise.reject({ status: 400, msg: "Missing rating" });
+    }
     const reviewsInCollection = await Review.find({ userName: userName });
     if (reviewsInCollection.length > 0) {
       return Promise.reject({

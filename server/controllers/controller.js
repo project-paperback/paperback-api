@@ -11,23 +11,29 @@ async function postNewUser(req, res, next) {
     const userNew = await saveNewUser(password, email, userName, userBio, req);
     res.status(201).send({ user: userNew });
   } catch (error) {
-    //The error here comes from the promise reject.
-    //Then the error is gonna be passed into the next() function
-    console.log(error, "from controllers");
     next(error);
   }
 }
 
-async function getBooks(req, res) {
-  const books = await fetchBooks();
-  res.status(200).send({ books: books });
+async function getBooks(req, res, next) {
+  try {
+    const books = await fetchBooks();
+
+    res.status(200).send({ books: books });
+  } catch (error) {
+    next(error);
+  }
 }
 
-async function getBookById(req, res) {
-  const { book_id } = req.params;
-  const book = await fetchBookById(book_id);
+async function getBookById(req, res, next) {
+  try {
+    const { book_id } = req.params;
+    const book = await fetchBookById(book_id);
 
-  res.status(200).send({ book: book });
+    res.status(200).send({ book: book });
+  } catch (error) {
+    next(error);
+  }
 }
 
 async function postReviewByBookId(req, res, next) {

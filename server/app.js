@@ -5,7 +5,7 @@ const {
   getBookById,
   postReviewByBookId,
 } = require("./controllers/controller");
-const { customErrorHandler } = require("./utilities/customErrors");
+const customErrorHandler = require("./utilities/customErrors");
 const app = express();
 
 const multer = require("multer");
@@ -23,4 +23,5 @@ app.get("/api/books/:book_id", getBookById);
 app.post("/api/reviews/:book_id", postReviewByBookId);
 
 app.use(customErrorHandler);
+
 module.exports = app;

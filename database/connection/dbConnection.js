@@ -1,27 +1,25 @@
 const mongoose = require("mongoose");
+const ENV = process.env.NODE_ENV || "development";
+require("dotenv").config({
+  path: `/home/natsu/Documents/side-project-backend/paperback/.env.${ENV}`, //Adjust path depending on environment we execute the app
+}); //.config() will help you read the .env file
+const DATABASE = process.env.MONGO_DATABASE;
 
-async function testDb() {
+async function dataBase() {
   try {
-    await mongoose.connect(
-      "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/testData?retryWrites=true&w=majority&appName=BookShop"
-    );
-  } catch (error) {}
-}
-
-async function devDb() {
-  try {
-    await mongoose.connect(
-      "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
-    );
-  } catch (error) {}
+    await mongoose.connect(DATABASE);
+  } catch (error) {
+    console.log("❗ ~ connection to DB failed:", error);
+  }
 }
 
 async function endConnection() {
   await mongoose.connection.close();
 }
+
+console.log("🟠 ~ ENVIRONTMENT:", ENV);
 module.exports = {
-  testDb,
-  devDb,
+  dataBase,
   endConnection,
 };
 

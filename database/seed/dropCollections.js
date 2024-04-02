@@ -1,8 +1,8 @@
-const { testDb, endConnection } = require("../connection/dbConnection");
-const Book = require("../schemaTest/bookSchemaTest");
-const Review = require("../schemaTest/reviewSchemaTes");
-
-testDb();
+const { dataBase, endConnection } = require("../connection/dbConnection");
+// const TestBook = require("../schemaTest/bookSchemaTest");
+// const TestReview = require("../schemaTest/reviewSchemaTes");
+const { Book, Review } = require("../schema/schemaIndex");
+dataBase();
 async function dropBookCollection() {
   try {
     const deletedBooks = await Book.deleteMany({});
@@ -23,10 +23,9 @@ async function dropReviewsCollection() {
     console.log("🟢 ~ Reviews collection whiped out.");
   }
 }
+async function dropCollections() {
+  await dropBookCollection();
+  await dropReviewsCollection();
+}
 
-// dropReviewsCollection();
-// dropBookCollection();
-module.exports = {
-  dropReviewsCollection,
-  dropBookCollection,
-};
+module.exports = dropCollections;
