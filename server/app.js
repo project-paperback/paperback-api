@@ -7,7 +7,7 @@ const {
   getReviewsById,
   deleteReviewById
 } = require("./controllers/controller");
-const { customErrorHandler } = require("./utilities/customErrors");
+const customErrorHandler = require("./utilities/customErrors");
 const app = express();
 
 const multer = require("multer");
@@ -27,4 +27,5 @@ app.get("/api/reviews/:book_id", getReviewsById)
 app.delete("/api/reviews/:review_id", deleteReviewById)
 
 app.use(customErrorHandler);
+
 module.exports = app;

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const { Book, Review, User } = require("../../schema/schemaIndex.js");
+const { Book, Review, User } = require("../../database/schema/schemaIndex");
 
-async function updateBookRating(book_id){
+async function updateBookRating(book_id) {
   // Get all the reviews
   const allReviews = await Review.find({ bookId: book_id });
   let ratingsSum = 0;
@@ -15,4 +15,4 @@ async function updateBookRating(book_id){
   await Book.findByIdAndUpdate(book_id, { $set: { rating: averageResult } });
 }
 
-module.exports = { updateBookRating }
+module.exports = { updateBookRating };
