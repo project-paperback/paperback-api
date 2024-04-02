@@ -154,7 +154,7 @@ describe("PAPERBACK API", () => {
       expect(response.statusCode).toBe(400);
       expect(response.body.msg).toBe("You cannot review this item again");
     });
-    test.only("400 ~ Responds with a 'Missing book id' message when book id is missing in the post request body", async () => {
+    test("400 ~ Responds with a 'Missing book id' message when book id is missing in the post request body", async () => {
       await dropCollections();
       await restoreColletions();
       const response = await request(app)

@@ -3,6 +3,8 @@ const {
   saveNewUser,
   fetchBookById,
   sendBookReview,
+  fetchReviewsById,
+  removeReviewById,
 } = require("../models/model");
 
 async function postNewUser(req, res, next) {
@@ -49,9 +51,32 @@ async function postReviewByBookId(req, res, next) {
   }
 }
 
+async function getReviewsById(req, res, next) {
+  try {
+    const { book_id } = req.params;
+    const reviews = await fetchReviewsById(book_id)
+    res.status(200).send({ reviews : reviews })
+  } catch (error) {
+    next(error)
+  }
+}
+
+
+async function deleteReviewById(req, res, next) {
+  try {
+    const { review_id } = req.params;
+    const deletedReview = await removeReviewById(review_id)
+    res.status(200).send({ deletedReview })
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 module.exports = {
   getBooks,
   postNewUser,
   getBookById,
   postReviewByBookId,
+  getReviewsById,
+  deleteReviewById
 };

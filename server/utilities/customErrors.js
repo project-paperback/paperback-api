@@ -23,6 +23,11 @@ function customErrorHandler(error, request, response, next) {
       .send({ msg: "Cannot send a review without a username" });
   } else if (error.status === 404 && error.msg === "Book not found") {
     response.status(404).send({ msg: "Book not found" });
+  } else if (
+    error.status === 400 &&
+    error.msg === "This book hasn't been reviewed yet"
+  ) {
+    response.status(400).send({ msg: "This book hasn't been reviewed yet" });
   }
 }
 
