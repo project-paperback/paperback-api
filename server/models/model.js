@@ -157,10 +157,29 @@ async function fetchReviewsByBookId(book_id) {
 async function removeReviewById(review_id) {
   try {
     const findReview = await Review.findById(review_id);
+    if (!findReview) {
+      return Promise.reject({ status: 404, msg: "Review not found"})
+    }
     const bookId = findReview.bookId;
     const deletedReview = await Review.findByIdAndDelete(review_id);
     await updateBookRating(bookId);
     return deletedReview;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function amendReviewById(review_id, reviewBody, rating) {
+  try {
+    const findReview = await Review.findById(review_id);
+    if (!findReview) {
+      return Promise.reject({ status: 404, msg: "Review not found"});
+    }
+    const bookId = findReview.bookId;
+    const newUpdates = { reviewBody, rating };
+    const updatedReview = await Review.findByIdAndUpdate(review_id, newUpdates, {new : true});
+    await updateBookRating(bookId);
+    return updatedReview;
   } catch (error) {
     console.log(error);
   }
@@ -173,4 +192,5 @@ module.exports = {
   sendBookReview,
   fetchReviewsByBookId,
   removeReviewById,
+  amendReviewById
 };

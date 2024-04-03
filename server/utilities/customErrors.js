@@ -32,6 +32,8 @@ function customErrorHandler(error, request, response, next) {
     response.status(404).send({ msg: "Book to review not found" });
   } else if (error.status === 404 && error.msg === "Book not found") {
     response.status(404).send({ msg: "Book not found" });
+  } else if (error.status === 404 && error.msg === "Review not found") {
+    response.status(404).send({ msg: "Review not found" });
   }
 }
 
