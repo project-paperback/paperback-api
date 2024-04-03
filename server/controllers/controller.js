@@ -3,7 +3,7 @@ const {
   saveNewUser,
   fetchBookById,
   sendBookReview,
-  fetchReviewsById,
+  fetchReviewsByBookId,
   removeReviewById,
   amendReviewById,
 } = require("../models/model");
@@ -52,35 +52,34 @@ async function postReviewByBookId(req, res, next) {
   }
 }
 
-async function getReviewsById(req, res, next) {
+async function getReviewsByBookId(req, res, next) {
   try {
     const { book_id } = req.params;
-    const reviews = await fetchReviewsById(book_id)
-    res.status(200).send({ reviews : reviews })
+    const reviews = await fetchReviewsByBookId(book_id);
+    res.status(200).send({ reviews: reviews });
   } catch (error) {
-    next(error)
+    next(error);
   }
 }
-
 
 async function deleteReviewById(req, res, next) {
   try {
     const { review_id } = req.params;
-    const deletedReview = await removeReviewById(review_id)
-    res.status(200).send({ deletedReview : deletedReview })
+    const deletedReview = await removeReviewById(review_id);
+    res.status(200).send({ deletedReview: deletedReview });
   } catch (error) {
-    next(error)
+    next(error);
   }
 }
 
 async function updateReviewById(req, res, next) {
   try {
     const { review_id } = req.params;
-    const { reviewBody, rating } = req.body
-    const updatedReview = await amendReviewById(review_id, reviewBody, rating)
-    res.status(200).send({ updatedReview : updatedReview})
+    const { reviewBody, rating } = req.body;
+    const updatedReview = await amendReviewById(review_id, reviewBody, rating);
+    res.status(200).send({ updatedReview: updatedReview });
   } catch (error) {
-    next(error)
+    next(error);
   }
 }
 
@@ -89,7 +88,7 @@ module.exports = {
   postNewUser,
   getBookById,
   postReviewByBookId,
-  getReviewsById,
+  getReviewsByBookId,
   deleteReviewById,
-  updateReviewById
+  updateReviewById,
 };

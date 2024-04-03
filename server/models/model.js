@@ -67,6 +67,7 @@ async function fetchBooks() {
         msg: "More books coming soon!",
       });
     }
+
     return books;
   } catch (error) {
     if (error.name === "ValidationError") {
@@ -100,6 +101,12 @@ async function sendBookReview(book_id, userName, reviewBody, rating) {
     } else if (!rating) {
       return Promise.reject({ status: 400, msg: "Missing rating" });
     }
+    const isBookInCollection = await Book.findById(book_id);
+
+    if (isBookInCollection === null) {
+      return Promise.reject({ status: 404, msg: "Book to review not found" });
+    }
+
     const reviewsInCollection = await Review.find({ userName: userName });
     if (reviewsInCollection.length > 0) {
       return Promise.reject({
@@ -120,21 +127,30 @@ async function sendBookReview(book_id, userName, reviewBody, rating) {
     await updateBookRating(book_id);
 
     return review;
-  } catch (error) {}
+  } catch (error) {
+    console.log("🚀 ~ sendBookReview ~ error:", error);
+  }
 }
 
-async function fetchReviewsById(book_id) {
+async function fetchReviewsByBookId(book_id) {
   try {
+    const isBookInCollection = await Book.findById(book_id);
+
+    if (isBookInCollection === null) {
+      return Promise.reject({ status: 404, msg: "Book not found" });
+    }
     const reviews = await Review.find({ bookId: book_id });
     if (reviews.length === 0) {
       return Promise.reject({
-        status: 400,
+        status: 200,
         msg: "This book hasn't been reviewed yet",
       });
     }
     return reviews;
   } catch (error) {
-    console.log(error);
+    if (error.kind === "ObjectId") {
+      return Promise.reject({ status: 400, msg: "Invalid book id" });
+    }
   }
 }
 
@@ -174,7 +190,7 @@ module.exports = {
   saveNewUser,
   fetchBookById,
   sendBookReview,
-  fetchReviewsById,
+  fetchReviewsByBookId,
   removeReviewById,
   amendReviewById
 };

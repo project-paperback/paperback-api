@@ -24,10 +24,14 @@ function customErrorHandler(error, request, response, next) {
   } else if (error.status === 404 && error.msg === "Book not found") {
     response.status(404).send({ msg: "Book not found" });
   } else if (
-    error.status === 400 &&
+    error.status === 200 &&
     error.msg === "This book hasn't been reviewed yet"
   ) {
-    response.status(400).send({ msg: "This book hasn't been reviewed yet" });
+    response.status(200).send({ msg: "This book hasn't been reviewed yet" });
+  } else if (error.status === 404 && error.msg === "Book to review not found") {
+    response.status(404).send({ msg: "Book to review not found" });
+  } else if (error.status === 404 && error.msg === "Book not found") {
+    response.status(404).send({ msg: "Book not found" });
   } else if (error.status === 404 && error.msg === "Review not found") {
     response.status(404).send({ msg: "Review not found" });
   }
