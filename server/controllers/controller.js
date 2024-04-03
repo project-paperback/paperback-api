@@ -3,7 +3,7 @@ const {
   saveNewUser,
   fetchBookById,
   sendBookReview,
-  fetchReviewsById,
+  fetchReviewsByBookId,
   removeReviewById,
 } = require("../models/model");
 
@@ -51,24 +51,23 @@ async function postReviewByBookId(req, res, next) {
   }
 }
 
-async function getReviewsById(req, res, next) {
+async function getReviewsByBookId(req, res, next) {
   try {
     const { book_id } = req.params;
-    const reviews = await fetchReviewsById(book_id)
-    res.status(200).send({ reviews : reviews })
+    const reviews = await fetchReviewsByBookId(book_id);
+    res.status(200).send({ reviews: reviews });
   } catch (error) {
-    next(error)
+    next(error);
   }
 }
-
 
 async function deleteReviewById(req, res, next) {
   try {
     const { review_id } = req.params;
-    const deletedReview = await removeReviewById(review_id)
-    res.status(200).send({ deletedReview })
+    const deletedReview = await removeReviewById(review_id);
+    res.status(200).send({ deletedReview });
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 
@@ -77,6 +76,6 @@ module.exports = {
   postNewUser,
   getBookById,
   postReviewByBookId,
-  getReviewsById,
-  deleteReviewById
+  getReviewsByBookId,
+  deleteReviewById,
 };

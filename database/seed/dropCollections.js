@@ -1,6 +1,4 @@
-const { dataBase, endConnection } = require("../connection/dbConnection");
-// const TestBook = require("../schemaTest/bookSchemaTest");
-// const TestReview = require("../schemaTest/reviewSchemaTes");
+const { dataBase } = require("../connection/dbConnection");
 const { Book, Review } = require("../schema/schemaIndex");
 dataBase();
 async function dropBookCollection() {

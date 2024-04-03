@@ -25,6 +25,7 @@ describe("PAPERBACK API", () => {
       await dropCollections();
       await restoreColletions();
       const response = await request(app).get("/api/books");
+
       expect(response.statusCode).toBe(200);
       expect(response.body.books).toBeInstanceOf(Array);
     });
@@ -81,7 +82,7 @@ describe("PAPERBACK API", () => {
         author: "Virginia Woolf",
         year: 1927,
         pages: 209,
-        genres: ["Computer Science, Textbook"],
+        genres: ["Computer Science", "Textbook"],
         language: "English",
         isFiction: true,
         publisher: "Hogarth Press",
@@ -97,6 +98,13 @@ describe("PAPERBACK API", () => {
       expect(response.statusCode).toBe(200);
       expect(response.body.book).toMatchObject(matchingItem);
     });
+    test("400 ~ Returns a 'Invalid book id' message if invalid book id.", async () => {
+      await dropCollections();
+      await restoreColletions();
+      const response = await request(app).get("/api/books/dddd");
+      expect(response.statusCode).toBe(400);
+      expect(response.body.msg).toBe("Invalid book id");
+    });
     test("404 ~ Returns a 'Book not found' message when given an id of a non-existent item in database.", async () => {
       await dropCollections();
       await restoreColletions();
@@ -107,16 +115,65 @@ describe("PAPERBACK API", () => {
       expect(response.statusCode).toBe(404);
       expect(response.body.msg).toBe("Book not found");
     });
-    test("400 ~ Returns a 'Invalid book id' message if invalid book id.", async () => {
+  });
+  describe("GET /api/reviews/book_id", () => {
+    test("200 ~ Returns an array of reviews objects", async () => {
       await dropCollections();
       await restoreColletions();
-      const response = await request(app).get("/api/books/dddd");
+      const response = await request(app).get(
+        "/api/reviews/6602968a7b60b6e6e3b6a9c9"
+      );
+      expect(response.statusCode).toBe(200);
+      expect(response.body.reviews).toBeInstanceOf(Array);
+    });
+    test("200 ~ Each review object structure is according to the data model.", async () => {
+      await dropCollections();
+      await restoreColletions();
+      const response = await request(app).get(
+        "/api/reviews/6602968a7b60b6e6e3b6a9c9"
+      );
+      const reviews = response.body.reviews;
+
+      reviews.forEach((review) => {
+        expect(review).toHaveProperty("_id", expect.any(String)),
+          expect(review).toHaveProperty("bookId", expect.any(String)),
+          expect(review).toHaveProperty("userName", expect.any(String)),
+          expect(review).toHaveProperty("reviewBody", expect.any(String)),
+          expect(review).toHaveProperty("createdAt", expect.any(String)),
+          expect(review).toHaveProperty("rating", expect.any(Number));
+      });
+    });
+    test("200 ~ Returns a 'This book hasn't been reviewed yet' message if book has no reviews.", async () => {
+      await dropCollections();
+      await restoreColletions();
+      const response = await request(app).get(
+        "/api/reviews/6602968a7b60b6e6e3b6a9cb"
+      );
+
+      expect(response.statusCode).toBe(200);
+      expect(response.body.msg).toBe("This book hasn't been reviewed yet");
+    });
+    test("400 ~ Returns a 'Invalid book id' message when the input is an invalid book id format.", async () => {
+      await dropCollections();
+      await restoreColletions();
+      const response = await request(app).get("/api/reviews/ddd");
       expect(response.statusCode).toBe(400);
       expect(response.body.msg).toBe("Invalid book id");
     });
+    test("404 ~ Returns a 'Book was not found' message if book id of a non-existent item in database", async () => {
+      await dropCollections();
+      await restoreColletions();
+
+      const response = await request(app).get(
+        "/api/reviews/66029a552fc9fc1d38e0fd49"
+      );
+      expect(response.statusCode).toBe(404);
+      expect(response.body.msg).toBe("Book not found");
+    });
   });
+
   describe("POST /api/reviews/book_id", () => {
-    test("201 ~ Returns the corresponding review object given a book id.", async () => {
+    test("201 ~ Returns the posted review object back.", async () => {
       await dropCollections();
       await restoreColletions();
 
@@ -154,7 +211,7 @@ describe("PAPERBACK API", () => {
       expect(response.statusCode).toBe(400);
       expect(response.body.msg).toBe("You cannot review this item again");
     });
-    test("400 ~ Responds with a 'Missing book id' message when book id is missing in the post request body", async () => {
+    test("400 ~ Responds with a 'Cannot send a review without a username' message when username is missing in the post request body.", async () => {
       await dropCollections();
       await restoreColletions();
       const response = await request(app)
@@ -166,6 +223,57 @@ describe("PAPERBACK API", () => {
         });
       expect(response.statusCode).toBe(400);
       expect(response.body.msg).toBe("Cannot send a review without a username");
+    });
+    test("400 ~ Responds with a 'Cannot send a review without a rating' message if rating value is missing in the post request body.", async () => {
+      await dropCollections();
+      await restoreColletions();
+
+      const response = await request(app)
+        .post("/api/reviews/6602968a7b60b6e6e3b6a9cb")
+        .send({
+          bookId: "6602968a7b60b6e6e3b6a9cb",
+          userName: "Superman",
+          reviewBody: "What a terrible book! Not a masterpiece.",
+        });
+
+      expect(response.statusCode).toBe(400);
+      expect(response.body.msg).toBe("Cannot send a review without a rating");
+    });
+
+    test("404 ~ Returns a 'Book to review was not found' message if book is non-existent in database.", async () => {
+      await dropCollections();
+      await restoreColletions();
+
+      const response = await request(app)
+        .post("/api/reviews/66029a552fc9fc1d38e0fd4b")
+        .send({
+          userName: "Superman",
+          reviewBody: "What a terrible book! Not a masterpiece.",
+          rating: 3,
+        });
+      expect(response.statusCode).toBe(404);
+      expect(response.body.msg).toBe("Book to review not found");
+    });
+  });
+  describe("DELETE /api/reviews/review_id", () => {
+    test("200 ~ Returns the deleted review object.", async () => {
+      await dropCollections();
+      await restoreColletions();
+
+      const response = await request(app).delete(
+        "/api/reviews/66059d1222d02d34b58e0664"
+      );
+      const objectToMatch = {
+        _id: "66059d1222d02d34b58e0664",
+        bookId: "6602968a7b60b6e6e3b6a9c9",
+        userName: "Spiderman",
+        reviewBody: "What a terrible book! Not a masterpiece.",
+        createdAt: "2024-03-28T16:38:42.462Z",
+        rating: 3,
+        __v: 0,
+      };
+      expect(response.statusCode).toBe(200);
+      expect(response.body.deletedReview).toMatchObject(objectToMatch);
     });
   });
 });
