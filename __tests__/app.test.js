@@ -19,14 +19,12 @@ afterAll(() => {
 describe("PAPERBACK API", () => {
   describe("POST /api/create_profile", () => {
     test("201 ~ Returns the newly created user object.", async () => {
-      console.log("hello from test");
       const response = await request(app).post("/api/create_profile").send({
         password: "test123",
         userName: "Tomas",
         email: "coder123@gmail.com",
         image: "/home/natsu/Downloads/firebase.png",
       });
-      console.log(response.user);
       expect(response.statusCode).toBe(201);
     });
   });
@@ -75,8 +73,10 @@ describe("PAPERBACK API", () => {
     });
   });
   describe("DELETE /api/delete_profile", () => {
-    test("200 ~ Deletes user", async () => {
+    test("200 ~ Returns the deleted object", async () => {
       const response = await request(app).delete("/api/delete_profile");
+      console.log(response, "from test");
+      expect(response.statusCode).toBe(200);
     });
   });
   describe("GET /api/books", () => {
