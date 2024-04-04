@@ -1,25 +1,84 @@
 const request = require("supertest");
 const {
-  dataBase,
+  connectToDb,
   endConnection,
 } = require("../database/connection/dbConnection");
 const app = require("../server/app");
-const runSeed = require("../database/seed/run-seed");
+
 const dropCollections = require("../database/seed/dropCollections");
 const restoreColletions = require("../database/seed/restoreCollections");
 
 beforeAll(async () => {
-  return await dataBase();
+  return await connectToDb();
 });
 
-// beforeEach(async () => {
-//   return await runSeed();
-// });
 afterAll(() => {
   return endConnection();
 });
 
 describe("PAPERBACK API", () => {
+  describe("POST /api/create_profile", () => {
+    test("201 ~ Returns the newly created user object.", async () => {
+      console.log("hello from test");
+      const response = await request(app).post("/api/create_profile").send({
+        password: "test123",
+        userName: "Tomas",
+        email: "coder123@gmail.com",
+        image: "/home/natsu/Downloads/firebase.png",
+      });
+      console.log(response.user);
+      expect(response.statusCode).toBe(201);
+    });
+  });
+  describe("POST /api/sign_in", () => {
+    test("200 ~ Returns a 'Logged in!' message when successfully logged in.", async () => {
+      const response = await request(app).post("/api/sign_in").send({
+        email: "coder123@gmail.com",
+        password: "test123",
+      });
+      expect(response.statusCode).toBe(200);
+      expect(response.body.loggedIn.msg).toBe("Logged in!");
+    });
+    test("200 ~ Response also returns user email and uid.", async () => {
+      const response = await request(app).post("/api/sign_in").send({
+        email: "coder123@gmail.com",
+        password: "test123",
+      });
+      expect(response.body.loggedIn.userInf).toHaveProperty("email");
+    });
+    test("400 ~ Returns an 'Email required to log in' message if user attempts to log in without user email input.", async () => {
+      const response = await request(app)
+        .post("/api/sign_in")
+        .send({ password: "test123" });
+      expect(response.statusCode).toBe(400);
+      expect(response.body.msg).toBe("Email required to log in");
+    });
+    test("400 ~ Returns a 'Password required to log in' message if user attempts to log in without password input.", async () => {
+      const response = await request(app).post("/api/sign_in").send({
+        email: "bananas@gmail.com",
+      });
+      expect(response.body.msg).toBe("Password required to log in");
+    });
+    test("400 ~ Returns an 'Email and password missing' message if both password and email are missing when signing in.", async () => {
+      const response = await request(app).post("/api/sign_in").send({});
+
+      expect(response.statusCode).toBe(400);
+      expect(response.body.msg).toBe("Email and password missing");
+    });
+    test("401 ~ Returns a 'Wrong credentials. Are you signed up?' message if logging in without previously signed up.", async () => {
+      const response = await request(app).post("/api/sign_in").send({
+        email: "bananas@gmail.com",
+        password: "test123",
+      });
+      expect(response.statusCode).toBe(401);
+      expect(response.body.msg).toBe("Wrong credentials. Are you signed up?");
+    });
+  });
+  describe("DELETE /api/delete_profile", () => {
+    test("200 ~ Deletes user", async () => {
+      const response = await request(app).delete("/api/delete_profile");
+    });
+  });
   describe("GET /api/books", () => {
     test("200 ~ Returns an array of book objects.", async () => {
       await dropCollections();

@@ -2,7 +2,9 @@
 const {
   auth,
   newUser,
-} = require("../../Firebase/authentication/FBauthentication.js");
+  signIn,
+  deleteUser,
+} = require("../../Firebase/Manage_Users/FBauthentication.js");
 const { Book, Review, User } = require("../../database/schema/schemaIndex.js");
 const {
   ref,
@@ -10,12 +12,14 @@ const {
   getDownloadURL,
   uploadBytesResumable,
 } = require("../../Firebase/firebaseStorage/fbStorage.js");
-const {
-  dataBase,
-  endConnection,
-} = require("../../database/connection/dbConnection.js");
-dataBase();
+const { connectToDb } = require("../../database/connection/dbConnection.js");
+connectToDb();
 const { updateBookRating } = require("../utilities/utils.js");
+
+/*
+
+
+*/
 
 async function saveNewUser(password, email, userName, userBio, req) {
   try {
@@ -29,19 +33,22 @@ async function saveNewUser(password, email, userName, userBio, req) {
 
     const addUser = await newUser(auth, email, password);
 
-    const imagesRef = ref(
-      storage,
-      `profileImages/${
-        req.file.originalname +
-        addUser.user.uid +
-        Math.ceil(Math.random() * 1000)
-      }`
-    );
-    const buffer = req.file.buffer;
-    const metadata = { contentType: req.file.mimetype };
-    const uploadTask = uploadBytesResumable(imagesRef, buffer, metadata);
-    const snapshot = await uploadTask;
-    const downloadURL = await getDownloadURL(snapshot.ref);
+    let downloadURL = "Profile picture not set up.";
+    if (req.file) {
+      const imagesRef = ref(
+        storage,
+        `profileImages/${
+          req.file.originalname +
+          addUser.user.uid +
+          Math.ceil(Math.random() * 1000)
+        }`
+      );
+      const buffer = req.file.buffer;
+      const metadata = { contentType: req.file.mimetype };
+      const uploadTask = uploadBytesResumable(imagesRef, buffer, metadata);
+      const snapshot = await uploadTask;
+      downloadURL = await getDownloadURL(snapshot.ref);
+    }
 
     const newUserMongo = new User({
       fbUid: addUser.user.uid,
@@ -50,14 +57,56 @@ async function saveNewUser(password, email, userName, userBio, req) {
       userEmail: addUser.user.email,
       profileImg: downloadURL,
     });
-
     await newUserMongo.save();
     return newUserMongo;
   } catch (error) {
-    return Promise.reject(error.customData._tokenResponse.error);
+    console.log("🚀 ~ saveNewUser ~ error:", error);
+    return error.customData._tokenResponse.error;
+  }
+}
+async function userLogIn(email, password) {
+  try {
+    if (!email && !password) {
+      return Promise.reject({ status: 400, msg: "Email and password missing" });
+    } else if (!email) {
+      return Promise.reject({ status: 400, msg: "Email required to log in" });
+    } else if (!password) {
+      return Promise.reject({
+        status: 400,
+        msg: "Password required to log in",
+      });
+    }
+    const signUserIn = await signIn(auth, email, password);
+    const userInfo = {
+      uid: signUserIn._tokenResponse.localId,
+      email: signUserIn._tokenResponse.email,
+    };
+    return { userInf: userInfo, msg: "Logged in!" };
+  } catch (error) {
+    if (error) {
+      console.log("🚀 ~ userLogIn ~ error:", error);
+      return Promise.reject({
+        status: 401,
+        msg: "Wrong credentials. Are you signed up?",
+      });
+    }
   }
 }
 
+async function removeUserProfile() {
+  try {
+    const user = auth.currentUser;
+    const userInfo = user.reloadUserInfo;
+    const fireUid = userInfo.localId;
+    const removedFromDb = await User.find({ fbUid: fireUid });
+    console.log("🚀 ~ removeUserProfile ~ removedFromDb:", removedFromDb);
+
+    // const userDeleted = await deleteUser(user);
+
+    return userDeleted;
+  } catch (error) {}
+}
+//====================================================================
 async function fetchBooks() {
   try {
     const books = await Book.find({});
@@ -158,7 +207,7 @@ async function removeReviewById(review_id) {
   try {
     const findReview = await Review.findById(review_id);
     if (!findReview) {
-      return Promise.reject({ status: 404, msg: "Review not found"})
+      return Promise.reject({ status: 404, msg: "Review not found" });
     }
     const bookId = findReview.bookId;
     const deletedReview = await Review.findByIdAndDelete(review_id);
@@ -173,11 +222,15 @@ async function amendReviewById(review_id, reviewBody, rating) {
   try {
     const findReview = await Review.findById(review_id);
     if (!findReview) {
-      return Promise.reject({ status: 404, msg: "Review not found"});
+      return Promise.reject({ status: 404, msg: "Review not found" });
     }
     const bookId = findReview.bookId;
     const newUpdates = { reviewBody, rating };
-    const updatedReview = await Review.findByIdAndUpdate(review_id, newUpdates, {new : true});
+    const updatedReview = await Review.findByIdAndUpdate(
+      review_id,
+      newUpdates,
+      { new: true }
+    );
     await updateBookRating(bookId);
     return updatedReview;
   } catch (error) {
@@ -186,11 +239,13 @@ async function amendReviewById(review_id, reviewBody, rating) {
 }
 
 module.exports = {
-  fetchBooks,
   saveNewUser,
+  userLogIn,
+  removeUserProfile,
+  fetchBooks,
   fetchBookById,
   sendBookReview,
   fetchReviewsByBookId,
   removeReviewById,
-  amendReviewById
+  amendReviewById,
 };

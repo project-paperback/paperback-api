@@ -1,6 +1,6 @@
-const { dataBase } = require("../connection/dbConnection");
+const { connectToDb } = require("../connection/dbConnection");
 const { Book, Review } = require("../schema/schemaIndex");
-dataBase();
+connectToDb();
 async function dropBookCollection() {
   try {
     const deletedBooks = await Book.deleteMany({});
@@ -8,7 +8,7 @@ async function dropBookCollection() {
   } catch (error) {
     console.log(error);
   } finally {
-    console.log("🟢 ~ Books collection whiped out.");
+    console.log("🟢 ~ Books collection wiped out.");
   }
 }
 
@@ -18,7 +18,7 @@ async function dropReviewsCollection() {
     return deletedReviews;
   } catch (error) {
   } finally {
-    console.log("🟢 ~ Reviews collection whiped out.");
+    console.log("🟢 ~ Reviews collection wiped out.");
   }
 }
 async function dropCollections() {

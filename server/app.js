@@ -1,7 +1,9 @@
 const express = require("express");
 const {
-  getBooks,
   postNewUser,
+  userSignIn,
+  deleteUserProfile,
+  getBooks,
   getBookById,
   postReviewByBookId,
   getReviewsByBookId,
@@ -16,9 +18,12 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 app.use(express.json());
 
-app.post("/api/create_user", upload.single("image"), (req, res) => {
+//Users and Authentication
+app.post("/api/create_profile", upload.single("image"), (req, res) => {
   postNewUser(req, res);
 });
+app.post("/api/sign_in", userSignIn);
+app.delete("/api/delete_profile", deleteUserProfile);
 // Books
 app.get("/api/books", getBooks);
 app.get("/api/books/:book_id", getBookById);

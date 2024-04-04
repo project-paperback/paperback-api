@@ -5,7 +5,7 @@ require("dotenv").config({
 }); //.config() will help you read the .env file
 const DATABASE = process.env.MONGO_DATABASE;
 
-async function dataBase() {
+async function connectToDb() {
   try {
     await mongoose.connect(DATABASE);
   } catch (error) {
@@ -19,7 +19,7 @@ async function endConnection() {
 
 console.log("🟠 ~ ENVIRONTMENT:", ENV);
 module.exports = {
-  dataBase,
+  connectToDb,
   endConnection,
 };
 

@@ -1,8 +1,8 @@
-const { dataBase } = require("../connection/dbConnection");
+const { connectToDb } = require("../connection/dbConnection");
 const { bookData, reviewData } = require("./jsonData/dataIndex");
 const { Book, Review } = require("../schema/schemaIndex");
 
-dataBase();
+connectToDb();
 async function restoreBookCollection() {
   try {
     await Book.insertMany(bookData);

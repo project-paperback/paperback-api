@@ -1,6 +1,8 @@
 const {
-  fetchBooks,
   saveNewUser,
+  userLogIn,
+  removeUserProfile,
+  fetchBooks,
   fetchBookById,
   sendBookReview,
   fetchReviewsByBookId,
@@ -11,12 +13,34 @@ const {
 async function postNewUser(req, res, next) {
   try {
     const { password, email, userName, userBio } = req.body;
+
     const userNew = await saveNewUser(password, email, userName, userBio, req);
     res.status(201).send({ user: userNew });
+  } catch (error) {
+    console.log("🚀 ~ postNewUser ~ error:", error);
+    next(error);
+  }
+}
+async function userSignIn(req, res, next) {
+  try {
+    const { email, password } = req.body;
+
+    const logIn = await userLogIn(email, password);
+    res.status(200).send({ loggedIn: logIn });
   } catch (error) {
     next(error);
   }
 }
+
+async function deleteUserProfile(req, res, next) {
+  try {
+    const removed = await removeUserProfile();
+  } catch (error) {
+    console.log("🚀 ~ deleteUserProfile ~ error:", error);
+  }
+}
+
+//=========================================================
 
 async function getBooks(req, res, next) {
   try {
@@ -84,8 +108,10 @@ async function updateReviewById(req, res, next) {
 }
 
 module.exports = {
-  getBooks,
   postNewUser,
+  userSignIn,
+  deleteUserProfile,
+  getBooks,
   getBookById,
   postReviewByBookId,
   getReviewsByBookId,
