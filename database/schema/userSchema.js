@@ -4,7 +4,7 @@ const userSchema = new Schema({
   fbUid: String,
   userName: String,
   userEmail: String,
-  userBio: String,
+  userBio: { type: String, default: "No user bio found" },
   profileImg: String,
 });
 
