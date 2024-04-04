@@ -35,6 +35,7 @@ async function userSignIn(req, res, next) {
 async function deleteUserProfile(req, res, next) {
   try {
     const removed = await removeUserProfile();
+    res.status(200).send({ removed: removed });
   } catch (error) {
     console.log("🚀 ~ deleteUserProfile ~ error:", error);
   }

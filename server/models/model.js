@@ -60,7 +60,6 @@ async function saveNewUser(password, email, userName, userBio, req) {
     await newUserMongo.save();
     return newUserMongo;
   } catch (error) {
-    console.log("🚀 ~ saveNewUser ~ error:", error);
     return error.customData._tokenResponse.error;
   }
 }
@@ -98,12 +97,13 @@ async function removeUserProfile() {
     const user = auth.currentUser;
     const userInfo = user.reloadUserInfo;
     const fireUid = userInfo.localId;
-    const removedFromDb = await User.find({ fbUid: fireUid });
-    console.log("🚀 ~ removeUserProfile ~ removedFromDb:", removedFromDb);
+    const userToRemove = await User.find({ fbUid: fireUid });
+    const userId = userToRemove[0]._id;
+    const userRemoved = await User.findByIdAndDelete(userId);
 
-    // const userDeleted = await deleteUser(user);
+    await deleteUser(user);
 
-    return userDeleted;
+    return userRemoved;
   } catch (error) {}
 }
 //====================================================================
