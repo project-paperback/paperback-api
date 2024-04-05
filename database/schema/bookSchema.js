@@ -1,30 +1,29 @@
 const { Schema, model } = require("mongoose");
 
-const industryIdentifierSchema = new Schema({
-  type: String,
-  identifier: String
-});
+// const industryIdentifierSchema = new Schema({
+//   type: String,
+//   identifier: String,
+// });
 
-const imageLinks = new Schema({
-  smallThumbnail: String,
-  thumbnail: String
-});
+// const imageLinks = new Schema({
+//   smallThumbnail: String,
+//   thumbnail: String,
+// });
 
 const bookSchema = new Schema({
-  title: { type: String, immutable: true },
-  subtitle: String,
-  authors: [String],
+  title: String,
+  authors: Array,
   publisher: String,
   publishedDate: String,
   description: String,
-  industryIdentifiers: [ industryIdentifierSchema ],
+  industryIdentifiers: Array,
   pageCount: Number,
   printType: String,
-  categories: [String],
+  categories: Array,
   maturityRating: String,
   allowAnonLogging: Boolean,
   contentVersion: String,
-  imageLinks: imageLinks,
+  imageLinks: Array,
   language: String,
   previewLink: String,
   infoLink: String,
@@ -32,10 +31,8 @@ const bookSchema = new Schema({
   price: Number,
   quantity: Number,
   rating: { type: Number, default: 0 },
-  isbn: { type: String,}
-})
-
-
+  __v: Number,
+});
 
 const Book = model("Book", bookSchema);
 

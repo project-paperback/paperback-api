@@ -1,5 +1,5 @@
 function customErrorHandler(error, request, response, next) {
-  // console.log("🚀 ~ customErrorHandler ~ error:", error);
+  console.log(error, "from error handler line 2");
   if (error.status === 200) {
     if (error.msg === "More books coming soon!") {
       response.status(200).send({ msg: "More books coming soon!" });
@@ -7,14 +7,8 @@ function customErrorHandler(error, request, response, next) {
       response.status(200).send({ msg: "This book hasn't been reviewed yet" });
     }
   } else if (error.status === 400) {
-    if (error.msg === "Username is required") {
-      response.status(400).send({ msg: "Username is required" });
-    } else if (error.msg === "Password is required") {
-      response.status(400).send({ msg: "Password is required" });
-    } else if (error.msg === "Email and password missing") {
+    if (error.msg === "Email and password missing") {
       response.status(400).send({ msg: "Email and password missing" });
-    } else if (error.message === "EMAIL_EXISTS") {
-      response.status(400).send({ msg: "Email already in use" });
     } else if (error.msg === "Email required to log in") {
       response.status(400).send({ msg: "Email required to log in" });
     } else if (error.msg === "Password required to log in") {
@@ -36,6 +30,8 @@ function customErrorHandler(error, request, response, next) {
       response
         .status(401)
         .send({ msg: "Wrong credentials. Are you signed up?" });
+    } else if (error.msg === "Unauthorized request") {
+      response.status(401).send({ msg: "Unauthorized request" });
     }
   } else if (error.status === 404) {
     if (error.msg === "Book to review not found") {

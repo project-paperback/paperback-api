@@ -15,10 +15,20 @@ async function postNewUser(req, res, next) {
     const { password, email, userName, userBio } = req.body;
 
     const userNew = await saveNewUser(password, email, userName, userBio, req);
+
     res.status(201).send({ user: userNew });
   } catch (error) {
-    console.log("🚀 ~ postNewUser ~ error:", error);
-    next(error);
+    if (error.status === 400) {
+      if (error.msg === "Password is required") {
+        res.status(400).send({ msg: "Password is required" });
+      } else if (error.msg === "Username is required") {
+        res.status(400).send({ msg: "Username is required" });
+      } else if (error.msg === "Email is required") {
+        res.status(400).send({ msg: "Email is required" });
+      } else if (error.msg === "EMAIL_EXISTS") {
+        res.status(400).send({ msg: "Email already in use" });
+      }
+    }
   }
 }
 async function userSignIn(req, res, next) {

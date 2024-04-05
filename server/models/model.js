@@ -21,7 +21,7 @@ const { updateBookRating } = require("../utilities/utils.js");
 
 */
 
-async function saveNewUser(password, email, userName, userBio, req) {
+async function saveNewUser(password, email, userName, userBio, req, res) {
   try {
     if (!userName) {
       return Promise.reject({ status: 400, msg: "Username is required" });
@@ -60,7 +60,10 @@ async function saveNewUser(password, email, userName, userBio, req) {
     await newUserMongo.save();
     return newUserMongo;
   } catch (error) {
-    return error.customData._tokenResponse.error;
+    return Promise.reject({
+      status: 400,
+      msg: error.customData._tokenResponse.error.message,
+    });
   }
 }
 async function userLogIn(email, password) {
@@ -83,7 +86,6 @@ async function userLogIn(email, password) {
     return { userInf: userInfo, msg: "Logged in!" };
   } catch (error) {
     if (error) {
-      console.log("🚀 ~ userLogIn ~ error:", error);
       return Promise.reject({
         status: 401,
         msg: "Wrong credentials. Are you signed up?",
@@ -96,15 +98,22 @@ async function removeUserProfile() {
   try {
     const user = auth.currentUser;
     const userInfo = user.reloadUserInfo;
-    const fireUid = userInfo.localId;
-    const userToRemove = await User.find({ fbUid: fireUid });
-    const userId = userToRemove[0]._id;
-    const userRemoved = await User.findByIdAndDelete(userId);
+    if (!userInfo) {
+      return Promise.reject({ status: 401, msg: "Unauthorized request" });
+    } else {
+      const fireUid = userInfo.localId;
+      const userToRemove = await User.find({ fbUid: fireUid });
+      const userId = userToRemove[0]._id;
+      const userRemoved = await User.findByIdAndDelete(userId);
 
-    await deleteUser(user);
+      await deleteUser(user);
 
-    return userRemoved;
-  } catch (error) {}
+      return userRemoved;
+    }
+  } catch (error) {
+    if (error) console.log(error);
+    return error;
+  }
 }
 //====================================================================
 async function fetchBooks() {
@@ -156,7 +165,10 @@ async function sendBookReview(book_id, userName, reviewBody, rating) {
       return Promise.reject({ status: 404, msg: "Book to review not found" });
     }
 
-    const reviewsInCollection = await Review.find({ userName: userName });
+    const reviewsInCollection = await Review.find({
+      userName: userName,
+      bookId: book_id,
+    });
     if (reviewsInCollection.length > 0) {
       return Promise.reject({
         status: 400,

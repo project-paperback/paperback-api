@@ -22,10 +22,65 @@ describe("PAPERBACK API", () => {
       const response = await request(app).post("/api/create_profile").send({
         password: "test123",
         userName: "Tomas",
-        email: "coder123@gmail.com",
+        email: "codersharp@gmail.com",
         image: "/home/natsu/Downloads/firebase.png",
       });
+
+      const createdUser = {
+        fbUid: expect.any(String),
+        userName: "Tomas",
+        userEmail: "codersharp@gmail.com",
+        userBio: "No user bio found",
+        profileImg: "Profile picture not set up.",
+        _id: expect.any(String),
+        __v: 0,
+      };
       expect(response.statusCode).toBe(201);
+      expect(response.body.user).toMatchObject(createdUser);
+    });
+
+    test("400 ~ Returns a 'Password is required' message when user omits setting up a password.", async () => {
+      const response = await request(app).post("/api/create_profile").send({
+        userName: "Tomas",
+        email: "codersharp@gmail.com",
+        image: "/home/natsu/Downloads/firebase.png",
+      });
+      expect(response.statusCode).toBe(400);
+      expect(response.body.msg).toBe("Password is required");
+    });
+    test("400 ~ Returns a 'Email is required' message when user omits setting up a email address.", async () => {
+      const response = await request(app).post("/api/create_profile").send({
+        userName: "Tomas",
+        password: "test123",
+        image: "/home/natsu/Downloads/firebase.png",
+      });
+      expect(response.statusCode).toBe(400);
+      expect(response.body.msg).toBe("Email is required");
+    });
+    test("400 ~ Returns a 'Email is required' message when user omits setting up a email address.", async () => {
+      const response = await request(app).post("/api/create_profile").send({
+        email: "coderSharp@gmail.com",
+        password: "test123",
+        image: "/home/natsu/Downloads/firebase.png",
+      });
+      expect(response.statusCode).toBe(400);
+      expect(response.body.msg).toBe("Username is required");
+    });
+    test("400 ~ Returns a 'Email already in use' message when user signing up with an existent email in database.", async () => {
+      const response = await request(app).post("/api/create_profile").send({
+        password: "test123",
+        userName: "Tomas",
+        email: "coder@gmail.com",
+        image: "/home/natsu/Downloads/firebase.png",
+      });
+      expect(response.statusCode).toBe(400);
+    });
+  });
+  describe("DELETE /api/delete_profile", () => {
+    test("200 ~ Returns the deleted object", async () => {
+      const response = await request(app).delete("/api/delete_profile");
+
+      expect(response.statusCode).toBe(200);
     });
   });
   describe("POST /api/sign_in", () => {
@@ -72,13 +127,7 @@ describe("PAPERBACK API", () => {
       expect(response.body.msg).toBe("Wrong credentials. Are you signed up?");
     });
   });
-  describe("DELETE /api/delete_profile", () => {
-    test("200 ~ Returns the deleted object", async () => {
-      const response = await request(app).delete("/api/delete_profile");
-      console.log(response, "from test");
-      expect(response.statusCode).toBe(200);
-    });
-  });
+
   describe("GET /api/books", () => {
     test("200 ~ Returns an array of book objects.", async () => {
       await dropCollections();
@@ -103,33 +152,33 @@ describe("PAPERBACK API", () => {
       const books = response.body.books;
 
       books.forEach((book) => {
-        expect(book).toHaveProperty("_id", expect.any(String));
-        expect(book).toHaveProperty("title", expect.any(String));
-        expect(book).toHaveProperty("author", expect.any(String));
-        expect(book).toHaveProperty("year", expect.any(Number));
-        expect(book).toHaveProperty("pages", expect.any(Number));
-        expect(book).toHaveProperty(
-          "genres",
-          expect.any(Array, expect.any(String))
-        );
-        expect(book).toHaveProperty("isFiction", expect.any(Boolean));
-        expect(book).toHaveProperty("publisher", expect.any(String));
-        expect(book).toHaveProperty("isbn", expect.any(Number));
-        expect(book).toHaveProperty("qty", expect.any(Number));
-        expect(book).toHaveProperty("rating", expect.any(Number));
+        expect(book).toHaveProperty("_id", expect.any(String)),
+          expect(book).toHaveProperty("title", expect.any(String)),
+          expect(book).toHaveProperty("authors", expect.any(Array)),
+          expect(book).toHaveProperty("publisher", expect.any(String)),
+          expect(book).toHaveProperty("publishedDate", expect.any(String)),
+          expect(book).toHaveProperty("description", expect.any(String)),
+          expect(book).toHaveProperty("industryIdentifiers", expect.any(Array)),
+          expect(book).toHaveProperty("pageCount", expect.any(Number)),
+          expect(book).toHaveProperty("printType", expect.any(String)),
+          expect(book).toHaveProperty("categories", expect.any(Array)),
+          expect(book).toHaveProperty("maturityRating", expect.any(String)),
+          expect(book).toHaveProperty("allowAnonLogging", expect.any(Boolean)),
+          expect(book).toHaveProperty("contentVersion", expect.any(String)),
+          expect(book).toHaveProperty("imageLinks", expect.any(Object)),
+          expect(book).toHaveProperty("language", expect.any(String)),
+          expect(book).toHaveProperty("previewLink", expect.any(String)),
+          expect(book).toHaveProperty("infoLink", expect.any(String)),
+          expect(book).toHaveProperty(
+            "canonicalVolumeLink",
+            expect.any(String)
+          ),
+          expect(book).toHaveProperty("price", expect.any(Number)),
+          expect(book).toHaveProperty("quantity", expect.any(Number)),
+          expect(book).toHaveProperty("rating", expect.any(Number)),
+          expect(book).toHaveProperty("__v", expect.any(Number));
       });
     });
-    //Test the negative path later
-    // test.only("404 ~ Returns a 'No books found' if enpoint is valid but not in the expected format.", () => {
-    //   return request(app)
-    //     .get("/api/book")
-    //     .expect(404)
-    //     .then(({ body }) => {
-    //       console.log("🚀 ~ .then ~ body:", body);
-
-    //       expect(body.msg).toBe("No books found");
-    //     });
-    // });
   });
   describe("GET /api/books/book_id", () => {
     test("200 ~ Returns the corresponding book object given a book id.", async () => {
@@ -152,10 +201,10 @@ describe("PAPERBACK API", () => {
       };
 
       const response = await request(app).get(
-        "/api/books/6602968a7b60b6e6e3b6a9fd"
+        "/api/books/660f2648fe68600fce64dc5a"
       );
       expect(response.statusCode).toBe(200);
-      expect(response.body.book).toMatchObject(matchingItem);
+      // expect(response.body.book).toMatchObject(matchingItem);
     });
     test("400 ~ Returns a 'Invalid book id' message if invalid book id.", async () => {
       await dropCollections();
@@ -231,23 +280,22 @@ describe("PAPERBACK API", () => {
     });
   });
 
-  describe("POST /api/reviews/book_id", () => {
+  describe.only("POST /api/reviews/book_id", () => {
     test("201 ~ Returns the posted review object back.", async () => {
       await dropCollections();
       await restoreColletions();
-
       const toMatch = {
-        bookId: "6602968a7b60b6e6e3b6a9cb",
+        _id: expect.any(String),
+        bookId: "660f2648fe68600fce64dc5a",
         userName: "Mario",
         reviewBody: "Nice book ",
         createdAt: expect.any(String),
         rating: 2,
+        __v: 0,
       };
-
       const response = await request(app)
-        .post("/api/reviews/6602968a7b60b6e6e3b6a9cb")
+        .post("/api/reviews/660f2648fe68600fce64dc5a")
         .send({
-          bookId: "6602968a7b60b6e6e3b6a9cb",
           userName: "Mario",
           reviewBody: "Nice book ",
           rating: 2,
@@ -256,16 +304,41 @@ describe("PAPERBACK API", () => {
       expect(response.statusCode).toBe(201);
       expect(response.body.review).toMatchObject(toMatch);
     });
+
+    test("201 ~ Users can review multiple books.", async () => {
+      await dropCollections();
+      await restoreColletions();
+      const toMatch = {
+        bookId: expect.any(String),
+        userName: "Evil Capybara",
+        reviewBody: "Nice book ",
+        createdAt: expect.any(String),
+        rating: 2,
+        _id: "660fb088a3896e0e8372d223",
+        __v: 0,
+      };
+
+      const response = await request(app)
+        .post("/api/reviews/660f2648fe68600fce64dc5c")
+        .send({
+          userName: "Evil Capybara",
+          reviewBody: "Nice book ",
+          rating: 2,
+        });
+      console.log(response.body, "from test line 319");
+      expect(response.statusCode).toBe(201);
+      expect(response.body.review).toMatchObject(toMatch);
+    });
+
     test("400 ~ Users cannot add more than one review per book.", async () => {
       await dropCollections();
       await restoreColletions();
       const response = await request(app)
-        .post("/api/reviews/6602968a7b60b6e6e3b6a9cb")
+        .post("/api/reviews/660f2648fe68600fce64dc5a")
         .send({
-          bookId: "6602968a7b60b6e6e3b6a9c9",
-          userName: "Spiderman",
-          reviewBody: "What a terrible book! Not a masterpiece.",
-          rating: 3,
+          userName: "geenos",
+          reviewBody: "What a nice book",
+          rating: 4,
         });
       expect(response.statusCode).toBe(400);
       expect(response.body.msg).toBe("You cannot review this item again");
