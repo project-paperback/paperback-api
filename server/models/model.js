@@ -251,22 +251,39 @@ async function amendReviewById(review_id, reviewBody, rating) {
 }
 
 async function createBasket(userNew){
-  const basket = await Basket.create({
-    userEmail : userNew.userEmail,
-    userId : userNew._id,
-    items : [],
-  })
-
-  // const newBasket = new Basket({
-  //   userEmail : userNew.userEmail,
-  //   userId : userNew._id,
-  //   items: []
-  // });
-  // await newBasket.save();
-
+  try {
+    const basket = await Basket.create({
+      userEmail : userNew.userEmail,
+      userId : userNew._id,
+      items : [],
+    })
+  } catch (error) {
+    console.log(error)
+  }
 
   await User.findByIdAndUpdate(userNew._id, { basketId : basket._id});
   return basket;
+}
+
+async function sendToBasket(userId, productId, quantity){
+  try {
+    const basket = await Basket.findOne({ userId: userId })
+    if (!basket) {
+      return Promise.reject({ status: 404, msg: "Shopping cart not found" });
+    }
+    const existingItem = basket.items.find(item => item.product.toString() === productId);
+    if (existingItem) {
+      // If the item already exists, update its quantity
+      existingItem.quantity += quantity;
+    } else {
+      // If the item doesn't exist, add it to the items array
+      basket.items.push({ product: productId, quantity: quantity });
+    }
+
+    await basket.save()
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 module.exports = {
@@ -279,5 +296,6 @@ module.exports = {
   fetchReviewsByBookId,
   removeReviewById,
   amendReviewById,
-  createBasket
+  createBasket,
+  sendToBasket
 };
