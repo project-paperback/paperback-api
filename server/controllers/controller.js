@@ -8,6 +8,7 @@ const {
   fetchReviewsByBookId,
   removeReviewById,
   amendReviewById,
+  createBasket,
 } = require("../models/model");
 
 async function postNewUser(req, res, next) {
@@ -15,6 +16,8 @@ async function postNewUser(req, res, next) {
     const { password, email, userName, userBio } = req.body;
 
     const userNew = await saveNewUser(password, email, userName, userBio, req);
+
+    const basket = await createBasket(userNew)
 
     res.status(201).send({ user: userNew });
   } catch (error) {

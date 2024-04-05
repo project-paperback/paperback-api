@@ -33,7 +33,7 @@ app.get("/api/reviews/:book_id", getReviewsByBookId);
 app.delete("/api/reviews/:review_id", deleteReviewById);
 app.patch("/api/reviews/:review_id", updateReviewById);
 //Basket
-// app.post('api/basket/user_id')
+// app.post('api/basket/user_id/:book_id')
 
 app.use(customErrorHandler);
 

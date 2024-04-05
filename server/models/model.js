@@ -5,7 +5,7 @@ const {
   signIn,
   deleteUser,
 } = require("../../Firebase/Manage_Users/FBauthentication.js");
-const { Book, Review, User } = require("../../database/schema/schemaIndex.js");
+const { Book, Review, User, Basket } = require("../../database/schema/schemaIndex.js");
 const {
   ref,
   storage,
@@ -250,6 +250,25 @@ async function amendReviewById(review_id, reviewBody, rating) {
   }
 }
 
+async function createBasket(userNew){
+  const basket = await Basket.create({
+    userEmail : userNew.userEmail,
+    userId : userNew._id,
+    items : [],
+  })
+
+  // const newBasket = new Basket({
+  //   userEmail : userNew.userEmail,
+  //   userId : userNew._id,
+  //   items: []
+  // });
+  // await newBasket.save();
+
+
+  await User.findByIdAndUpdate(userNew._id, { basketId : basket._id});
+  return basket;
+}
+
 module.exports = {
   saveNewUser,
   userLogIn,
@@ -260,4 +279,5 @@ module.exports = {
   fetchReviewsByBookId,
   removeReviewById,
   amendReviewById,
+  createBasket
 };
