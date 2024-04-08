@@ -84,7 +84,7 @@ describe("PAPERBACK API", () => {
     });
   });
   describe("POST /api/sign_in", () => {
-    test.only("200 ~ Returns a 'Logged in!' message when successfully logged in.", async () => {
+    test("200 ~ Returns a 'Logged in!' message when successfully logged in.", async () => {
       const email = "evilcapy@gmail.com";
       const password = "test123";
       await userLogIn(email, password);
@@ -132,7 +132,7 @@ describe("PAPERBACK API", () => {
     });
   });
 
-  describe.only("PATCH /api/account_details", () => {
+  describe("PATCH /api/account_details", () => {
     test("200 ~ Returns the updated user info object.", async () => {});
   });
   describe("POST /api/sign_out", () => {

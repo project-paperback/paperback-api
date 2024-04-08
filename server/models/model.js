@@ -6,7 +6,7 @@ const {
   signOut,
   deleteUser,
 } = require("../../Firebase/Manage_Users/FBauthentication.js");
-const { Book, Review, User } = require("../../database/schema/schemaIndex.js");
+const { Book, Review, User, Basket } = require("../../database/schema/schemaIndex.js");
 const {
   ref,
   storage,
@@ -319,6 +319,42 @@ async function amendReviewById(review_id, reviewBody, rating) {
   }
 }
 
+async function createBasket(userNew){
+  try {
+    const basket = await Basket.create({
+      userEmail : userNew.userEmail,
+      userId : userNew._id,
+      items : [],
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  await User.findByIdAndUpdate(userNew._id, { basketId : basket._id});
+  return basket;
+}
+
+async function sendToBasket(userId, productId, quantity){
+  try {
+    const basket = await Basket.findOne({ userId: userId })
+    if (!basket) {
+      return Promise.reject({ status: 404, msg: "Shopping cart not found" });
+    }
+    const existingItem = basket.items.find(item => item.product.toString() === productId);
+    if (existingItem) {
+      // If the item already exists, update its quantity
+      existingItem.quantity += quantity;
+    } else {
+      // If the item doesn't exist, add it to the items array
+      basket.items.push({ product: productId, quantity: quantity });
+    }
+
+    await basket.save()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 module.exports = {
   saveNewUser,
   userLogIn,
@@ -331,4 +367,6 @@ module.exports = {
   fetchReviewsByBookId,
   removeReviewById,
   amendReviewById,
+  createBasket,
+  sendToBasket
 };

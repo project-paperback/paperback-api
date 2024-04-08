@@ -11,6 +11,8 @@ const {
   fetchReviewsByBookId,
   removeReviewById,
   amendReviewById,
+  createBasket,
+  sendToBasket,
 } = require("../models/model");
 
 async function postNewUser(req, res, next) {
@@ -18,6 +20,8 @@ async function postNewUser(req, res, next) {
     const { password, email, userName, userBio } = req.body;
 
     const userNew = await saveNewUser(password, email, userName, userBio, req);
+
+    const basket = await createBasket(userNew)
 
     res.status(201).send({ user: userNew });
   } catch (error) {
@@ -141,6 +145,17 @@ async function updateReviewById(req, res, next) {
   }
 }
 
+async function addToBasket(req, res, next){
+  try {
+    const { userId, productId } = req.body
+    const quantity = req.body.quantity ? Number(req.body.quantity) : 1;
+    const basket = await sendToBasket( userId, productId, quantity )
+    res.status(200).send({ msg: "Item added to the basket successfully!" })
+  } catch (error) {
+    next(error)
+  }
+}
+
 module.exports = {
   postNewUser,
   userSignIn,
@@ -153,4 +168,5 @@ module.exports = {
   getReviewsByBookId,
   deleteReviewById,
   updateReviewById,
+  addToBasket
 };

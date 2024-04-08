@@ -1,14 +1,15 @@
 const { Schema, model } = require("mongoose");
 
 const basketSchema = new Schema({
+    userEmail : String,
     userId: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'User',
         required: true,
       },
       items: [{
         product: {
-          type: mongoose.Schema.Types.ObjectId,
+          type: Schema.Types.ObjectId,
           ref: 'Book',
           required: true,
         },
@@ -19,3 +20,7 @@ const basketSchema = new Schema({
           },
         }]
 })
+
+const Basket = model("Basket", basketSchema);
+
+module.exports = Basket;

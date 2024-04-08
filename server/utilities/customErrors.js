@@ -69,6 +69,8 @@ function customErrorHandler(error, request, response, next) {
       response.status(404).send({ msg: "Review not found" });
     } else if (error.msg === "Book not found") {
       response.status(404).send({ msg: "Book not found" });
+    } else if (error.msg === "Shopping cart not found"){
+      response.status(404).send({ msg: "Shopping cart not found"})
     }
   }
 }
