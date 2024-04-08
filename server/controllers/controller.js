@@ -22,7 +22,6 @@ async function postNewUser(req, res, next) {
     const userNew = await saveNewUser(password, email, userName, userBio, req);
 
     const basket = await createBasket(userNew)
-
     res.status(201).send({ user: userNew });
   } catch (error) {
     if (error.status === 400) {
@@ -147,9 +146,9 @@ async function updateReviewById(req, res, next) {
 
 async function addToBasket(req, res, next){
   try {
-    const { userId, productId } = req.body
+    const { productId } = req.body
     const quantity = req.body.quantity ? Number(req.body.quantity) : 1;
-    const basket = await sendToBasket( userId, productId, quantity )
+    const basket = await sendToBasket( productId, quantity )
     res.status(200).send({ msg: "Item added to the basket successfully!" })
   } catch (error) {
     next(error)

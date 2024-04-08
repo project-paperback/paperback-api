@@ -27,6 +27,8 @@ function customErrorHandler(error, request, response, next) {
         .send({ msg: "Cannot send a review without a username" });
     } else if (error.msg === "Invalid review Id") {
       response.status(400).send({ msg: "Invalid review Id" });
+    } else if(error.msg === "Invalid book Id, input must be a 24 character hex string, 12 byte Uint8Array, or an integer"){
+      response.status(400).send({ msg: "Invalid book Id, input must be a 24 character hex string, 12 byte Uint8Array, or an integer"})
     }
   } else if (error.status === 401) {
     if (error.msg === "Wrong credentials. Are you signed up?") {
@@ -59,6 +61,8 @@ function customErrorHandler(error, request, response, next) {
       response
         .status(401)
         .send({ msg: "You are not allowed to modify other user's reviews" });
+    } else if(error.msg === "You need to be logged in to add items to the basket"){
+      response.status(401).send({ msg: "You need to be logged in to add items to the basket"})
     }
   } else if (error.status === 404) {
     if (error.msg === "Book to review not found") {
