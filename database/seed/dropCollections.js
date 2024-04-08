@@ -8,7 +8,7 @@ async function dropBookCollection() {
   } catch (error) {
     console.log(error);
   } finally {
-    console.log("🟢 ~ Books collection wiped out.");
+    // console.log("🟢 ~ Books collection wiped out.");
   }
 }
 
@@ -18,12 +18,13 @@ async function dropReviewsCollection() {
     return deletedReviews;
   } catch (error) {
   } finally {
-    console.log("🟢 ~ Reviews collection wiped out.");
+    // console.log("🟢 ~ Reviews collection wiped out.");
   }
 }
 async function dropCollections() {
   await dropBookCollection();
   await dropReviewsCollection();
+  console.log("🟢 ~ All collections were wiped out.");
 }
 
 module.exports = dropCollections;

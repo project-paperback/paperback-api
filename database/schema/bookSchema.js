@@ -31,6 +31,7 @@ const bookSchema = new Schema({
   price: Number,
   quantity: Number,
   rating: { type: Number, default: 0 },
+  timesRated: { type: Number, default: 0 }, //==> New addition
   __v: Number,
 });
 
