@@ -3,6 +3,7 @@ const {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
   deleteUser,
 } = require("firebase/auth");
 
@@ -15,5 +16,6 @@ module.exports = {
   auth,
   newUser,
   signIn,
+  signOut,
   deleteUser,
 };

@@ -3,6 +3,7 @@ const {
   auth,
   newUser,
   signIn,
+  signOut,
   deleteUser,
 } = require("../../Firebase/Manage_Users/FBauthentication.js");
 const { Book, Review, User } = require("../../database/schema/schemaIndex.js");
@@ -66,6 +67,25 @@ async function saveNewUser(password, email, userName, userBio, req, res) {
     });
   }
 }
+async function removeUserProfile() {
+  try {
+    const user = auth.currentUser;
+    const accessKey = user.accessToken;
+    if (accessKey) {
+      const userInfo = user.reloadUserInfo;
+      const fireUid = userInfo.localId;
+      const userToRemove = await User.find({ fbUid: fireUid });
+      const userId = userToRemove[0]._id;
+      const userRemoved = await User.findByIdAndDelete(userId);
+
+      await deleteUser(user);
+
+      return userRemoved;
+    }
+  } catch (error) {
+    return Promise.reject({ status: 401, msg: "Unauthorized request" });
+  }
+}
 async function userLogIn(email, password) {
   try {
     if (!email && !password) {
@@ -93,29 +113,32 @@ async function userLogIn(email, password) {
     }
   }
 }
-
-async function removeUserProfile() {
+async function changeAccountDetails() {
   try {
     const user = auth.currentUser;
-    const userInfo = user.reloadUserInfo;
-    if (!userInfo) {
-      return Promise.reject({ status: 401, msg: "Unauthorized request" });
-    } else {
-      const fireUid = userInfo.localId;
-      const userToRemove = await User.find({ fbUid: fireUid });
-      const userId = userToRemove[0]._id;
-      const userRemoved = await User.findByIdAndDelete(userId);
-
-      await deleteUser(user);
-
-      return userRemoved;
+    const accessKey = user.accessToken;
+    if (accessKey) {
+      const uid = user.uid;
+      const findUser = await User.find({ fbUid: uid });
+      if (findUser) {
+        console.log("user found");
+      }
     }
-  } catch (error) {
-    if (error) console.log(error);
-    return error;
-  }
+  } catch (error) {}
 }
+async function userLogOut() {
+  try {
+    const user = auth.currentUser;
+    const accessKey = user.accessToken;
+    if (accessKey) {
+      await signOut(auth);
+      return "User logged out";
+    }
+  } catch (error) {}
+}
+
 //====================================================================
+
 async function fetchBooks() {
   try {
     const books = await Book.find({});
@@ -152,46 +175,7 @@ async function fetchBookById(id) {
   }
 }
 
-async function sendBookReview(book_id, userName, reviewBody, rating) {
-  try {
-    if (!userName) {
-      return Promise.reject({ status: 400, msg: "Missing username" });
-    } else if (!rating) {
-      return Promise.reject({ status: 400, msg: "Missing rating" });
-    }
-    const isBookInCollection = await Book.findById(book_id);
-
-    if (isBookInCollection === null) {
-      return Promise.reject({ status: 404, msg: "Book to review not found" });
-    }
-
-    const reviewsInCollection = await Review.find({
-      userName: userName,
-      bookId: book_id,
-    });
-    if (reviewsInCollection.length > 0) {
-      return Promise.reject({
-        status: 400,
-        msg: "You cannot review this item again",
-      });
-    }
-
-    const review = new Review({
-      bookId: book_id,
-      userName: userName, //This value is going to change based on logged in user
-      reviewBody: reviewBody,
-      createdAt: new Date(),
-      rating: rating,
-    });
-    await review.save();
-
-    await updateBookRating(book_id);
-
-    return review;
-  } catch (error) {
-    console.log("🚀 ~ sendBookReview ~ error:", error);
-  }
-}
+//====================================================================
 
 async function fetchReviewsByBookId(book_id) {
   try {
@@ -215,44 +199,131 @@ async function fetchReviewsByBookId(book_id) {
   }
 }
 
+async function sendBookReview(book_id, reviewBody, rating) {
+  try {
+    const user = auth.currentUser;
+    const uid = user.uid;
+    const accessKey = user.accessToken;
+    console.log(accessKey);
+    if (accessKey) {
+      const userMgdb = await User.find({ fbUid: uid });
+      const userName = userMgdb[0].userName;
+      console.log(userName);
+      if (!rating) {
+        return Promise.reject({ status: 400, msg: "Missing rating" });
+      }
+      const isBookInCollection = await Book.findById(book_id);
+      if (isBookInCollection === null) {
+        return Promise.reject({ status: 404, msg: "Book to review not found" });
+      }
+      const reviewsInCollection = await Review.find({
+        userName: userName,
+        bookId: book_id,
+      });
+      if (reviewsInCollection.length > 0) {
+        return Promise.reject({
+          status: 400,
+          msg: "You cannot review this item again",
+        });
+      }
+      const review = new Review({
+        bookId: book_id,
+        userName: userName, //This value is going to change based on logged in user
+        reviewBody: reviewBody,
+        createdAt: new Date(),
+        rating: rating,
+        uid: uid,
+      });
+      await review.save();
+      await updateBookRating(book_id);
+      return review;
+    }
+  } catch (error) {
+    return Promise.reject({
+      status: 401,
+      msg: "You need to be logged in to leave a review",
+    });
+  }
+}
+
 async function removeReviewById(review_id) {
   try {
-    const findReview = await Review.findById(review_id);
-    if (!findReview) {
-      return Promise.reject({ status: 404, msg: "Review not found" });
+    const user = auth.currentUser;
+    const accessKey = user.accessToken;
+    if (accessKey) {
+      const uid = user.uid;
+      const findReview = await Review.findById(review_id);
+      if (!findReview) {
+        return Promise.reject({ status: 404, msg: "Review not found" });
+      }
+      if (findReview.uid !== uid) {
+        return Promise.reject({
+          status: 401,
+          msg: "You are not allowed to delete other user's reviews",
+        });
+      }
+      const bookId = findReview.bookId;
+      const deletedReview = await Review.findByIdAndDelete(review_id);
+      await updateBookRating(bookId);
+      return deletedReview;
     }
-    const bookId = findReview.bookId;
-    const deletedReview = await Review.findByIdAndDelete(review_id);
-    await updateBookRating(bookId);
-    return deletedReview;
   } catch (error) {
-    console.log(error);
+    if (error.kind === "ObjectId") {
+      return Promise.reject({ status: 400, msg: "Invalid review Id" });
+    } else {
+      return Promise.reject({
+        status: 401,
+        msg: "You need to be logged in to delete a review",
+      });
+    }
   }
 }
 
 async function amendReviewById(review_id, reviewBody, rating) {
   try {
-    const findReview = await Review.findById(review_id);
-    if (!findReview) {
-      return Promise.reject({ status: 404, msg: "Review not found" });
+    const user = auth.currentUser;
+    const accessKey = user.accessToken;
+
+    if (accessKey) {
+      const uid = user.uid;
+
+      const findReview = await Review.findById(review_id);
+      if (!findReview) {
+        return Promise.reject({ status: 404, msg: "Review not found" });
+      }
+      if (findReview.uid !== uid) {
+        return Promise.reject({
+          status: 401,
+          msg: "You are not allowed to modify other user's reviews",
+        });
+      }
+      const bookId = findReview.bookId;
+      const newUpdates = { reviewBody, rating };
+      const updatedReview = await Review.findByIdAndUpdate(
+        review_id,
+        newUpdates,
+        { new: true }
+      );
+      await updateBookRating(bookId);
+      return updatedReview;
     }
-    const bookId = findReview.bookId;
-    const newUpdates = { reviewBody, rating };
-    const updatedReview = await Review.findByIdAndUpdate(
-      review_id,
-      newUpdates,
-      { new: true }
-    );
-    await updateBookRating(bookId);
-    return updatedReview;
   } catch (error) {
-    console.log(error);
+    if (error.kind === "ObjectId") {
+      return Promise.reject({ status: 400, msg: "Invalid review Id" });
+    } else {
+      return Promise.reject({
+        status: 401,
+        msg: "You need to be logged in to modify a review",
+      });
+    }
   }
 }
 
 module.exports = {
   saveNewUser,
   userLogIn,
+  userLogOut,
+  changeAccountDetails,
   removeUserProfile,
   fetchBooks,
   fetchBookById,
