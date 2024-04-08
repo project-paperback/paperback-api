@@ -323,20 +323,34 @@ async function createBasket(userNew){
   try {
     const basket = await Basket.create({
       userEmail : userNew.userEmail,
+      fbUid: userNew.fbUid,
       userId : userNew._id,
       items : [],
     })
+    await User.findByIdAndUpdate(userNew._id, { basketId : basket._id});
+    return basket;
   } catch (error) {
     console.log(error)
   }
 
-  await User.findByIdAndUpdate(userNew._id, { basketId : basket._id});
-  return basket;
 }
 
-async function sendToBasket(userId, productId, quantity){
+async function sendToBasket(productId, quantity){
   try {
-    const basket = await Basket.findOne({ userId: userId })
+    const user = auth.currentUser;
+    if(!user){
+      return Promise.reject({
+        status: 401,
+        msg: "You need to be logged in to add items to the basket",
+      });
+    }
+
+    const fbUid = user.uid;
+    const book = await Book.findById(productId);
+    if(book === null){
+      return Promise.reject({ status: 404, msg: "Book not found" });
+    }
+    const basket = await Basket.findOne({ fbUid: fbUid });
     if (!basket) {
       return Promise.reject({ status: 404, msg: "Shopping cart not found" });
     }
@@ -351,7 +365,9 @@ async function sendToBasket(userId, productId, quantity){
 
     await basket.save()
   } catch (error) {
-    console.log(error)
+    if (error.reason.toString().startsWith("BSONError: input must be a 24 character hex string")){
+      return Promise.reject({ status: 400, msg: "Invalid book Id, input must be a 24 character hex string, 12 byte Uint8Array, or an integer" });
+    }
   }
 }
 
