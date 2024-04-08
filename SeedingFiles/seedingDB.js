@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 const Book = require("../database/schema/bookSchema.js");
 const fs = require("fs").promises;
-// const dataPromise = fs.readFile("info_books.json", "utf-8")
+const { connectToDb } = require("../database/connection/dbConnection.js");
+
 const bookData = require("../info_books.json");
+const { connectToDb } = require("../database/connection/dbConnection.js");
 
 async function saveBooks() {
   try {
-    await mongoose.connect(
-      "mongodb+srv://riccardofoti97:9DjR06YkoRabUZcS@bookshop.wtlyola.mongodb.net/development?retryWrites=true&w=majority&appName=BookShop"
-    ); // Await connection completion
+    await connectToDb(); // Await connection completion
     await Book.insertMany(bookData);
 
     mongoose.connection.close(); // Close connection after completion
@@ -18,7 +18,7 @@ async function saveBooks() {
   }
 }
 
-saveBooks();
+// saveBooks();
 
 // function filterData() {
 //   const filtered = bookData.filter((book) => {

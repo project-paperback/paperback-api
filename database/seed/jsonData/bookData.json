@@ -16,31 +16,27 @@
         "identifier": "1135179719"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 447,
     "printType": "BOOK",
     "categories": ["Education"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.4.0.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=Us-MAgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=Us-MAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=Us-MAgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=Us-MAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=Us-MAgAAQBAJ&printsec=frontcover&dq=subject:education&hl=&cd=1&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=Us-MAgAAQBAJ&dq=subject:education&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/The_Routledge_International_Handbook_of.html?hl=&id=Us-MAgAAQBAJ",
     "price": 0.18,
     "quantity": 50,
-    "rating": 0
+    "rating": 5,
+    "timesRated": 2,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc5b",
@@ -59,33 +55,27 @@
         "identifier": "9780521003377"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 412,
     "printType": "BOOK",
     "categories": ["Education"],
-    "averageRating": 3,
-    "ratingsCount": 2,
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "4.3.4.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=UB0Tao4oikEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=UB0Tao4oikEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=UB0Tao4oikEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=UB0Tao4oikEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=UB0Tao4oikEC&printsec=frontcover&dq=subject:education&hl=&cd=2&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=UB0Tao4oikEC&dq=subject:education&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/God_and_Reason_in_the_Middle_Ages.html?hl=&id=UB0Tao4oikEC",
     "price": 6.7,
     "quantity": 90,
-    "rating": 0
+    "rating": 3.9,
+    "timesRated": 7,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc5c",
@@ -104,36 +94,31 @@
         "identifier": "9780674013513"
       }
     ],
-    "readingModes": {
-      "text": true,
-      "image": true
-    },
     "pageCount": 756,
     "printType": "BOOK",
     "categories": ["Business & Economics"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "1.5.7.0.preview.3",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=DaOY4DQ-MKAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=DaOY4DQ-MKAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=DaOY4DQ-MKAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=DaOY4DQ-MKAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=DaOY4DQ-MKAC&printsec=frontcover&dq=subject:education&hl=&cd=3&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=DaOY4DQ-MKAC&dq=subject:education&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Rationality_and_Freedom.html?hl=&id=DaOY4DQ-MKAC",
     "price": 6.01,
     "quantity": 46,
-    "rating": 0
+    "rating": 4,
+    "timesRated": 10,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc5d",
     "title": "Introduction to Mediation, Moderation, and Conditional Process Analysis",
-    "subtitle": "A Regression-Based Approach",
     "authors": ["Andrew F. Hayes"],
     "publisher": "Guilford Press",
     "publishedDate": "2013-04-22",
@@ -148,36 +133,31 @@
         "identifier": "1462511279"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 527,
     "printType": "BOOK",
     "categories": ["Psychology"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": true,
     "contentVersion": "1.9.2.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=8YX2QwGgD8AC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=8YX2QwGgD8AC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=8YX2QwGgD8AC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=8YX2QwGgD8AC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=8YX2QwGgD8AC&printsec=frontcover&dq=subject:education&hl=&cd=4&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=8YX2QwGgD8AC&dq=subject:education&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Introduction_to_Mediation_Moderation_and.html?hl=&id=8YX2QwGgD8AC",
     "price": 4.23,
     "quantity": 23,
-    "rating": 0
+    "rating": 5,
+    "timesRated": 1,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc5e",
     "title": "Mathematical Mindsets",
-    "subtitle": "Unleashing Students' Potential through Creative Math, Inspiring Messages and Innovative Teaching",
     "authors": ["Jo Boaler"],
     "publisher": "John Wiley & Sons",
     "publishedDate": "2015-11-02",
@@ -192,36 +172,31 @@
         "identifier": "0470894520"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 320,
     "printType": "BOOK",
     "categories": ["Education"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "1.17.3.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=b0d_BwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=b0d_BwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=b0d_BwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=b0d_BwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=b0d_BwAAQBAJ&printsec=frontcover&dq=subject:education&hl=&cd=5&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=b0d_BwAAQBAJ&dq=subject:education&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Mathematical_Mindsets.html?hl=&id=b0d_BwAAQBAJ",
     "price": 12.2,
     "quantity": 86,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc5f",
     "title": "The Use and Abuse of History",
-    "subtitle": "Or How the Past is Taught to Children",
     "authors": ["Marc Ferro"],
     "publisher": "Routledge",
     "publishedDate": "2004-06-01",
@@ -236,31 +211,27 @@
         "identifier": "113444964X"
       }
     ],
-    "readingModes": {
-      "text": true,
-      "image": true
-    },
     "pageCount": 277,
     "printType": "BOOK",
     "categories": ["Education"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": true,
     "contentVersion": "1.4.5.0.preview.3",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=dS5oGk1733gC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=dS5oGk1733gC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=dS5oGk1733gC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=dS5oGk1733gC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=dS5oGk1733gC&printsec=frontcover&dq=subject:education&hl=&cd=6&source=gbs_api",
     "infoLink": "https://play.google.com/store/books/details?id=dS5oGk1733gC&source=gbs_api",
     "canonicalVolumeLink": "https://play.google.com/store/books/details?id=dS5oGk1733gC",
     "price": 0.42,
     "quantity": 32,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc60",
@@ -279,36 +250,31 @@
         "identifier": "0199262659"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 488,
     "printType": "BOOK",
     "categories": ["Literary Collections"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.1.0.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=uOgTDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=uOgTDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=uOgTDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=uOgTDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=uOgTDAAAQBAJ&printsec=frontcover&dq=subject:education&hl=&cd=7&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=uOgTDAAAQBAJ&dq=subject:education&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Quintilian_Institutio_Oratoria_Book_2.html?hl=&id=uOgTDAAAQBAJ",
     "price": 5.64,
     "quantity": 62,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc61",
     "title": "Understanding How We Learn",
-    "subtitle": "A Visual Guide",
     "authors": ["Yana Weinstein", "Megan Sumeracki", "Oliver Caviglioli"],
     "publisher": "Routledge",
     "publishedDate": "2018-08-22",
@@ -323,31 +289,27 @@
         "identifier": "1351358049"
       }
     ],
-    "readingModes": {
-      "text": true,
-      "image": true
-    },
     "pageCount": 238,
     "printType": "BOOK",
     "categories": ["Education"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": true,
     "contentVersion": "0.2.3.0.preview.3",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=_XtqDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=_XtqDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=_XtqDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=_XtqDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=_XtqDwAAQBAJ&printsec=frontcover&dq=subject:education&hl=&cd=8&source=gbs_api",
     "infoLink": "https://play.google.com/store/books/details?id=_XtqDwAAQBAJ&source=gbs_api",
     "canonicalVolumeLink": "https://play.google.com/store/books/details?id=_XtqDwAAQBAJ",
     "price": 14.89,
     "quantity": 51,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc62",
@@ -366,36 +328,31 @@
         "identifier": "1118053931"
       }
     ],
-    "readingModes": {
-      "text": true,
-      "image": true
-    },
     "pageCount": 408,
     "printType": "BOOK",
     "categories": ["History"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": true,
     "contentVersion": "1.5.7.0.preview.3",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=-rgSoUm0ptYC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=-rgSoUm0ptYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=-rgSoUm0ptYC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=-rgSoUm0ptYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=-rgSoUm0ptYC&printsec=frontcover&dq=subject:education&hl=&cd=9&source=gbs_api",
     "infoLink": "https://play.google.com/store/books/details?id=-rgSoUm0ptYC&source=gbs_api",
     "canonicalVolumeLink": "https://play.google.com/store/books/details?id=-rgSoUm0ptYC",
     "price": 6.59,
     "quantity": 94,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc63",
     "title": "The Future of Teaching",
-    "subtitle": "And the Myths That Hold It Back",
     "authors": ["Guy Claxton"],
     "publisher": "Routledge",
     "publishedDate": "2021-04-28",
@@ -410,36 +367,31 @@
         "identifier": "1000400409"
       }
     ],
-    "readingModes": {
-      "text": true,
-      "image": true
-    },
     "pageCount": 202,
     "printType": "BOOK",
     "categories": ["Education"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": true,
     "contentVersion": "preview-1.0.0",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=8UEjEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=8UEjEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=8UEjEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=8UEjEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=8UEjEAAAQBAJ&printsec=frontcover&dq=subject:education&hl=&cd=10&source=gbs_api",
     "infoLink": "https://play.google.com/store/books/details?id=8UEjEAAAQBAJ&source=gbs_api",
     "canonicalVolumeLink": "https://play.google.com/store/books/details?id=8UEjEAAAQBAJ",
     "price": 13.3,
     "quantity": 40,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc64",
     "title": "Fun Home",
-    "subtitle": "A Family Tragicomic",
     "authors": ["Alison Bechdel"],
     "publisher": "Houghton Mifflin Harcourt",
     "publishedDate": "2007",
@@ -454,38 +406,31 @@
         "identifier": "9780618871711"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 248,
     "printType": "BOOK",
     "categories": ["Biography & Autobiography"],
-    "averageRating": 4,
-    "ratingsCount": 18,
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": true,
     "contentVersion": "2.3.4.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=eq0n9Ck79ysC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=eq0n9Ck79ysC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=eq0n9Ck79ysC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=eq0n9Ck79ysC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=eq0n9Ck79ysC&printsec=frontcover&dq=subject:art&hl=&cd=1&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=eq0n9Ck79ysC&dq=subject:art&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Fun_Home.html?hl=&id=eq0n9Ck79ysC",
     "price": 1.49,
     "quantity": 71,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc65",
     "title": "Germany",
-    "subtitle": "Memories of a Nation",
     "authors": ["Neil MacGregor"],
     "publisher": "Penguin UK",
     "publishedDate": "2014-11-13",
@@ -500,31 +445,27 @@
         "identifier": "0241008344"
       }
     ],
-    "readingModes": {
-      "text": true,
-      "image": false
-    },
     "pageCount": 416,
     "printType": "BOOK",
     "categories": ["History"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": true,
     "contentVersion": "1.9.9.0.preview.2",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=BwO5BAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=BwO5BAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=BwO5BAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=BwO5BAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=BwO5BAAAQBAJ&printsec=frontcover&dq=subject:art&hl=&cd=2&source=gbs_api",
     "infoLink": "https://play.google.com/store/books/details?id=BwO5BAAAQBAJ&source=gbs_api",
     "canonicalVolumeLink": "https://play.google.com/store/books/details?id=BwO5BAAAQBAJ",
     "price": 12.61,
     "quantity": 17,
-    "rating": 0
+    "rating": 3.8,
+    "timesRated": 10,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc66",
@@ -543,31 +484,27 @@
         "identifier": "0486139581"
       }
     ],
-    "readingModes": {
-      "text": true,
-      "image": true
-    },
     "pageCount": 176,
     "printType": "BOOK",
     "categories": ["Art"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": true,
     "contentVersion": "2.8.9.0.preview.3",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=ZC3DAgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=ZC3DAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=ZC3DAgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=ZC3DAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=ZC3DAgAAQBAJ&printsec=frontcover&dq=subject:art&hl=&cd=3&source=gbs_api",
     "infoLink": "https://play.google.com/store/books/details?id=ZC3DAgAAQBAJ&source=gbs_api",
     "canonicalVolumeLink": "https://play.google.com/store/books/details?id=ZC3DAgAAQBAJ",
     "price": 3.42,
     "quantity": 80,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc67",
@@ -586,31 +523,27 @@
         "identifier": "0399531971"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": false
-    },
     "pageCount": 385,
     "printType": "BOOK",
     "categories": ["Philosophy"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "1.2.1.0.preview.0",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=hJtPEAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=hJtPEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=hJtPEAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=hJtPEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=hJtPEAAAQBAJ&dq=subject:art&hl=&cd=4&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=hJtPEAAAQBAJ&dq=subject:art&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Art_as_Experience.html?hl=&id=hJtPEAAAQBAJ",
     "price": 11.41,
     "quantity": 81,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc68",
@@ -629,36 +562,31 @@
         "identifier": "1387849603"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 266,
     "printType": "BOOK",
     "categories": ["Art"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "preview-1.0.0",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=6H9eDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=6H9eDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=6H9eDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=6H9eDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=6H9eDwAAQBAJ&printsec=frontcover&dq=subject:art&hl=&cd=5&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=6H9eDwAAQBAJ&dq=subject:art&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Dead_Souls.html?hl=&id=6H9eDwAAQBAJ",
     "price": 5.07,
     "quantity": 30,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc69",
     "title": "Scenes from Deep Time",
-    "subtitle": "Early Pictorial Representations of the Prehistoric World",
     "authors": ["M. J. S. Rudwick"],
     "publisher": "University of Chicago Press",
     "publishedDate": "1992",
@@ -673,31 +601,27 @@
         "identifier": "9780226731049"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 302,
     "printType": "BOOK",
     "categories": ["Art"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.6.9.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=bbPOIDcQ69MC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=bbPOIDcQ69MC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=bbPOIDcQ69MC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=bbPOIDcQ69MC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=bbPOIDcQ69MC&printsec=frontcover&dq=subject:art&hl=&cd=6&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=bbPOIDcQ69MC&dq=subject:art&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Scenes_from_Deep_Time.html?hl=&id=bbPOIDcQ69MC",
     "price": 3.66,
     "quantity": 73,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc6a",
@@ -712,31 +636,27 @@
         "identifier": "EAN:8596547065753"
       }
     ],
-    "readingModes": {
-      "text": true,
-      "image": true
-    },
     "pageCount": 241,
     "printType": "BOOK",
     "categories": ["Art"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.1.1.0.preview.3",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=IOl1EAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=IOl1EAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=IOl1EAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=IOl1EAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=IOl1EAAAQBAJ&printsec=frontcover&dq=subject:art&hl=&cd=7&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=IOl1EAAAQBAJ&dq=subject:art&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Man_and_Superman.html?hl=&id=IOl1EAAAQBAJ",
     "price": 1.16,
     "quantity": 65,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc6b",
@@ -755,36 +675,31 @@
         "identifier": "0190844949"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 1168,
     "printType": "BOOK",
     "categories": ["Social Science"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "preview-1.0.0",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=mlByDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=mlByDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=mlByDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=mlByDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=mlByDwAAQBAJ&printsec=frontcover&dq=subject:art&hl=&cd=8&source=gbs_api",
     "infoLink": "https://play.google.com/store/books/details?id=mlByDwAAQBAJ&source=gbs_api",
     "canonicalVolumeLink": "https://play.google.com/store/books/details?id=mlByDwAAQBAJ",
     "price": 6.36,
     "quantity": 96,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc6c",
     "title": "Christian Responses to Roman Art and Architecture",
-    "subtitle": "The Second-Century Church Amid the Spaces of Empire",
     "authors": ["Laura Salah Nasrallah"],
     "publisher": "Cambridge University Press",
     "publishedDate": "2010-01-25",
@@ -799,36 +714,31 @@
         "identifier": "0521766524"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 351,
     "printType": "BOOK",
     "categories": ["Architecture"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "1.2.2.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=UkA3EX8WZMIC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=UkA3EX8WZMIC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=UkA3EX8WZMIC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=UkA3EX8WZMIC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=UkA3EX8WZMIC&printsec=frontcover&dq=subject:art&hl=&cd=9&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=UkA3EX8WZMIC&dq=subject:art&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Christian_Responses_to_Roman_Art_and_Arc.html?hl=&id=UkA3EX8WZMIC",
     "price": 12.99,
     "quantity": 95,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc6d",
     "title": "Pilgrimage to the End of the World",
-    "subtitle": "The Road to Santiago de Compostela",
     "authors": ["Conrad Rudolph"],
     "publisher": "University of Chicago Press",
     "publishedDate": "2004-05-19",
@@ -843,31 +753,27 @@
         "identifier": "0226731278"
       }
     ],
-    "readingModes": {
-      "text": true,
-      "image": true
-    },
     "pageCount": 145,
     "printType": "BOOK",
     "categories": ["Art"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "2.5.5.0.preview.3",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=nFaQ2fVI1hwC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=nFaQ2fVI1hwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=nFaQ2fVI1hwC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=nFaQ2fVI1hwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=nFaQ2fVI1hwC&printsec=frontcover&dq=subject:art&hl=&cd=10&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=nFaQ2fVI1hwC&dq=subject:art&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Pilgrimage_to_the_End_of_the_World.html?hl=&id=nFaQ2fVI1hwC",
     "price": 3.27,
     "quantity": 23,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc6e",
@@ -886,31 +792,27 @@
         "identifier": "9781402754265"
       }
     ],
-    "readingModes": {
-      "text": true,
-      "image": true
-    },
     "pageCount": 164,
     "printType": "BOOK",
     "categories": ["Fairies"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "1.4.11.0.preview.3",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=WdM_qxJq8T8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=WdM_qxJq8T8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=WdM_qxJq8T8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=WdM_qxJq8T8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=WdM_qxJq8T8C&printsec=frontcover&dq=subject:fantasy&hl=&cd=1&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=WdM_qxJq8T8C&dq=subject:fantasy&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Peter_Pan.html?hl=&id=WdM_qxJq8T8C",
     "price": 11.13,
     "quantity": 66,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc6f",
@@ -929,33 +831,27 @@
         "identifier": "9781853261220"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 202,
     "printType": "BOOK",
     "categories": ["Juvenile Fiction"],
-    "averageRating": 4.5,
-    "ratingsCount": 7,
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.11.9.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=Mo7D3Je7_DMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=Mo7D3Je7_DMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=Mo7D3Je7_DMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=Mo7D3Je7_DMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=Mo7D3Je7_DMC&printsec=frontcover&dq=subject:fantasy&hl=&cd=2&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=Mo7D3Je7_DMC&dq=subject:fantasy&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/The_Wind_in_the_Willows.html?hl=&id=Mo7D3Je7_DMC",
     "price": 1.23,
     "quantity": 83,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc70",
@@ -974,33 +870,27 @@
         "identifier": "9780802130303"
       }
     ],
-    "readingModes": {
-      "text": true,
-      "image": true
-    },
     "pageCount": 184,
     "printType": "BOOK",
     "categories": ["Fiction"],
-    "averageRating": 4.5,
-    "ratingsCount": 20,
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.6.6.0.preview.3",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=1FrJqcRILaoC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=1FrJqcRILaoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=1FrJqcRILaoC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=1FrJqcRILaoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=1FrJqcRILaoC&printsec=frontcover&dq=subject:fantasy&hl=&cd=4&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=1FrJqcRILaoC&dq=subject:fantasy&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Ficciones_C_Edited_and_with_an_Introduct.html?hl=&id=1FrJqcRILaoC",
     "price": 1.54,
     "quantity": 38,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc71",
@@ -1019,31 +909,27 @@
         "identifier": "140883233X"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 419,
     "printType": "BOOK",
     "categories": ["Juvenile Fiction"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "1.3.3.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=D8GIcKPGNR8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=D8GIcKPGNR8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=D8GIcKPGNR8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=D8GIcKPGNR8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=D8GIcKPGNR8C&printsec=frontcover&dq=subject:fantasy&hl=&cd=6&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=D8GIcKPGNR8C&dq=subject:fantasy&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Throne_of_Glass.html?hl=&id=D8GIcKPGNR8C",
     "price": 13.86,
     "quantity": 30,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc72",
@@ -1058,33 +944,27 @@
         "identifier": "UOM:39015050507618"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": false
-    },
     "pageCount": 876,
     "printType": "BOOK",
     "categories": ["Fiction"],
-    "averageRating": 4.5,
-    "ratingsCount": 130,
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "1.2.2.0.preview.0",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=bIZiAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=bIZiAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=bIZiAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=bIZiAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=bIZiAAAAMAAJ&dq=subject:fantasy&hl=&cd=7&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=bIZiAAAAMAAJ&dq=subject:fantasy&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/A_Game_of_Thrones.html?hl=&id=bIZiAAAAMAAJ",
     "price": 4.63,
     "quantity": 43,
-    "rating": 0
+    "rating": 2.3,
+    "timesRated": 3,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc73",
@@ -1103,31 +983,27 @@
         "identifier": "0689316836"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": false
-    },
     "pageCount": 248,
     "printType": "BOOK",
     "categories": ["Juvenile Fiction"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.4.2.0.preview.0",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=6hzSk8MupCYC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=6hzSk8MupCYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=6hzSk8MupCYC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=6hzSk8MupCYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=6hzSk8MupCYC&printsec=frontcover&dq=subject:fantasy&hl=&cd=8&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=6hzSk8MupCYC&dq=subject:fantasy&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/The_Farthest_Shore.html?hl=&id=6hzSk8MupCYC",
     "price": 4.83,
     "quantity": 88,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc74",
@@ -1146,36 +1022,31 @@
         "identifier": "0140305025"
       }
     ],
-    "readingModes": {
-      "text": true,
-      "image": false
-    },
     "pageCount": 137,
     "printType": "BOOK",
     "categories": ["Juvenile Nonfiction"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.1.1.0.preview.2",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=80oscBYjQZEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=80oscBYjQZEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=80oscBYjQZEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=80oscBYjQZEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=80oscBYjQZEC&printsec=frontcover&dq=subject:fantasy&hl=&cd=10&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=80oscBYjQZEC&dq=subject:fantasy&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Moominland_Midwinter.html?hl=&id=80oscBYjQZEC",
     "price": 12.71,
     "quantity": 24,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc75",
     "title": "The Discarded Image",
-    "subtitle": "An Introduction to Medieval and Renaissance Literature",
     "authors": ["C. S. Lewis"],
     "publisher": "Cambridge University Press",
     "publishedDate": "1994-08-26",
@@ -1190,38 +1061,31 @@
         "identifier": "9780521477352"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 248,
     "printType": "BOOK",
     "categories": ["History"],
-    "averageRating": 5,
-    "ratingsCount": 1,
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "1.7.12.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=WADDM36d3TAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=WADDM36d3TAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=WADDM36d3TAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=WADDM36d3TAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=WADDM36d3TAC&printsec=frontcover&dq=subject:history&hl=&cd=1&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=WADDM36d3TAC&dq=subject:history&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/The_Discarded_Image.html?hl=&id=WADDM36d3TAC",
     "price": 3.76,
     "quantity": 40,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc76",
     "title": "Damascus",
-    "subtitle": "A History",
     "authors": ["Ross Burns"],
     "publisher": "Psychology Press",
     "publishedDate": "2005",
@@ -1236,31 +1100,27 @@
         "identifier": "0415271053"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 409,
     "printType": "BOOK",
     "categories": ["Damascus (Syria)"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.1.1.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=SVR2cjWptCAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=SVR2cjWptCAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=SVR2cjWptCAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=SVR2cjWptCAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=SVR2cjWptCAC&printsec=frontcover&dq=subject:history&hl=&cd=2&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=SVR2cjWptCAC&dq=subject:history&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Damascus.html?hl=&id=SVR2cjWptCAC",
     "price": 11.2,
     "quantity": 48,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc77",
@@ -1279,38 +1139,31 @@
         "identifier": "9780521004794"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 316,
     "printType": "BOOK",
     "categories": ["History"],
-    "averageRating": 3,
-    "ratingsCount": 4,
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "1.7.6.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=H5pyUIY4THYC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=H5pyUIY4THYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=H5pyUIY4THYC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=H5pyUIY4THYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=H5pyUIY4THYC&printsec=frontcover&dq=subject:history&hl=&cd=3&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=H5pyUIY4THYC&dq=subject:history&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/A_Concise_History_of_Greece.html?hl=&id=H5pyUIY4THYC",
     "price": 0.52,
     "quantity": 72,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc78",
     "title": "Conservatism",
-    "subtitle": "An Anthology of Social and Political Thought from David Hume to the Present",
     "authors": ["Jerry Z. Muller"],
     "publisher": "Princeton University Press",
     "publishedDate": "1997-05-04",
@@ -1325,31 +1178,27 @@
         "identifier": "9780691037110"
       }
     ],
-    "readingModes": {
-      "text": true,
-      "image": true
-    },
     "pageCount": 476,
     "printType": "BOOK",
     "categories": ["History"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "1.4.5.0.preview.3",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=9F7i5u4sOtgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=9F7i5u4sOtgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=9F7i5u4sOtgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=9F7i5u4sOtgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=9F7i5u4sOtgC&printsec=frontcover&dq=subject:history&hl=&cd=4&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=9F7i5u4sOtgC&dq=subject:history&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Conservatism.html?hl=&id=9F7i5u4sOtgC",
     "price": 4.02,
     "quantity": 37,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc79",
@@ -1368,33 +1217,27 @@
         "identifier": "9780521003377"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 412,
     "printType": "BOOK",
     "categories": ["Education"],
-    "averageRating": 3,
-    "ratingsCount": 2,
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "4.3.4.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=UB0Tao4oikEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=UB0Tao4oikEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=UB0Tao4oikEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=UB0Tao4oikEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=UB0Tao4oikEC&printsec=frontcover&dq=subject:history&hl=&cd=5&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=UB0Tao4oikEC&dq=subject:history&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/God_and_Reason_in_the_Middle_Ages.html?hl=&id=UB0Tao4oikEC",
     "price": 7.14,
     "quantity": 53,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc7a",
@@ -1418,31 +1261,27 @@
         "identifier": "0521620961"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 520,
     "printType": "BOOK",
     "categories": ["History"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "2.2.2.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=iOoGH4GckQgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=iOoGH4GckQgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=iOoGH4GckQgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=iOoGH4GckQgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=iOoGH4GckQgC&printsec=frontcover&dq=subject:history&hl=&cd=6&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=iOoGH4GckQgC&dq=subject:history&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/The_Cambridge_History_of_Turkey.html?hl=&id=iOoGH4GckQgC",
     "price": 2.51,
     "quantity": 95,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc7b",
@@ -1461,31 +1300,27 @@
         "identifier": "0826430864"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 308,
     "printType": "BOOK",
     "categories": ["History"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "preview-1.0.0",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=UTjUAwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=UTjUAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=UTjUAwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=UTjUAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=UTjUAwAAQBAJ&printsec=frontcover&dq=subject:history&hl=&cd=7&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=UTjUAwAAQBAJ&dq=subject:history&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Constantinople_Capital_of_Byzantium.html?hl=&id=UTjUAwAAQBAJ",
     "price": 4.26,
     "quantity": 72,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc7c",
@@ -1504,38 +1339,31 @@
         "identifier": "0571258840"
       }
     ],
-    "readingModes": {
-      "text": true,
-      "image": true
-    },
     "pageCount": 318,
     "printType": "BOOK",
     "categories": ["Fiction"],
-    "averageRating": 4,
-    "ratingsCount": 1,
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": true,
     "contentVersion": "0.4.4.0.preview.3",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=WK_mPzxMFfoC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=WK_mPzxMFfoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=WK_mPzxMFfoC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=WK_mPzxMFfoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=WK_mPzxMFfoC&printsec=frontcover&dq=subject:history&hl=&cd=8&source=gbs_api",
     "infoLink": "https://play.google.com/store/books/details?id=WK_mPzxMFfoC&source=gbs_api",
     "canonicalVolumeLink": "https://play.google.com/store/books/details?id=WK_mPzxMFfoC",
     "price": 9.6,
     "quantity": 48,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc7d",
     "title": "Tibet",
-    "subtitle": "A History",
     "authors": ["Sam van Schaik"],
     "publisher": "Yale University Press",
     "publishedDate": "2011-06-28",
@@ -1550,31 +1378,27 @@
         "identifier": "0300154046"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": false
-    },
     "pageCount": 350,
     "printType": "BOOK",
     "categories": ["History"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.5.0.0.preview.0",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=La1CWinaDR4C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=La1CWinaDR4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=La1CWinaDR4C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=La1CWinaDR4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=La1CWinaDR4C&printsec=frontcover&dq=subject:history&hl=&cd=9&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=La1CWinaDR4C&dq=subject:history&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Tibet.html?hl=&id=La1CWinaDR4C",
     "price": 4.49,
     "quantity": 92,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc7e",
@@ -1598,33 +1422,27 @@
         "identifier": "9780521256032"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 960,
     "printType": "BOOK",
     "categories": ["History"],
-    "averageRating": 5,
-    "ratingsCount": 2,
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.9.8.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=3yUkzNLiY4oC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=3yUkzNLiY4oC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=3yUkzNLiY4oC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=3yUkzNLiY4oC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=3yUkzNLiY4oC&printsec=frontcover&dq=subject:history&hl=&cd=10&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=3yUkzNLiY4oC&dq=subject:history&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/The_Cambridge_Ancient_History.html?hl=&id=3yUkzNLiY4oC",
     "price": 12.78,
     "quantity": 97,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc7f",
@@ -1648,33 +1466,27 @@
         "identifier": "1481443259"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": false
-    },
     "pageCount": 672,
     "printType": "BOOK",
     "categories": ["Juvenile Fiction"],
-    "averageRating": 4.5,
-    "ratingsCount": 2,
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.3.1.0.preview.0",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=gvB1DQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=gvB1DQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=gvB1DQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=gvB1DQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=gvB1DQAAQBAJ&printsec=frontcover&dq=subject:horror&hl=&cd=1&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=gvB1DQAAQBAJ&dq=subject:horror&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Tales_from_the_Shadowhunter_Academy.html?hl=&id=gvB1DQAAQBAJ",
     "price": 13.06,
     "quantity": 25,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc80",
@@ -1693,31 +1505,27 @@
         "identifier": "9780451161345"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": false
-    },
     "pageCount": 324,
     "printType": "BOOK",
     "categories": ["Allegories"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.5.1.0.preview.0",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=1YP-hfna5ewC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=1YP-hfna5ewC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=1YP-hfna5ewC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=1YP-hfna5ewC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=1YP-hfna5ewC&dq=subject:horror&hl=&cd=2&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=1YP-hfna5ewC&dq=subject:horror&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Thinner.html?hl=&id=1YP-hfna5ewC",
     "price": 0.42,
     "quantity": 73,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc81",
@@ -1736,31 +1544,27 @@
         "identifier": "0141331887"
       }
     ],
-    "readingModes": {
-      "text": true,
-      "image": false
-    },
     "pageCount": 605,
     "printType": "BOOK",
     "categories": ["Juvenile Fiction"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "1.6.3.0.preview.2",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=Rwcpd5zqrrkC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=Rwcpd5zqrrkC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=Rwcpd5zqrrkC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=Rwcpd5zqrrkC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=Rwcpd5zqrrkC&printsec=frontcover&dq=subject:horror&hl=&cd=3&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=Rwcpd5zqrrkC&dq=subject:horror&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Last_Sacrifice.html?hl=&id=Rwcpd5zqrrkC",
     "price": 14.49,
     "quantity": 84,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc82",
@@ -1779,31 +1583,27 @@
         "identifier": "1481410490"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": false
-    },
     "pageCount": 128,
     "printType": "BOOK",
     "categories": ["Juvenile Fiction"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.1.2.0.preview.0",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=F1MdBAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=F1MdBAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=F1MdBAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=F1MdBAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=F1MdBAAAQBAJ&printsec=frontcover&dq=subject:horror&hl=&cd=4&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=F1MdBAAAQBAJ&dq=subject:horror&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/The_Secret_Path.html?hl=&id=F1MdBAAAQBAJ",
     "price": 8.31,
     "quantity": 91,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc83",
@@ -1818,31 +1618,27 @@
         "identifier": "UCSD:31822023797939"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": false
-    },
     "pageCount": 230,
     "printType": "BOOK",
     "categories": ["English fiction"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.3.2.0.preview.0",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=xFIN97PzxxYC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=xFIN97PzxxYC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=xFIN97PzxxYC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=xFIN97PzxxYC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=xFIN97PzxxYC&dq=subject:horror&hl=&cd=7&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=xFIN97PzxxYC&dq=subject:horror&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Frankenstein.html?hl=&id=xFIN97PzxxYC",
     "price": 14.63,
     "quantity": 53,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc84",
@@ -1861,31 +1657,27 @@
         "identifier": "1481410539"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": false
-    },
     "pageCount": 128,
     "printType": "BOOK",
     "categories": ["FICTION"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "preview-1.0.0",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=hlMdBAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=hlMdBAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=hlMdBAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=hlMdBAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=hlMdBAAAQBAJ&printsec=frontcover&dq=subject:horror&hl=&cd=8&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=hlMdBAAAQBAJ&dq=subject:horror&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/The_Howling_Ghost.html?hl=&id=hlMdBAAAQBAJ",
     "price": 0.89,
     "quantity": 95,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc85",
@@ -1904,31 +1696,27 @@
         "identifier": "9781561563098"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": false
-    },
     "pageCount": 196,
     "printType": "BOOK",
     "categories": ["Juvenile Fiction"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.3.1.0.preview.0",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=4dHXkNcpIXgC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=4dHXkNcpIXgC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=4dHXkNcpIXgC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=4dHXkNcpIXgC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=4dHXkNcpIXgC&dq=subject:horror&hl=&cd=9&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=4dHXkNcpIXgC&dq=subject:horror&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Frankenstein.html?hl=&id=4dHXkNcpIXgC",
     "price": 11.84,
     "quantity": 79,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc86",
@@ -1952,38 +1740,31 @@
         "identifier": "1506701612"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 129,
     "printType": "BOOK",
     "categories": ["Comics & Graphic Novels"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.2.1.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": true,
-      "imageBubbleVersion": "3ddf0451b863c221_A"
-    },
-    "comicsContent": true,
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=v4kmDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=v4kmDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=v4kmDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=v4kmDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=v4kmDwAAQBAJ&printsec=frontcover&dq=subject:horror&hl=&cd=10&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=v4kmDwAAQBAJ&dq=subject:horror&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Witcher_Volume_3_Curse_of_Crows.html?hl=&id=v4kmDwAAQBAJ",
     "price": 9.67,
     "quantity": 85,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc87",
     "title": "Frankenstein, Or the Modern Prometheus",
-    "subtitle": "The 1818 Text",
     "authors": ["Mary Wollstonecraft Shelley"],
     "publisher": "University of Chicago Press",
     "publishedDate": "1982-03-15",
@@ -1998,33 +1779,27 @@
         "identifier": "9780226752273"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 338,
     "printType": "BOOK",
     "categories": ["Fiction"],
-    "averageRating": 4.5,
-    "ratingsCount": 10,
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "1.3.3.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=dW8M0BD4ozMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=dW8M0BD4ozMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=dW8M0BD4ozMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=dW8M0BD4ozMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=dW8M0BD4ozMC&printsec=frontcover&dq=subject:literature&hl=&cd=1&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=dW8M0BD4ozMC&dq=subject:literature&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Frankenstein_Or_the_Modern_Prometheus.html?hl=&id=dW8M0BD4ozMC",
     "price": 8.32,
     "quantity": 64,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc88",
@@ -2043,33 +1818,27 @@
         "identifier": "9781853260209"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 452,
     "printType": "BOOK",
     "categories": ["Fiction"],
-    "averageRating": 3.5,
-    "ratingsCount": 5,
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "1.4.4.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=bfpaLNJhassC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=bfpaLNJhassC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=bfpaLNJhassC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=bfpaLNJhassC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=bfpaLNJhassC&printsec=frontcover&dq=subject:literature&hl=&cd=2&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=bfpaLNJhassC&dq=subject:literature&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Jane_Eyre.html?hl=&id=bfpaLNJhassC",
     "price": 14.89,
     "quantity": 51,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc89",
@@ -2084,31 +1853,27 @@
         "identifier": "UOM:39015064885620"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": false
-    },
     "pageCount": 312,
     "printType": "BOOK",
     "categories": ["Fiction"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "2.3.2.0.preview.0",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=h8tlAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=h8tlAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=h8tlAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=h8tlAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=h8tlAAAAMAAJ&dq=subject:literature&hl=&cd=3&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=h8tlAAAAMAAJ&dq=subject:literature&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Stoner.html?hl=&id=h8tlAAAAMAAJ",
     "price": 6.4,
     "quantity": 40,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc8a",
@@ -2127,36 +1892,31 @@
         "identifier": "113749154X"
       }
     ],
-    "readingModes": {
-      "text": true,
-      "image": true
-    },
     "pageCount": 217,
     "printType": "BOOK",
     "categories": ["Social Science"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.4.3.0.preview.3",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=KMGYBgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=KMGYBgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=KMGYBgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=KMGYBgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=KMGYBgAAQBAJ&printsec=frontcover&dq=subject:literature&hl=&cd=5&source=gbs_api",
     "infoLink": "https://play.google.com/store/books/details?id=KMGYBgAAQBAJ&source=gbs_api",
     "canonicalVolumeLink": "https://play.google.com/store/books/details?id=KMGYBgAAQBAJ",
     "price": 11.65,
     "quantity": 87,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc8b",
     "title": "Khrushchev",
-    "subtitle": "A Political Life",
     "authors": ["William Tompson"],
     "publisher": "Springer",
     "publishedDate": "2016-07-27",
@@ -2171,31 +1931,27 @@
         "identifier": "1349256080"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 349,
     "printType": "BOOK",
     "categories": ["Political Science"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.2.2.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=hym_DAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=hym_DAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=hym_DAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=hym_DAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=hym_DAAAQBAJ&printsec=frontcover&dq=subject:literature&hl=&cd=6&source=gbs_api",
     "infoLink": "https://play.google.com/store/books/details?id=hym_DAAAQBAJ&source=gbs_api",
     "canonicalVolumeLink": "https://play.google.com/store/books/details?id=hym_DAAAQBAJ",
     "price": 9.38,
     "quantity": 57,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc8c",
@@ -2214,31 +1970,27 @@
         "identifier": "0230554652"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 368,
     "printType": "BOOK",
     "categories": ["Fiction"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.2.0.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=AajtCwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=AajtCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=AajtCwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=AajtCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=AajtCwAAQBAJ&printsec=frontcover&dq=subject:literature&hl=&cd=7&source=gbs_api",
     "infoLink": "https://play.google.com/store/books/details?id=AajtCwAAQBAJ&source=gbs_api",
     "canonicalVolumeLink": "https://play.google.com/store/books/details?id=AajtCwAAQBAJ",
     "price": 3.64,
     "quantity": 46,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc8d",
@@ -2253,33 +2005,27 @@
         "identifier": "UOM:39015054075968"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": false
-    },
     "pageCount": 422,
     "printType": "BOOK",
     "categories": ["Colonies in literature"],
-    "averageRating": 5,
-    "ratingsCount": 1,
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.4.2.0.preview.0",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=gvxgAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=gvxgAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=gvxgAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=gvxgAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=gvxgAAAAMAAJ&dq=subject:literature&hl=&cd=8&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=gvxgAAAAMAAJ&dq=subject:literature&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Culture_and_Imperialism.html?hl=&id=gvxgAAAAMAAJ",
     "price": 2.53,
     "quantity": 95,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc8e",
@@ -2298,36 +2044,31 @@
         "identifier": "0199537372"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 529,
     "printType": "BOOK",
     "categories": ["Literary Criticism"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.2.0.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=UwQUDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=UwQUDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=UwQUDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=UwQUDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=UwQUDAAAQBAJ&printsec=frontcover&dq=subject:literature&hl=&cd=10&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=UwQUDAAAQBAJ&dq=subject:literature&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Metamorphoses.html?hl=&id=UwQUDAAAQBAJ",
     "price": 2.69,
     "quantity": 29,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc8f",
     "title": "Modern Hospice Design",
-    "subtitle": "The Architecture of Palliative and Social Care",
     "authors": ["Ken Worpole"],
     "publisher": "Taylor & Francis",
     "publishedDate": "2023-09-29",
@@ -2342,36 +2083,31 @@
         "identifier": "1000923630"
       }
     ],
-    "readingModes": {
-      "text": true,
-      "image": true
-    },
     "pageCount": 225,
     "printType": "BOOK",
     "categories": ["Architecture"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.1.1.0.preview.3",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=JwXUEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=JwXUEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=JwXUEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=JwXUEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=JwXUEAAAQBAJ&printsec=frontcover&dq=subject:science&hl=&cd=1&source=gbs_api",
     "infoLink": "https://play.google.com/store/books/details?id=JwXUEAAAQBAJ&source=gbs_api",
     "canonicalVolumeLink": "https://play.google.com/store/books/details?id=JwXUEAAAQBAJ",
     "price": 3.4,
     "quantity": 66,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc90",
     "title": "Homo Deus",
-    "subtitle": "‘An intoxicating brew of science, philosophy and futurism’ Mail on Sunday",
     "authors": ["Yuval Noah Harari"],
     "publisher": "Random House",
     "publishedDate": "2016-09-08",
@@ -2386,38 +2122,31 @@
         "identifier": "1473545374"
       }
     ],
-    "readingModes": {
-      "text": true,
-      "image": false
-    },
     "pageCount": 504,
     "printType": "BOOK",
     "categories": ["Social Science"],
-    "averageRating": 5,
-    "ratingsCount": 3,
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": true,
     "contentVersion": "2.44.36.0.preview.2",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=dWYyCwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=dWYyCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=dWYyCwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=dWYyCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=dWYyCwAAQBAJ&printsec=frontcover&dq=subject:science&hl=&cd=2&source=gbs_api",
     "infoLink": "https://play.google.com/store/books/details?id=dWYyCwAAQBAJ&source=gbs_api",
     "canonicalVolumeLink": "https://play.google.com/store/books/details?id=dWYyCwAAQBAJ",
     "price": 9.44,
     "quantity": 36,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc91",
     "title": "How We Became Posthuman",
-    "subtitle": "Virtual Bodies in Cybernetics, Literature, and Informatics",
     "authors": ["N. Katherine Hayles"],
     "publisher": "University of Chicago Press",
     "publishedDate": "2008-05-15",
@@ -2432,38 +2161,32 @@
         "identifier": "0226321398"
       }
     ],
-    "readingModes": {
-      "text": true,
-      "image": true
-    },
     "pageCount": 364,
     "printType": "BOOK",
     "categories": ["Philosophy"],
-    "averageRating": 4,
-    "ratingsCount": 7,
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": true,
     "contentVersion": "3.7.4.0.preview.3",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=JqB6Qy9z3TcC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=JqB6Qy9z3TcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=JqB6Qy9z3TcC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=JqB6Qy9z3TcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=JqB6Qy9z3TcC&printsec=frontcover&dq=subject:science&hl=&cd=3&source=gbs_api",
     "infoLink": "https://play.google.com/store/books/details?id=JqB6Qy9z3TcC&source=gbs_api",
     "canonicalVolumeLink": "https://play.google.com/store/books/details?id=JqB6Qy9z3TcC",
     "price": 2.86,
     "quantity": 46,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc92",
     "title": "The Encyclopedia of Animals",
-    "subtitle": "A Complete Visual Guide",
+    "authors": [],
     "publisher": "Univ of California Press",
     "publishedDate": "2004",
     "description": "This lavishly illustrated trade reference to mammals, birds, reptiles, amphibians, fishes, and invertebrates features hundreds of glorious photos, masterful illustrations, and informative maps.",
@@ -2477,33 +2200,27 @@
         "identifier": "0520244060"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 619,
     "printType": "BOOK",
     "categories": ["Reference"],
-    "averageRating": 4.5,
-    "ratingsCount": 11,
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "0.2.2.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=2V1tHqi4hLEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=2V1tHqi4hLEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=2V1tHqi4hLEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=2V1tHqi4hLEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=2V1tHqi4hLEC&printsec=frontcover&dq=subject:science&hl=&cd=4&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=2V1tHqi4hLEC&dq=subject:science&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/The_Encyclopedia_of_Animals.html?hl=&id=2V1tHqi4hLEC",
     "price": 10.39,
     "quantity": 98,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc93",
@@ -2527,31 +2244,27 @@
         "identifier": "144624346X"
       }
     ],
-    "readingModes": {
-      "text": true,
-      "image": true
-    },
     "pageCount": 482,
     "printType": "BOOK",
     "categories": ["Science"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": true,
     "contentVersion": "1.12.13.0.preview.3",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=EUvOviwwc2cC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=EUvOviwwc2cC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=EUvOviwwc2cC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=EUvOviwwc2cC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=EUvOviwwc2cC&printsec=frontcover&dq=subject:science&hl=&cd=5&source=gbs_api",
     "infoLink": "https://play.google.com/store/books/details?id=EUvOviwwc2cC&source=gbs_api",
     "canonicalVolumeLink": "https://play.google.com/store/books/details?id=EUvOviwwc2cC",
     "price": 1.83,
     "quantity": 32,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc94",
@@ -2570,33 +2283,27 @@
         "identifier": "9780854045938"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 180,
     "printType": "BOOK",
     "categories": ["Cooking"],
-    "averageRating": 4,
-    "ratingsCount": 1,
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "1.4.6.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=JTdUXI9fz2kC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=JTdUXI9fz2kC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=JTdUXI9fz2kC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=JTdUXI9fz2kC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=JTdUXI9fz2kC&printsec=frontcover&dq=subject:science&hl=&cd=6&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=JTdUXI9fz2kC&dq=subject:science&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/The_Science_of_Sugar_Confectionery.html?hl=&id=JTdUXI9fz2kC",
     "price": 13.95,
     "quantity": 94,
-    "rating": 0
+    "rating": 4,
+    "timesRated": 10,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc95",
@@ -2615,33 +2322,27 @@
         "identifier": "9780521003377"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 412,
     "printType": "BOOK",
     "categories": ["Education"],
-    "averageRating": 3,
-    "ratingsCount": 2,
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "4.3.4.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=UB0Tao4oikEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=UB0Tao4oikEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=UB0Tao4oikEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=UB0Tao4oikEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=UB0Tao4oikEC&printsec=frontcover&dq=subject:science&hl=&cd=7&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=UB0Tao4oikEC&dq=subject:science&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/God_and_Reason_in_the_Middle_Ages.html?hl=&id=UB0Tao4oikEC",
     "price": 8.21,
     "quantity": 69,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc96",
@@ -2660,31 +2361,27 @@
         "identifier": "1118230612"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 1458,
     "printType": "BOOK",
     "categories": ["Science"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "1.1.1.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=RReJCgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=RReJCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=RReJCgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=RReJCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=RReJCgAAQBAJ&printsec=frontcover&dq=subject:science&hl=&cd=8&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=RReJCgAAQBAJ&dq=subject:science&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Fundamentals_of_Physics_Extended.html?hl=&id=RReJCgAAQBAJ",
     "price": 1.32,
     "quantity": 24,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc97",
@@ -2703,38 +2400,31 @@
         "identifier": "0854041273"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": true
-    },
     "pageCount": 193,
     "printType": "BOOK",
     "categories": ["Science"],
-    "averageRating": 5,
-    "ratingsCount": 1,
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "3.4.3.0.preview.1",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=yxRyOf8jFeQC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=yxRyOf8jFeQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=yxRyOf8jFeQC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=yxRyOf8jFeQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=yxRyOf8jFeQC&printsec=frontcover&dq=subject:science&hl=&cd=9&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=yxRyOf8jFeQC&dq=subject:science&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/The_Chemistry_of_Fireworks.html?hl=&id=yxRyOf8jFeQC",
     "price": 11.1,
     "quantity": 10,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   },
   {
     "_id": "660f2648fe68600fce64dc98",
     "title": "Darwin Among The Machines",
-    "subtitle": "The Evolution Of Global Intelligence",
     "authors": ["George Dyson"],
     "publisher": "Addison Wesley Publishing Company",
     "publishedDate": "1997-05",
@@ -2745,30 +2435,26 @@
         "identifier": "UOM:39015041310320"
       }
     ],
-    "readingModes": {
-      "text": false,
-      "image": false
-    },
     "pageCount": 312,
     "printType": "BOOK",
     "categories": ["Computers"],
     "maturityRating": "NOT_MATURE",
     "allowAnonLogging": false,
     "contentVersion": "1.4.1.0.preview.0",
-    "panelizationSummary": {
-      "containsEpubBubbles": false,
-      "containsImageBubbles": false
-    },
-    "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=v8DaAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=v8DaAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-    },
+    "imageLinks": [
+      {
+        "smallThumbnail": "http://books.google.com/books/content?id=v8DaAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=v8DaAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+      }
+    ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=v8DaAAAAMAAJ&dq=subject:science&hl=&cd=10&source=gbs_api",
     "infoLink": "http://books.google.co.uk/books?id=v8DaAAAAMAAJ&dq=subject:science&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Darwin_Among_The_Machines.html?hl=&id=v8DaAAAAMAAJ",
     "price": 7.7,
     "quantity": 59,
-    "rating": 0
+    "rating": 0,
+    "timesRated": 0,
+    "__v": 0
   }
 ]

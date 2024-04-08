@@ -9,7 +9,7 @@ async function restoreBookCollection() {
   } catch (error) {
     console.log("🔴 ~ restoreBookCollection ~ error:", error);
   } finally {
-    console.log("🟢 ~ All books have been restored succesfully.");
+    // console.log("🟢 ~ All books have been restored succesfully.");
   }
 }
 
@@ -19,12 +19,13 @@ async function restoreReviewCollection() {
   } catch (error) {
     console.log("🔴 ~ restoreReviewCollection ~ error:", error);
   } finally {
-    console.log("🟢 ~ All Reviews have been restored succesfully.");
+    // console.log("🟢 ~ All Reviews have been restored succesfully.");
   }
 }
 
 async function restoreColletions() {
   await restoreBookCollection();
   await restoreReviewCollection();
+  console.log("🟢 ~ All collections were restored succesfully.");
 }
 module.exports = restoreColletions;

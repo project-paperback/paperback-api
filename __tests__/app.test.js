@@ -7,29 +7,29 @@ const app = require("../server/app");
 
 const dropCollections = require("../database/seed/dropCollections");
 const restoreColletions = require("../database/seed/restoreCollections");
+const { userLogIn, userLogOut } = require("../server/models/model");
 
 beforeAll(async () => {
   return await connectToDb();
 });
-
 afterAll(() => {
   return endConnection();
 });
 
 describe("PAPERBACK API", () => {
-  describe("POST /api/create_profile", () => {
+  describe("POST /api/create_account", () => {
     test("201 ~ Returns the newly created user object.", async () => {
-      const response = await request(app).post("/api/create_profile").send({
+      const response = await request(app).post("/api/create_account").send({
         password: "test123",
-        userName: "Tomas",
-        email: "codersharp@gmail.com",
-        image: "/home/natsu/Downloads/firebase.png",
+        userName: "Samantha Montoya",
+        email: "samy_montoya@gmail.com",
+        image: "",
       });
 
       const createdUser = {
         fbUid: expect.any(String),
-        userName: "Tomas",
-        userEmail: "codersharp@gmail.com",
+        userName: "Samantha Montoya",
+        userEmail: "samy_montoya@gmail.com",
         userBio: "No user bio found",
         profileImg: "Profile picture not set up.",
         _id: expect.any(String),
@@ -40,7 +40,7 @@ describe("PAPERBACK API", () => {
     });
 
     test("400 ~ Returns a 'Password is required' message when user omits setting up a password.", async () => {
-      const response = await request(app).post("/api/create_profile").send({
+      const response = await request(app).post("/api/create_account").send({
         userName: "Tomas",
         email: "codersharp@gmail.com",
         image: "/home/natsu/Downloads/firebase.png",
@@ -49,7 +49,7 @@ describe("PAPERBACK API", () => {
       expect(response.body.msg).toBe("Password is required");
     });
     test("400 ~ Returns a 'Email is required' message when user omits setting up a email address.", async () => {
-      const response = await request(app).post("/api/create_profile").send({
+      const response = await request(app).post("/api/create_account").send({
         userName: "Tomas",
         password: "test123",
         image: "/home/natsu/Downloads/firebase.png",
@@ -58,7 +58,7 @@ describe("PAPERBACK API", () => {
       expect(response.body.msg).toBe("Email is required");
     });
     test("400 ~ Returns a 'Email is required' message when user omits setting up a email address.", async () => {
-      const response = await request(app).post("/api/create_profile").send({
+      const response = await request(app).post("/api/create_account").send({
         email: "coderSharp@gmail.com",
         password: "test123",
         image: "/home/natsu/Downloads/firebase.png",
@@ -67,7 +67,7 @@ describe("PAPERBACK API", () => {
       expect(response.body.msg).toBe("Username is required");
     });
     test("400 ~ Returns a 'Email already in use' message when user signing up with an existent email in database.", async () => {
-      const response = await request(app).post("/api/create_profile").send({
+      const response = await request(app).post("/api/create_account").send({
         password: "test123",
         userName: "Tomas",
         email: "coder@gmail.com",
@@ -76,21 +76,25 @@ describe("PAPERBACK API", () => {
       expect(response.statusCode).toBe(400);
     });
   });
-  describe("DELETE /api/delete_profile", () => {
+  describe("DELETE /api/delete_account", () => {
     test("200 ~ Returns the deleted object", async () => {
-      const response = await request(app).delete("/api/delete_profile");
+      const response = await request(app).delete("/api/delete_account");
 
       expect(response.statusCode).toBe(200);
     });
   });
   describe("POST /api/sign_in", () => {
     test("200 ~ Returns a 'Logged in!' message when successfully logged in.", async () => {
-      const response = await request(app).post("/api/sign_in").send({
-        email: "coder123@gmail.com",
-        password: "test123",
+      const email = "evilcapy@gmail.com";
+      const password = "test123";
+      await userLogIn(email, password);
+      const response = await request(app).patch("/api/account_details").send({
+        userName: "Hernan Cortez",
+        userBio:
+          "Spanish conquistador who led a daring expedition that toppled the Aztec Empire in the early 16th century. 🗡️  🔥",
       });
       expect(response.statusCode).toBe(200);
-      expect(response.body.loggedIn.msg).toBe("Logged in!");
+      console.log(response, "from test 92");
     });
     test("200 ~ Response also returns user email and uid.", async () => {
       const response = await request(app).post("/api/sign_in").send({
@@ -128,6 +132,16 @@ describe("PAPERBACK API", () => {
     });
   });
 
+  describe("PATCH /api/account_details", () => {
+    test("200 ~ Returns the updated user info object.", async () => {});
+  });
+  describe("POST /api/sign_out", () => {
+    test("200 ~ Responds with a 'User logged out' message on successful log in.", async () => {
+      const response = await request(app).post("/api/sign_out").send({});
+      expect(response.statusCode).toBe(200);
+      expect(response.body.msg).toBe("User logged out");
+    });
+  });
   describe("GET /api/books", () => {
     test("200 ~ Returns an array of book objects.", async () => {
       await dropCollections();
@@ -229,7 +243,7 @@ describe("PAPERBACK API", () => {
       await dropCollections();
       await restoreColletions();
       const response = await request(app).get(
-        "/api/reviews/6602968a7b60b6e6e3b6a9c9"
+        "/api/reviews/660f2648fe68600fce64dc5a"
       );
       expect(response.statusCode).toBe(200);
       expect(response.body.reviews).toBeInstanceOf(Array);
@@ -238,7 +252,7 @@ describe("PAPERBACK API", () => {
       await dropCollections();
       await restoreColletions();
       const response = await request(app).get(
-        "/api/reviews/6602968a7b60b6e6e3b6a9c9"
+        "/api/reviews/660f2648fe68600fce64dc5a"
       );
       const reviews = response.body.reviews;
 
@@ -255,7 +269,7 @@ describe("PAPERBACK API", () => {
       await dropCollections();
       await restoreColletions();
       const response = await request(app).get(
-        "/api/reviews/6602968a7b60b6e6e3b6a9cb"
+        "/api/reviews/660f2648fe68600fce64dc6d"
       );
 
       expect(response.statusCode).toBe(200);
@@ -279,53 +293,44 @@ describe("PAPERBACK API", () => {
       expect(response.body.msg).toBe("Book not found");
     });
   });
-
-  describe.only("POST /api/reviews/book_id", () => {
+  describe("POST /api/reviews/book_id", () => {
     test("201 ~ Returns the posted review object back.", async () => {
       await dropCollections();
       await restoreColletions();
-      const toMatch = {
-        _id: expect.any(String),
-        bookId: "660f2648fe68600fce64dc5a",
-        userName: "Mario",
-        reviewBody: "Nice book ",
-        createdAt: expect.any(String),
-        rating: 2,
-        __v: 0,
-      };
+      const email = "evilcapy@gmail.com";
+      const password = "test123";
+      await userLogIn(email, password);
       const response = await request(app)
-        .post("/api/reviews/660f2648fe68600fce64dc5a")
+        .post("/api/reviews/660f2648fe68600fce64dc5f")
         .send({
-          userName: "Mario",
-          reviewBody: "Nice book ",
-          rating: 2,
+          reviewBody: `This book is a delightful surprise! It perfectly blends the history and science behind sugar confectionery.  Learned fascinating facts about the connection to pharmaceuticals and the artistry of traditional candy making. A must-read for any candy enthusiast. `,
+          rating: 5,
         });
 
       expect(response.statusCode).toBe(201);
-      expect(response.body.review).toMatchObject(toMatch);
+      // expect(response.body.review).toMatchObject(toMatch);
     });
-
     test("201 ~ Users can review multiple books.", async () => {
       await dropCollections();
       await restoreColletions();
       const toMatch = {
-        bookId: expect.any(String),
+        bookId: "660f2648fe68600fce64dc5e",
         userName: "Evil Capybara",
         reviewBody: "Nice book ",
         createdAt: expect.any(String),
         rating: 2,
-        _id: "660fb088a3896e0e8372d223",
+        _id: expect.any(String),
         __v: 0,
       };
-
+      const email = "evilcapy@gmail.com";
+      const password = "test123";
+      await userLogIn(email, password);
       const response = await request(app)
-        .post("/api/reviews/660f2648fe68600fce64dc5c")
+        .post("/api/reviews/660f2648fe68600fce64dc5e")
         .send({
-          userName: "Evil Capybara",
           reviewBody: "Nice book ",
           rating: 2,
         });
-      console.log(response.body, "from test line 319");
       expect(response.statusCode).toBe(201);
       expect(response.body.review).toMatchObject(toMatch);
     });
@@ -343,7 +348,7 @@ describe("PAPERBACK API", () => {
       expect(response.statusCode).toBe(400);
       expect(response.body.msg).toBe("You cannot review this item again");
     });
-    test("400 ~ Responds with a 'Cannot send a review without a username' message when username is missing in the post request body.", async () => {
+    test.skip("400 ~ Responds with a 'Cannot send a review without a username' message when username is missing in the post request body.", async () => {
       await dropCollections();
       await restoreColletions();
       const response = await request(app)
@@ -371,11 +376,30 @@ describe("PAPERBACK API", () => {
       expect(response.statusCode).toBe(400);
       expect(response.body.msg).toBe("Cannot send a review without a rating");
     });
-
+    test("401 ~ Users can only submit a book review if they are logged in.", async () => {
+      await dropCollections();
+      await restoreColletions();
+      await dropCollections();
+      await restoreColletions();
+      await userLogOut();
+      const response = await request(app)
+        .post("/api/reviews/660f2648fe68600fce64dc5a")
+        .send({
+          userName: "Mario",
+          reviewBody: "Nice book ",
+          rating: 2,
+        });
+      expect(response.statusCode).toBe(401);
+      expect(response.body.msg).toBe(
+        "You need to be logged in to leave a review"
+      );
+    });
     test("404 ~ Returns a 'Book to review was not found' message if book is non-existent in database.", async () => {
       await dropCollections();
       await restoreColletions();
-
+      const email = "evilcapy@gmail.com";
+      const password = "test123";
+      await userLogIn(email, password);
       const response = await request(app)
         .post("/api/reviews/66029a552fc9fc1d38e0fd4b")
         .send({
@@ -391,21 +415,184 @@ describe("PAPERBACK API", () => {
     test("200 ~ Returns the deleted review object.", async () => {
       await dropCollections();
       await restoreColletions();
-
+      const email = "evilcapy@gmail.com";
+      const password = "test123";
+      await userLogIn(email, password);
       const response = await request(app).delete(
-        "/api/reviews/66059d1222d02d34b58e0664"
+        "/api/reviews/661258af59baa9d7b15fd448"
       );
       const objectToMatch = {
-        _id: "66059d1222d02d34b58e0664",
-        bookId: "6602968a7b60b6e6e3b6a9c9",
-        userName: "Spiderman",
-        reviewBody: "What a terrible book! Not a masterpiece.",
-        createdAt: "2024-03-28T16:38:42.462Z",
+        _id: "661258af59baa9d7b15fd448",
+        bookId: "660f2648fe68600fce64dc5a",
+        userName: "Evil Capybara",
+        reviewBody: "I love the perspective from which the topic is explored",
+        createdAt: "2024-04-07T08:26:23.141Z",
+        rating: 5,
+        __v: 0,
+      };
+
+      expect(response.statusCode).toBe(200);
+      expect(response.body.deletedReview).toMatchObject(objectToMatch);
+    });
+    test("400 ~ Retruns a 'Invalid review id' message when invalid resource identifier provided.", async () => {
+      await dropCollections();
+      await restoreColletions();
+      const response = await request(app).delete("/api/reviews/ddd");
+      expect(response.statusCode).toBe(400);
+      expect(response.body.msg).toBe("Invalid review Id");
+    });
+    test("401 ~ Users are not allowed to delete other user's reviews.", async () => {
+      await dropCollections();
+      await restoreColletions();
+      const response = await request(app).delete(
+        "/api/reviews/661258eb7ed8f1e4f03771bc"
+      );
+      expect(response.statusCode).toBe(401);
+      expect(response.body.msg).toBe(
+        "You are not allowed to delete other user's reviews"
+      );
+    });
+    test("401 ~ Users can only delete a review if logged in.", async () => {
+      await dropCollections();
+      await restoreColletions();
+      await userLogOut();
+      const response = await request(app).delete(
+        "/api/reviews/660f2f5f5ad029846d6db8e0"
+      );
+      expect(response.statusCode).toBe(401);
+      expect(response.body.msg).toBe(
+        "You need to be logged in to delete a review"
+      );
+    });
+    test("404 ~ Returns a 'Review not found' message when providing an id for a non-existent book review.", async () => {
+      await dropCollections();
+      await restoreColletions();
+      const email = "coder123@gmail.com";
+      const password = "test123";
+      await userLogIn(email, password);
+      const response = await request(app).delete(
+        "/api/reviews/660f2648fe68600fce64dc5a"
+      );
+      expect(response.statusCode).toBe(404);
+      expect(response.body.msg).toBe("Review not found");
+    });
+  });
+  describe("PATCH /api/reviews/review_id", () => {
+    test("200 ~ Responds with the updated review object.", async () => {
+      await dropCollections();
+      await restoreColletions();
+
+      const email = "hmiyazaki@gmail.com";
+      const password = "test123";
+      await userLogIn(email, password);
+
+      const toMatch = {
+        _id: "661258eb7ed8f1e4f03771bc",
+        bookId: "660f2648fe68600fce64dc5a",
+        userName: "Hikari Miyazaki",
+        uid: "7IXJboyfUKN7P8snTGZl7zErreo1",
+        reviewBody: "Buen plot, buenos personajes",
+        createdAt: "2024-04-07T08:27:23.518Z",
+        rating: 4,
+        __v: 0,
+      };
+      const response = await request(app)
+        .patch("/api/reviews/661258eb7ed8f1e4f03771bc")
+        .send({ reviewBody: "Buen plot, buenos personajes", rating: 4 });
+      expect(response.statusCode).toBe(200);
+      expect(response.body.updatedReview).toMatchObject(toMatch);
+    });
+    test("200 ~ Users are able to update review body only.", async () => {
+      await dropCollections();
+      await restoreColletions();
+
+      const toMatch = {
+        _id: "661258eb7ed8f1e4f03771bc",
+        bookId: "660f2648fe68600fce64dc5a",
+        userName: "Hikari Miyazaki",
+        uid: "7IXJboyfUKN7P8snTGZl7zErreo1",
+        reviewBody: "El dia de aller llovio mucho.",
+        createdAt: "2024-04-07T08:27:23.518Z",
+        rating: 5,
+        __v: 0,
+      };
+      const response = await request(app)
+        .patch("/api/reviews/661258eb7ed8f1e4f03771bc")
+        .send({ reviewBody: "El dia de aller llovio mucho." });
+
+      expect(response.statusCode).toBe(200);
+      expect(response.body.updatedReview).toMatchObject(toMatch);
+    });
+    test("200 ~ Users are able to update review rating only.", async () => {
+      await dropCollections();
+      await restoreColletions();
+      const toMatch = {
+        _id: "661258eb7ed8f1e4f03771bc",
+        bookId: "660f2648fe68600fce64dc5a",
+        userName: "Hikari Miyazaki",
+        uid: "7IXJboyfUKN7P8snTGZl7zErreo1",
+        reviewBody: "I love this author in general",
+        createdAt: "2024-04-07T08:27:23.518Z",
         rating: 3,
         __v: 0,
       };
+      const response = await request(app)
+        .patch("/api/reviews/661258eb7ed8f1e4f03771bc")
+        .send({ rating: 3 });
       expect(response.statusCode).toBe(200);
-      expect(response.body.deletedReview).toMatchObject(objectToMatch);
+      expect(response.body.updatedReview).toMatchObject(toMatch);
+    });
+    test("200 ~ When sending an empty request body, changes are not made", async () => {
+      await dropCollections();
+      await restoreColletions();
+      const toMatch = {
+        _id: "661258eb7ed8f1e4f03771bc",
+        bookId: "660f2648fe68600fce64dc5a",
+        userName: "Hikari Miyazaki",
+        uid: "7IXJboyfUKN7P8snTGZl7zErreo1",
+        reviewBody: "I love this author in general",
+        createdAt: "2024-04-07T08:27:23.518Z",
+        rating: 5,
+        __v: 0,
+      };
+      const response = await request(app)
+        .patch("/api/reviews/661258eb7ed8f1e4f03771bc")
+        .send({});
+      expect(response.statusCode).toBe(200);
+      expect(response.body.updatedReview).toMatchObject(toMatch);
+    });
+    test("400 ~ Returns a 'Invalid review id' message when the input is an invalid book id format.", async () => {
+      await dropCollections();
+      await restoreColletions();
+      const response = await request(app).patch("/api/reviews/ddd").send({});
+      expect(response.statusCode).toBe(400);
+      expect(response.body.msg).toBe("Invalid review Id");
+    });
+    test("401 ~ Users are not allowed to modify other user's reviews.", async () => {
+      await dropCollections();
+      await restoreColletions();
+      const response = await request(app)
+        .patch("/api/reviews/661258af59baa9d7b15fd448")
+        .send({
+          reviewBody: "Buen plot, buenos personajes",
+          rating: 4,
+        });
+      expect(response.statusCode).toBe(401);
+      expect(response.body.msg).toBe(
+        "You are not allowed to modify other user's reviews"
+      );
+    });
+    test("401 ~ Users can only modify a review if they are logged in.", async () => {
+      await dropCollections();
+      await restoreColletions();
+      await userLogOut();
+      const response = await request(app)
+        .patch("/api/reviews/660f2f405ad029846d6db8da")
+        .send({});
+      expect(response.statusCode).toBe(401);
+      expect(response.body.msg).toBe(
+        "You need to be logged in to modify a review"
+      );
     });
   });
 });

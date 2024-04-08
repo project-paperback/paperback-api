@@ -1,7 +1,10 @@
+const { auth } = require("../../Firebase/Manage_Users/FBauthentication");
 const {
   saveNewUser,
   userLogIn,
+  userLogOut,
   removeUserProfile,
+  changeAccountDetails,
   fetchBooks,
   fetchBookById,
   sendBookReview,
@@ -45,7 +48,27 @@ async function userSignIn(req, res, next) {
     next(error);
   }
 }
-
+async function userSignOut(req, res, next) {
+  try {
+    const logOut = await userLogOut();
+    console.log(logOut, "from contoller line 48");
+    res.status(200).send({ msg: "User logged out" });
+  } catch (error) {
+    console.log(error, "from controller line 49");
+  }
+}
+async function modifyAccountDetails(req, res, next) {
+  try {
+    const { userBio } = req.body;
+    console.log("🚀 ~ modifyAccountDetails ~ userBio:", userBio);
+    const changes = await changeAccountDetails();
+    console.log(changes);
+    res.status(200).send({ updatedUser: updatedUser });
+  } catch (error) {
+    console.log("🚀 ~ modifyAccountDetails ~ error:", error);
+    next(error);
+  }
+}
 async function deleteUserProfile(req, res, next) {
   try {
     const removed = await removeUserProfile();
@@ -83,8 +106,8 @@ async function postReviewByBookId(req, res, next) {
     const { book_id } = req.params;
     const { userName, reviewBody, rating } = req.body;
 
-    const review = await sendBookReview(book_id, userName, reviewBody, rating);
-
+    const review = await sendBookReview(book_id, reviewBody, rating);
+    console.log(review);
     res.status(201).send({ review: review });
   } catch (error) {
     next(error);
@@ -136,6 +159,8 @@ async function addToBasket(req, res, next){
 module.exports = {
   postNewUser,
   userSignIn,
+  modifyAccountDetails,
+  userSignOut,
   deleteUserProfile,
   getBooks,
   getBookById,

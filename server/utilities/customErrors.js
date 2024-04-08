@@ -21,10 +21,13 @@ function customErrorHandler(error, request, response, next) {
       response
         .status(400)
         .send({ msg: "Cannot send a review without a rating" });
-    } else if (error.msg === "Missing username")
+    } else if (error.msg === "Missing username") {
       response
         .status(400)
         .send({ msg: "Cannot send a review without a username" });
+    } else if (error.msg === "Invalid review Id") {
+      response.status(400).send({ msg: "Invalid review Id" });
+    }
   } else if (error.status === 401) {
     if (error.msg === "Wrong credentials. Are you signed up?") {
       response
@@ -32,6 +35,30 @@ function customErrorHandler(error, request, response, next) {
         .send({ msg: "Wrong credentials. Are you signed up?" });
     } else if (error.msg === "Unauthorized request") {
       response.status(401).send({ msg: "Unauthorized request" });
+    } else if (error.msg === "You need to be logged in to leave a review") {
+      response
+        .status(401)
+        .send({ msg: "You need to be logged in to leave a review" });
+    } else if (error.msg === "You need to be logged in to delete a review") {
+      response
+        .status(401)
+        .send({ msg: "You need to be logged in to delete a review" });
+    } else if (
+      error.msg === "You are not allowed to delete other user's reviews"
+    ) {
+      response
+        .status(401)
+        .send({ msg: "You are not allowed to delete other user's reviews" });
+    } else if (error.msg === "You need to be logged in to modify a review") {
+      response
+        .status(401)
+        .send({ msg: "You need to be logged in to modify a review" });
+    } else if (
+      error.msg === "You are not allowed to modify other user's reviews"
+    ) {
+      response
+        .status(401)
+        .send({ msg: "You are not allowed to modify other user's reviews" });
     }
   } else if (error.status === 404) {
     if (error.msg === "Book to review not found") {
