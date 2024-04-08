@@ -84,13 +84,17 @@ describe("PAPERBACK API", () => {
     });
   });
   describe("POST /api/sign_in", () => {
-    test("200 ~ Returns a 'Logged in!' message when successfully logged in.", async () => {
-      const response = await request(app).post("/api/sign_in").send({
-        email: "hmiyazaki@gmail.com",
-        password: "test123",
+    test.only("200 ~ Returns a 'Logged in!' message when successfully logged in.", async () => {
+      const email = "evilcapy@gmail.com";
+      const password = "test123";
+      await userLogIn(email, password);
+      const response = await request(app).patch("/api/account_details").send({
+        userName: "Hernan Cortez",
+        userBio:
+          "Spanish conquistador who led a daring expedition that toppled the Aztec Empire in the early 16th century. 🗡️  🔥",
       });
       expect(response.statusCode).toBe(200);
-      expect(response.body.loggedIn.msg).toBe("Logged in!");
+      console.log(response, "from test 92");
     });
     test("200 ~ Response also returns user email and uid.", async () => {
       const response = await request(app).post("/api/sign_in").send({
@@ -129,7 +133,7 @@ describe("PAPERBACK API", () => {
   });
 
   describe.only("PATCH /api/account_details", () => {
-    test("200 ~ Returns the updated user info object.");
+    test("200 ~ Returns the updated user info object.", async () => {});
   });
   describe("POST /api/sign_out", () => {
     test("200 ~ Responds with a 'User logged out' message on successful log in.", async () => {

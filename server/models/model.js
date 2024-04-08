@@ -120,7 +120,9 @@ async function changeAccountDetails() {
     if (accessKey) {
       const uid = user.uid;
       const findUser = await User.find({ fbUid: uid });
-      console.log(findUser, "from line 123 model");
+      if (findUser) {
+        console.log("user found");
+      }
     }
   } catch (error) {}
 }

@@ -55,6 +55,10 @@ async function userSignOut(req, res, next) {
 }
 async function modifyAccountDetails(req, res, next) {
   try {
+    const { userBio } = req.body;
+    console.log("🚀 ~ modifyAccountDetails ~ userBio:", userBio);
+    const changes = await changeAccountDetails();
+    console.log(changes);
     res.status(200).send({ updatedUser: updatedUser });
   } catch (error) {
     console.log("🚀 ~ modifyAccountDetails ~ error:", error);
