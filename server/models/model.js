@@ -1,4 +1,3 @@
-// const mongoose = require("mongoose");
 const {
   auth,
   newUser,
@@ -6,57 +5,49 @@ const {
   signOut,
   deleteUser,
 } = require("../../Firebase/Manage_Users/FBauthentication.js");
-const { Book, Review, User, Basket } = require("../../database/schema/schemaIndex.js");
 const {
-  ref,
-  storage,
-  getDownloadURL,
-  uploadBytesResumable,
-} = require("../../Firebase/firebaseStorage/fbStorage.js");
+  Book,
+  Review,
+  User,
+  Basket,
+} = require("../../database/schema/schemaIndex.js");
 const { connectToDb } = require("../../database/connection/dbConnection.js");
-connectToDb();
 const { updateBookRating } = require("../utilities/utils.js");
 
-/*
+connectToDb();
 
+//=================== [  USER MODELS  ] ===================//
 
-*/
-
-async function saveNewUser(password, email, userName, userBio, req, res) {
+async function saveNewUser(userFirstName, userLastName, userEmail, password) {
   try {
-    if (!userName) {
-      return Promise.reject({ status: 400, msg: "Username is required" });
+    if (!userFirstName && !userLastName && !userEmail && !password) {
+      return Promise.reject({
+        status: 400,
+        msg: "Looks like some fields are missing! Please fill out all required fields to complete your sign-up.",
+      });
     } else if (!password) {
-      return Promise.reject({ status: 400, msg: "Password is required" });
-    } else if (!email) {
-      return Promise.reject({ status: 400, msg: "Email is required" });
+      return Promise.reject({
+        status: 400,
+        msg: "Password is required to sign up",
+      });
+    } else if (!userEmail) {
+      return Promise.reject({
+        status: 400,
+        msg: "Email is required to sign up",
+      });
+    } else if (!userFirstName) {
+      return Promise.reject({
+        status: 400,
+        msg: "Name and last name are required to sign up",
+      });
     }
-
-    const addUser = await newUser(auth, email, password);
-
-    let downloadURL = "Profile picture not set up.";
-    if (req.file) {
-      const imagesRef = ref(
-        storage,
-        `profileImages/${
-          req.file.originalname +
-          addUser.user.uid +
-          Math.ceil(Math.random() * 1000)
-        }`
-      );
-      const buffer = req.file.buffer;
-      const metadata = { contentType: req.file.mimetype };
-      const uploadTask = uploadBytesResumable(imagesRef, buffer, metadata);
-      const snapshot = await uploadTask;
-      downloadURL = await getDownloadURL(snapshot.ref);
-    }
+    const addUser = await newUser(auth, userEmail, password);
 
     const newUserMongo = new User({
       fbUid: addUser.user.uid,
-      userName: userName,
-      userBio: userBio,
+      userFirstName: userFirstName,
+      userLastName: userLastName,
       userEmail: addUser.user.email,
-      profileImg: downloadURL,
     });
     await newUserMongo.save();
     return newUserMongo;
@@ -113,19 +104,6 @@ async function userLogIn(email, password) {
     }
   }
 }
-async function changeAccountDetails() {
-  try {
-    const user = auth.currentUser;
-    const accessKey = user.accessToken;
-    if (accessKey) {
-      const uid = user.uid;
-      const findUser = await User.find({ fbUid: uid });
-      if (findUser) {
-        console.log("user found");
-      }
-    }
-  } catch (error) {}
-}
 async function userLogOut() {
   try {
     const user = auth.currentUser;
@@ -134,10 +112,43 @@ async function userLogOut() {
       await signOut(auth);
       return "User logged out";
     }
-  } catch (error) {}
+  } catch (error) {
+    return error;
+  }
 }
+async function changeAccountDetails(firstName, lastName) {
+  try {
+    console.log(firstName, lastName);
+    const user = auth.currentUser;
+    const accessKey = user.accessToken;
+    if (accessKey) {
+      const fbUid = user.uid;
 
-//====================================================================
+      const findUser = await User.find({ fbUid: fbUid });
+
+      if (findUser) {
+        const filter = { fbUid: fbUid };
+        const updatedUser = await User.findOneAndUpdate(filter, {
+          userFirstName: firstName,
+          userLastName: lastName,
+        });
+        console.log(updatedUser, "from model line 123");
+        return updatedUser;
+      }
+    }
+  } catch (error) {
+    return Promise.reject({
+      status: 401,
+      msg: "You need to be logged in to change your details",
+    });
+  }
+}
+async function changeAccountCredentials() {
+  try {
+  } catch (error) {}
+} //In progress
+
+//=================== [  BOOK MODELS  ] ===================//
 
 async function fetchBooks() {
   try {
@@ -152,10 +163,9 @@ async function fetchBooks() {
     return books;
   } catch (error) {
     if (error.name === "ValidationError") {
-      return { status: 400, message: "Invalid request parameters" }; // Adjust message as needed
+      return { status: 400, message: "Invalid request parameters" };
     } else {
-      console.log(error); // Log other errors
-      // You can throw the error again for further handling (optional)
+      console.log(error);
     }
   }
 }
@@ -175,7 +185,7 @@ async function fetchBookById(id) {
   }
 }
 
-//====================================================================
+//=================== [  REVIEW MODELS  ] ===================//
 
 async function fetchReviewsByBookId(book_id) {
   try {
@@ -204,11 +214,11 @@ async function sendBookReview(book_id, reviewBody, rating) {
     const user = auth.currentUser;
     const uid = user.uid;
     const accessKey = user.accessToken;
-    console.log(accessKey);
+
     if (accessKey) {
       const userMgdb = await User.find({ fbUid: uid });
-      const userName = userMgdb[0].userName;
-      console.log(userName);
+      const userName =
+        userMgdb[0].userFirstName + " " + userMgdb[0].userLastName;
       if (!rating) {
         return Promise.reject({ status: 400, msg: "Missing rating" });
       }
@@ -319,26 +329,27 @@ async function amendReviewById(review_id, reviewBody, rating) {
   }
 }
 
-async function createBasket(userNew){
+//=================== [  BASKET MODELS  ] ===================//
+
+async function createBasket(userNew) {
   try {
     const basket = await Basket.create({
-      userEmail : userNew.userEmail,
+      userEmail: userNew.userEmail,
       fbUid: userNew.fbUid,
-      userId : userNew._id,
-      items : [],
-    })
-    await User.findByIdAndUpdate(userNew._id, { basketId : basket._id});
+      userId: userNew._id,
+      items: [],
+    });
+    await User.findByIdAndUpdate(userNew._id, { basketId: basket._id });
     return basket;
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-
 }
 
-async function sendToBasket(productId, quantity){
+async function sendToBasket(productId, quantity) {
   try {
     const user = auth.currentUser;
-    if(!user){
+    if (!user) {
       return Promise.reject({
         status: 401,
         msg: "You need to be logged in to add items to the basket",
@@ -347,14 +358,16 @@ async function sendToBasket(productId, quantity){
 
     const fbUid = user.uid;
     const book = await Book.findById(productId);
-    if(book === null){
+    if (book === null) {
       return Promise.reject({ status: 404, msg: "Book not found" });
     }
     const basket = await Basket.findOne({ fbUid: fbUid });
     if (!basket) {
       return Promise.reject({ status: 404, msg: "Shopping cart not found" });
     }
-    const existingItem = basket.items.find(item => item.product.toString() === productId);
+    const existingItem = basket.items.find(
+      (item) => item.product.toString() === productId
+    );
     if (existingItem) {
       // If the item already exists, update its quantity
       existingItem.quantity += quantity;
@@ -363,10 +376,17 @@ async function sendToBasket(productId, quantity){
       basket.items.push({ product: productId, quantity: quantity });
     }
 
-    await basket.save()
+    await basket.save();
   } catch (error) {
-    if (error.reason.toString().startsWith("BSONError: input must be a 24 character hex string")){
-      return Promise.reject({ status: 400, msg: "Invalid book Id, input must be a 24 character hex string, 12 byte Uint8Array, or an integer" });
+    if (
+      error.reason
+        .toString()
+        .startsWith("BSONError: input must be a 24 character hex string")
+    ) {
+      return Promise.reject({
+        status: 400,
+        msg: "Invalid book Id, input must be a 24 character hex string, 12 byte Uint8Array, or an integer",
+      });
     }
   }
 }
@@ -384,5 +404,5 @@ module.exports = {
   removeReviewById,
   amendReviewById,
   createBasket,
-  sendToBasket
+  sendToBasket,
 };

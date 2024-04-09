@@ -9,7 +9,6 @@ async function updateBookRating(book_id) {
   const aggregate = allReviews.forEach(
     (review) => (ratingsSum += review.rating)
   );
-  console.log(allReviews.length);
 
   const ratingAverage = ratingsSum / allReviews.length;
   const averageResult = Number(ratingAverage.toFixed(1));

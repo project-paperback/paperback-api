@@ -1,10 +1,11 @@
-const { auth } = require("../../Firebase/Manage_Users/FBauthentication");
+// const { auth } = require("../../Firebase/Manage_Users/FBauthentication");
 const {
   saveNewUser,
   userLogIn,
   userLogOut,
   removeUserProfile,
   changeAccountDetails,
+  changeAccountCredentials,
   fetchBooks,
   fetchBookById,
   sendBookReview,
@@ -15,26 +16,23 @@ const {
   sendToBasket,
 } = require("../models/model");
 
+//=================== [  USER CONTROLLERS  ] ===================//
+
 async function postNewUser(req, res, next) {
   try {
-    const { password, email, userName, userBio } = req.body;
+    const { userFirstName, userLastName, userEmail, password } = req.body;
+    console.log(req.body, "from controller 21");
+    const newUser = await saveNewUser(
+      userFirstName,
+      userLastName,
+      userEmail,
+      password
+    );
 
-    const userNew = await saveNewUser(password, email, userName, userBio, req);
-
-    const basket = await createBasket(userNew)
-    res.status(201).send({ user: userNew });
+    const basket = await createBasket(newUser);
+    res.status(201).send({ user: newUser });
   } catch (error) {
-    if (error.status === 400) {
-      if (error.msg === "Password is required") {
-        res.status(400).send({ msg: "Password is required" });
-      } else if (error.msg === "Username is required") {
-        res.status(400).send({ msg: "Username is required" });
-      } else if (error.msg === "Email is required") {
-        res.status(400).send({ msg: "Email is required" });
-      } else if (error.msg === "EMAIL_EXISTS") {
-        res.status(400).send({ msg: "Email already in use" });
-      }
-    }
+    next(error);
   }
 }
 async function userSignIn(req, res, next) {
@@ -49,22 +47,9 @@ async function userSignIn(req, res, next) {
 }
 async function userSignOut(req, res, next) {
   try {
-    const logOut = await userLogOut();
-    console.log(logOut, "from contoller line 48");
+    await userLogOut();
     res.status(200).send({ msg: "User logged out" });
   } catch (error) {
-    console.log(error, "from controller line 49");
-  }
-}
-async function modifyAccountDetails(req, res, next) {
-  try {
-    const { userBio } = req.body;
-    console.log("🚀 ~ modifyAccountDetails ~ userBio:", userBio);
-    const changes = await changeAccountDetails();
-    console.log(changes);
-    res.status(200).send({ updatedUser: updatedUser });
-  } catch (error) {
-    console.log("🚀 ~ modifyAccountDetails ~ error:", error);
     next(error);
   }
 }
@@ -73,11 +58,26 @@ async function deleteUserProfile(req, res, next) {
     const removed = await removeUserProfile();
     res.status(200).send({ removed: removed });
   } catch (error) {
-    console.log("🚀 ~ deleteUserProfile ~ error:", error);
+    next(error);
   }
 }
+async function modifyAccountDetails(req, res, next) {
+  try {
+    const { userFirstName, userLastName } = req.body;
 
-//=========================================================
+    const changes = await changeAccountDetails(userFirstName, userLastName);
+    res.status(200).send({ updatedUser: changes });
+  } catch (error) {
+    next(error);
+  }
+}
+async function modifyAccountCredentials() {
+  try {
+    await changeAccountCredentials();
+  } catch (error) {}
+} //In progress
+
+//=================== [  BOOKS CONTROLLERS  ] ===================//
 
 async function getBooks(req, res, next) {
   try {
@@ -100,13 +100,15 @@ async function getBookById(req, res, next) {
   }
 }
 
+//=================== [  REVIEWS CONTROLLERS  ] ===================//
+
 async function postReviewByBookId(req, res, next) {
   try {
     const { book_id } = req.params;
-    const { userName, reviewBody, rating } = req.body;
+    const { reviewBody, rating } = req.body;
 
     const review = await sendBookReview(book_id, reviewBody, rating);
-    console.log(review);
+
     res.status(201).send({ review: review });
   } catch (error) {
     next(error);
@@ -144,14 +146,16 @@ async function updateReviewById(req, res, next) {
   }
 }
 
-async function addToBasket(req, res, next){
+//=================== [  BASKET CONTROLLERS  ] ===================//
+
+async function addToBasket(req, res, next) {
   try {
-    const { productId } = req.body
+    const { productId } = req.body;
     const quantity = req.body.quantity ? Number(req.body.quantity) : 1;
-    const basket = await sendToBasket( productId, quantity )
-    res.status(200).send({ msg: "Item added to the basket successfully!" })
+    const basket = await sendToBasket(productId, quantity);
+    res.status(200).send({ msg: "Item added to the basket successfully!" });
   } catch (error) {
-    next(error)
+    next(error);
   }
 }
 
@@ -159,6 +163,7 @@ module.exports = {
   postNewUser,
   userSignIn,
   modifyAccountDetails,
+  modifyAccountCredentials,
   userSignOut,
   deleteUserProfile,
   getBooks,
@@ -167,5 +172,5 @@ module.exports = {
   getReviewsByBookId,
   deleteReviewById,
   updateReviewById,
-  addToBasket
+  addToBasket,
 };

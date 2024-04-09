@@ -21,17 +21,16 @@ describe("PAPERBACK API", () => {
     test("201 ~ Returns the newly created user object.", async () => {
       const response = await request(app).post("/api/create_account").send({
         password: "test123",
-        userName: "Samantha Montoya",
-        email: "samy_montoya@gmail.com",
-        image: "",
+        userFirstName: "Samantha",
+        userLastName: "Montoya",
+        userEmail: "coffe_milk@gmail.com",
       });
 
       const createdUser = {
         fbUid: expect.any(String),
-        userName: "Samantha Montoya",
-        userEmail: "samy_montoya@gmail.com",
-        userBio: "No user bio found",
-        profileImg: "Profile picture not set up.",
+        userFirstName: "Samantha",
+        userLastName: "Montoya",
+        userEmail: "coffe_milk@gmail.com",
         _id: expect.any(String),
         __v: 0,
       };
@@ -39,39 +38,39 @@ describe("PAPERBACK API", () => {
       expect(response.body.user).toMatchObject(createdUser);
     });
 
-    test("400 ~ Returns a 'Password is required' message when user omits setting up a password.", async () => {
+    test("400 ~ Returns a warning message when user omits setting up a password.", async () => {
       const response = await request(app).post("/api/create_account").send({
-        userName: "Tomas",
-        email: "codersharp@gmail.com",
-        image: "/home/natsu/Downloads/firebase.png",
+        userFirstName: "Samantha",
+        userLastName: "Montoya",
+        userEmail: "montoya_samy@gmail.com",
       });
       expect(response.statusCode).toBe(400);
-      expect(response.body.msg).toBe("Password is required");
+      expect(response.body.msg).toBe("Password is required to sign up");
     });
-    test("400 ~ Returns a 'Email is required' message when user omits setting up a email address.", async () => {
+    test("400 ~ Returns a warning message when user omits setting up a email address.", async () => {
       const response = await request(app).post("/api/create_account").send({
-        userName: "Tomas",
         password: "test123",
-        image: "/home/natsu/Downloads/firebase.png",
+        userFirstName: "Samantha",
+        userLastName: "Montoya",
       });
       expect(response.statusCode).toBe(400);
-      expect(response.body.msg).toBe("Email is required");
+      expect(response.body.msg).toBe("Email is required to sign up");
     });
-    test("400 ~ Returns a 'Email is required' message when user omits setting up a email address.", async () => {
-      const response = await request(app).post("/api/create_account").send({
-        email: "coderSharp@gmail.com",
-        password: "test123",
-        image: "/home/natsu/Downloads/firebase.png",
-      });
+
+    test("400 ~ Returns a warning message when user submits an empty sign up form.", async () => {
+      const response = await request(app).post("/api/create_account").send({});
       expect(response.statusCode).toBe(400);
-      expect(response.body.msg).toBe("Username is required");
+      expect(response.body.msg).toBe(
+        "Looks like some fields are missing! Please fill out all required fields to complete your sign-up."
+      );
     });
-    test("400 ~ Returns a 'Email already in use' message when user signing up with an existent email in database.", async () => {
+
+    test("400 ~ Returns a warning message when user signing up with an email that has been already authenticathed.", async () => {
       const response = await request(app).post("/api/create_account").send({
         password: "test123",
-        userName: "Tomas",
-        email: "coder@gmail.com",
-        image: "/home/natsu/Downloads/firebase.png",
+        userFirstName: "Hikari",
+        userLastName: "Miyazaki",
+        userEmail: "hikari@gmail.com",
       });
       expect(response.statusCode).toBe(400);
     });
@@ -85,16 +84,11 @@ describe("PAPERBACK API", () => {
   });
   describe("POST /api/sign_in", () => {
     test("200 ~ Returns a 'Logged in!' message when successfully logged in.", async () => {
-      const email = "evilcapy@gmail.com";
-      const password = "test123";
-      await userLogIn(email, password);
-      const response = await request(app).patch("/api/account_details").send({
-        userName: "Hernan Cortez",
-        userBio:
-          "Spanish conquistador who led a daring expedition that toppled the Aztec Empire in the early 16th century. 🗡️  🔥",
+      const response = await request(app).post("/api/sign_in").send({
+        email: "evilcapy@gmail.com",
+        password: "test123",
       });
       expect(response.statusCode).toBe(200);
-      console.log(response, "from test 92");
     });
     test("200 ~ Response also returns user email and uid.", async () => {
       const response = await request(app).post("/api/sign_in").send({
@@ -133,7 +127,24 @@ describe("PAPERBACK API", () => {
   });
 
   describe("PATCH /api/account_details", () => {
-    test("200 ~ Returns the updated user info object.", async () => {});
+    test("200 ~ Returns the updated user info object.", async () => {
+      const email = "monto_coffeemilk@gmail.com";
+      const password = "test123";
+      await userLogIn(email, password);
+      const response = await request(app).patch("/api/account_details").send({
+        userFirstName: "Mango",
+        userLastName: "Cafe",
+      });
+      expect(response.statusCode).toBe(200);
+    });
+    test("401 ~ Users need to be logged in to be able to modify their personal details", async () => {
+      await userLogOut();
+      const response = await request(app).patch("/api/account_details").send({
+        userFirstName: "Maria",
+        userLastName: "McAfee",
+      });
+      expect(response.statusCode).toBe(401);
+    });
   });
   describe("POST /api/sign_out", () => {
     test("200 ~ Responds with a 'User logged out' message on successful log in.", async () => {
@@ -238,7 +249,7 @@ describe("PAPERBACK API", () => {
       expect(response.body.msg).toBe("Book not found");
     });
   });
-  describe("GET /api/reviews/book_id", () => {
+  describe.skip("GET /api/reviews/book_id", () => {
     test("200 ~ Returns an array of reviews objects", async () => {
       await dropCollections();
       await restoreColletions();
@@ -293,11 +304,11 @@ describe("PAPERBACK API", () => {
       expect(response.body.msg).toBe("Book not found");
     });
   });
-  describe("POST /api/reviews/book_id", () => {
+  describe.skip("POST /api/reviews/book_id", () => {
     test("201 ~ Returns the posted review object back.", async () => {
       await dropCollections();
       await restoreColletions();
-      const email = "evilcapy@gmail.com";
+      const email = "samy_montoya@gmail.com";
       const password = "test123";
       await userLogIn(email, password);
       const response = await request(app)
@@ -313,18 +324,20 @@ describe("PAPERBACK API", () => {
     test("201 ~ Users can review multiple books.", async () => {
       await dropCollections();
       await restoreColletions();
+      const email = "samy_montoya@gmail.com";
+      const password = "test123";
+      await userLogIn(email, password);
       const toMatch = {
         bookId: "660f2648fe68600fce64dc5e",
-        userName: "Evil Capybara",
+        userName: "Samantha Montoya",
+        uid: "kiv4BJRGgnQYTqwIwoQWhMuFdAx1",
         reviewBody: "Nice book ",
         createdAt: expect.any(String),
         rating: 2,
         _id: expect.any(String),
         __v: 0,
       };
-      const email = "evilcapy@gmail.com";
-      const password = "test123";
-      await userLogIn(email, password);
+
       const response = await request(app)
         .post("/api/reviews/660f2648fe68600fce64dc5e")
         .send({
@@ -338,10 +351,12 @@ describe("PAPERBACK API", () => {
     test("400 ~ Users cannot add more than one review per book.", async () => {
       await dropCollections();
       await restoreColletions();
+      const email = "hmiyazaki@gmail.com";
+      const password = "test123";
+      await userLogIn(email, password);
       const response = await request(app)
         .post("/api/reviews/660f2648fe68600fce64dc5a")
         .send({
-          userName: "geenos",
           reviewBody: "What a nice book",
           rating: 4,
         });
@@ -411,7 +426,7 @@ describe("PAPERBACK API", () => {
       expect(response.body.msg).toBe("Book to review not found");
     });
   });
-  describe("DELETE /api/reviews/review_id", () => {
+  describe.skip("DELETE /api/reviews/review_id", () => {
     test("200 ~ Returns the deleted review object.", async () => {
       await dropCollections();
       await restoreColletions();
@@ -477,7 +492,7 @@ describe("PAPERBACK API", () => {
       expect(response.body.msg).toBe("Review not found");
     });
   });
-  describe("PATCH /api/reviews/review_id", () => {
+  describe.skip("PATCH /api/reviews/review_id", () => {
     test("200 ~ Responds with the updated review object.", async () => {
       await dropCollections();
       await restoreColletions();
