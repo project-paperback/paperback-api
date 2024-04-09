@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "seed": "node database/seed/run-seed.js",
-    "start": "nodemon /home/natsu/Documents/side-project-backend/paperback/listen.js"
+    "start": "nodemon listen.js"
   },
   "type": "commonjs",
   "keywords": [],
@@ -17,8 +17,7 @@
     "express": "^4.19.1",
     "firebase": "^10.9.0",
     "mongodb": "^6.5.0",
-    "mongoose": "^8.2.2",
-    "multer": "^1.4.5-lts.1"
+    "mongoose": "^8.2.2"
   },
   "devDependencies": {
     "jest": "^29.7.0",

@@ -4,6 +4,7 @@ const {
   userSignIn,
   userSignOut,
   modifyAccountDetails,
+  modifyAccountCredentials,
   deleteUserProfile,
   getBooks,
   getBookById,
@@ -15,19 +16,14 @@ const {
 } = require("./controllers/controller");
 const customErrorHandler = require("./utilities/customErrors");
 const app = express();
-
-const multer = require("multer");
-const storage = multer.memoryStorage();
-const upload = multer({ storage: storage });
 app.use(express.json());
 
 //Users and Authentication
-app.post("/api/create_account", upload.single("image"), (req, res) => {
-  postNewUser(req, res);
-});
+app.post("/api/create_account", postNewUser);
 app.post("/api/sign_in", userSignIn);
 app.post("/api/sign_out", userSignOut);
 app.patch("/api/account_details", modifyAccountDetails);
+app.patch("/api/account_credentials", modifyAccountCredentials);
 app.delete("/api/delete_account", deleteUserProfile);
 // Books
 app.get("/api/books", getBooks);
