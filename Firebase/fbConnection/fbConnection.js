@@ -1,4 +1,9 @@
 const { initializeApp } = require("firebase/app");
+const ENV = process.env.NODE_ENV || "development";
+require("dotenv").config({
+  path: `.env.${ENV}`, //Adjust path depending on environment we execute the app
+});
+
 const firebaseConfig = {
   apiKey: process.env.API_KEY,
   authDomain: process.env.AUTH_DOMAIN,
