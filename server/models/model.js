@@ -391,6 +391,41 @@ async function sendToBasket(productId, quantity) {
   }
 }
 
+async function removeFromBasketById(book_id){
+  try {
+    const user = auth.currentUser;
+    if (!user) {
+      return Promise.reject({
+        status: 401,
+        msg: "You need to be logged in to remove items from the basket",
+      });
+    }
+    const fbUid = user.uid;
+    const basket = await Basket.findOne({ fbUid: fbUid });
+    if (!basket) {
+      return Promise.reject({ status: 404, msg: "Shopping cart not found" });
+    }
+    basket.items.forEach(item => {
+
+      if (item.product.toString() === book_id) {
+        const bookIndexToDelete = basket.items.indexOf(item);
+        basket.items.splice(bookIndexToDelete, 1);
+      }
+      else { 
+        throw(new Error("Not found"));
+      }
+    });
+    await basket.save();
+  } catch (error) {
+    if (error.message === "Not found"){
+      return Promise.reject({
+        status: 404,
+        msg: "Book not found",
+      });
+    }
+  }
+}
+
 module.exports = {
   saveNewUser,
   userLogIn,
@@ -405,4 +440,5 @@ module.exports = {
   amendReviewById,
   createBasket,
   sendToBasket,
+  removeFromBasketById
 };

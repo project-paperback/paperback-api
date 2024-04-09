@@ -14,6 +14,7 @@ const {
   amendReviewById,
   createBasket,
   sendToBasket,
+  removeFromBasketById,
 } = require("../models/model");
 
 //=================== [  USER CONTROLLERS  ] ===================//
@@ -159,6 +160,16 @@ async function addToBasket(req, res, next) {
   }
 }
 
+async function deleteFromBasketByBookId(req, res, next) {
+  try {
+    const { book_id } = req.params;
+    const deletedBook = await removeFromBasketById(book_id);
+    res.status(200).send({ msg: "Item removed from the basket successfully!" });
+  } catch (error) {
+    next(error)
+  }
+}
+
 module.exports = {
   postNewUser,
   userSignIn,
@@ -173,4 +184,5 @@ module.exports = {
   deleteReviewById,
   updateReviewById,
   addToBasket,
+  deleteFromBasketByBookId
 };
