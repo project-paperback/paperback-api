@@ -18,8 +18,18 @@ const {
 } = require("../../database/schema/schemaIndex.js");
 const { connectToDb } = require("../../database/connection/dbConnection.js");
 const { updateBookRating } = require("../utilities/utils.js");
+const endpoints = require("../../endpoints.json");
 
 connectToDb();
+
+async function fetchEndpoints() {
+  try {
+    return endpoints;
+  } catch (error) {
+    console.log("🚀 ~ fetchEndpoints ~ error:", error);
+    return error;
+  }
+}
 
 //=================== [  USER MODELS  ] ===================//
 
@@ -511,6 +521,7 @@ async function sendToBasket(productId, quantity) {
 }
 
 module.exports = {
+  fetchEndpoints,
   saveNewUser,
   userLogIn,
   userLogOut,
