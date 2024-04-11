@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const {
   getEndpoints,
   postNewUser,
@@ -19,7 +20,7 @@ const {
 const customErrorHandler = require("./utilities/customErrors");
 const app = express();
 app.use(express.json());
-
+app.use(cors);
 // Endpoints
 app.get("/api", getEndpoints);
 
