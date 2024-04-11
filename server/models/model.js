@@ -402,28 +402,30 @@ async function removeFromBasketById(book_id){
     }
     const fbUid = user.uid;
     const basket = await Basket.findOne({ fbUid: fbUid });
-    if (!basket) {
-      return Promise.reject({ status: 404, msg: "Shopping cart not found" });
-    }
-    basket.items.forEach(item => {
+    if (!basket) return Promise.reject({ status: 404, msg: "Shopping cart not found" });
+    if (basket.items.length === 0) throw(new Error("No books in the basket"));
 
+    const foundItem = basket.items.filter((item) => item.product.toString() === book_id);
+    if (foundItem.length === 0) throw(new Error("Book not found"));
+    basket.items.forEach(item => {
       if (item.product.toString() === book_id) {
         const bookIndexToDelete = basket.items.indexOf(item);
         basket.items.splice(bookIndexToDelete, 1);
       }
-      else { 
-        throw(new Error("Not found"));
-      }
     });
     await basket.save();
   } catch (error) {
-    if (error.message === "Not found"){
+    if (error.message === "Book not found"){
       return Promise.reject({
         status: 404,
         msg: "Book not found",
       });
-    }
-  }
+    } else if (error.message === "No books in the basket"){
+      return Promise.reject({
+        status: 404,
+        msg: "No books in the basket",
+      });
+  }}
 }
 
 module.exports = {
