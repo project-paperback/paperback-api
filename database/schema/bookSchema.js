@@ -1,15 +1,5 @@
 const { Schema, model } = require("mongoose");
 
-// const industryIdentifierSchema = new Schema({
-//   type: String,
-//   identifier: String,
-// });
-
-// const imageLinks = new Schema({
-//   smallThumbnail: String,
-//   thumbnail: String,
-// });
-
 const bookSchema = new Schema({
   title: String,
   authors: Array,
@@ -31,7 +21,7 @@ const bookSchema = new Schema({
   price: Number,
   quantity: Number,
   rating: { type: Number, default: 0 },
-  timesRated: { type: Number, default: 0 }, //==> New addition
+  timesRated: { type: Number, default: 0 },
   __v: Number,
 });
 
