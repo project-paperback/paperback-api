@@ -1,14 +1,12 @@
 const { connectToDb } = require("../connection/dbConnection");
-const { Book, Review } = require("../schema/schemaIndex");
+const { Book, Review, Basket, User } = require("../schema/schemaIndex");
 connectToDb();
 async function dropBookCollection() {
   try {
     const deletedBooks = await Book.deleteMany({});
     return deletedBooks;
   } catch (error) {
-    console.log(error);
-  } finally {
-    // console.log("🟢 ~ Books collection wiped out.");
+    console.log("🔴 ~ dropBookCollection ~ error:", error);
   }
 }
 
@@ -17,14 +15,37 @@ async function dropReviewsCollection() {
     const deletedReviews = await Review.deleteMany({});
     return deletedReviews;
   } catch (error) {
-  } finally {
-    // console.log("🟢 ~ Reviews collection wiped out.");
+    console.log("🔴 ~ dropReviewsCollection ~ error:", error);
   }
 }
+
+async function dropBasketCollection() {
+  try {
+    const deletedReviews = await Basket.deleteMany({});
+    return deletedReviews;
+  } catch (error) {
+    console.log("🔴 ~ dropBasketCollection ~ error:", error);
+  }
+}
+async function dropUsersCollection() {
+  try {
+    const deletedReviews = await User.deleteMany({});
+    return deletedReviews;
+  } catch (error) {
+    console.log("🔴 ~ dropUsersCollection ~ error:", error);
+  }
+}
+
 async function dropCollections() {
-  await dropBookCollection();
-  await dropReviewsCollection();
-  console.log("🟢 ~ All collections were wiped out.");
+  try {
+    await dropBookCollection();
+    await dropReviewsCollection();
+    await dropBasketCollection();
+    await dropUsersCollection();
+    console.log("🟢 ~ All collections were wiped out.");
+  } catch (error) {
+    console.log("🔴 ~ dropCollections ~ error:", error);
+  }
 }
 
 module.exports = dropCollections;

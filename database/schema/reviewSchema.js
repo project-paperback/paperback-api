@@ -3,7 +3,7 @@ const { Schema, model } = require("mongoose");
 const reviewSchema = new Schema({
   bookId: String,
   userName: String,
-  uid: String,
+  fbUid: String,
   reviewBody: String,
   createdAt: Date,
   rating: Number,

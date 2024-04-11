@@ -5,6 +5,11 @@ const {
   signInWithEmailAndPassword,
   signOut,
   deleteUser,
+  sendEmailVerification,
+  EmailAuthProvider,
+  reauthenticateWithCredential,
+  verifyBeforeUpdateEmail,
+  updatePassword,
 } = require("firebase/auth");
 
 const auth = getAuth(app);
@@ -18,4 +23,9 @@ module.exports = {
   signIn,
   signOut,
   deleteUser,
+  sendEmailVerification,
+  EmailAuthProvider,
+  reauthenticateWithCredential,
+  verifyBeforeUpdateEmail,
+  updatePassword,
 };

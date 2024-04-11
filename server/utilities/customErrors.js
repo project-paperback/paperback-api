@@ -11,7 +11,7 @@ function customErrorHandler(error, request, response, next) {
 
   //==================== [ 400 ERRORS ] ====================//
   if (error.status === 400) {
-    //Sign in model
+    //Sign in
     if (error.msg === "Email and password missing") {
       response.status(400).send({ msg: "Email and password missing" });
     } else if (error.msg === "Email required to log in") {
@@ -43,28 +43,39 @@ function customErrorHandler(error, request, response, next) {
     } else if (error.msg === "EMAIL_EXISTS") {
       response.status(400).send({ msg: "Email already in use" });
     }
-  }
-
-  //reviews
-  if (error.msg === "You cannot review this item again") {
-    response.status(400).send({ msg: "You cannot review this item again" });
-  } else if (error.msg === "Invalid book id") {
-    response.status(400).send({ msg: "Invalid book id" });
-  } else if (error.msg === "Missing rating") {
-    response.status(400).send({ msg: "Cannot send a review without a rating" });
-  } else if (error.msg === "Missing username") {
-    response
-      .status(400)
-      .send({ msg: "Cannot send a review without a username" });
-  } else if (error.msg === "Invalid review Id") {
-    response.status(400).send({ msg: "Invalid review Id" });
-  } else if (
-    error.msg ===
-    "Invalid book Id, input must be a 24 character hex string, 12 byte Uint8Array, or an integer"
-  ) {
-    response.status(400).send({
-      msg: "Invalid book Id, input must be a 24 character hex string, 12 byte Uint8Array, or an integer",
-    });
+    //Log out
+    if (error.msg === "Opps, you are not logged in!") {
+      response.status(400).send({ msg: "Opps, you are not logged in!" });
+    }
+    //Password update
+    if (error.msg === "The passwords you entered don't match") {
+      response.status(400).send({
+        msg: "The passwords you entered don't match. Please re-enter your current password and try again.",
+      });
+    }
+    //reviews
+    if (error.msg === "You cannot review this item again") {
+      response.status(400).send({ msg: "You cannot review this item again" });
+    } else if (error.msg === "Invalid book id") {
+      response.status(400).send({ msg: "Invalid book id" });
+    } else if (error.msg === "Missing rating") {
+      response
+        .status(400)
+        .send({ msg: "Cannot send a review without a rating" });
+    } else if (error.msg === "Missing username") {
+      response
+        .status(400)
+        .send({ msg: "Cannot send a review without a username" });
+    } else if (error.msg === "Invalid review Id") {
+      response.status(400).send({ msg: "Invalid review Id" });
+    } else if (
+      error.msg ===
+      "Invalid book Id, input must be a 24 character hex string, 12 byte Uint8Array, or an integer"
+    ) {
+      response.status(400).send({
+        msg: "Invalid book Id, input must be a 24 character hex string, 12 byte Uint8Array, or an integer",
+      });
+    }
   }
 
   //==================== [ 401 ERRORS ] ====================//
@@ -80,6 +91,15 @@ function customErrorHandler(error, request, response, next) {
       response
         .status(401)
         .send({ msg: "You need to be logged in to change your details" });
+    }
+
+    //Password update
+    if (
+      error.msg === "You need to be logged in to change your password details"
+    ) {
+      response.status(401).send({
+        msg: "You need to be logged in to change your password details",
+      });
     }
     //Reviews
     if (error.msg === "Unauthorized request") {

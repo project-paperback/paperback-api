@@ -4,7 +4,8 @@ const {
   userSignIn,
   userSignOut,
   modifyAccountDetails,
-  modifyAccountCredentials,
+  modifyAccountPassword,
+  modifyAccountEmail,
   deleteUserProfile,
   getBooks,
   getBookById,
@@ -23,7 +24,9 @@ app.post("/api/create_account", postNewUser);
 app.post("/api/sign_in", userSignIn);
 app.post("/api/sign_out", userSignOut);
 app.patch("/api/account_details", modifyAccountDetails);
-app.patch("/api/account_credentials", modifyAccountCredentials);
+app.patch("/api/change_email", modifyAccountEmail);
+app.patch("/api/change_password", modifyAccountPassword);
+
 app.delete("/api/delete_account", deleteUserProfile);
 // Books
 app.get("/api/books", getBooks);
@@ -36,6 +39,9 @@ app.patch("/api/reviews/:review_id", updateReviewById);
 //Basket
 app.post("/api/add_to_basket", addToBasket);
 
+app.all("/*", (req, res) => {
+  res.status(404).send({ msg: "Not found" });
+});
 app.use(customErrorHandler);
 
 module.exports = app;
