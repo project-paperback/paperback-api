@@ -135,6 +135,10 @@ function customErrorHandler(error, request, response, next) {
       response
         .status(401)
         .send({ msg: "You need to be logged in to add items to the basket" });
+    } else if (error.msg === "You need to be logged in to remove items from the basket") {
+      response
+        .status(401)
+        .send({ msg: "You need to be logged in to remove items from the basket" });
     }
   }
 
@@ -150,8 +154,10 @@ function customErrorHandler(error, request, response, next) {
       response.status(404).send({ msg: "Book not found" });
     } else if (error.msg === "Shopping cart not found") {
       response.status(404).send({ msg: "Shopping cart not found" });
+    } else if (error.msg === "No books in the basket") {
+      response.status(404).send({ msg: "No books in the basket"});
     }
-  }
+   }
 }
 
 module.exports = customErrorHandler;

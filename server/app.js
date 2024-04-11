@@ -16,6 +16,7 @@ const {
   deleteReviewById,
   updateReviewById,
   addToBasket,
+  deleteFromBasketByBookId,
 } = require("./controllers/controller");
 const customErrorHandler = require("./utilities/customErrors");
 const app = express();
@@ -43,6 +44,7 @@ app.delete("/api/reviews/:review_id", deleteReviewById);
 app.patch("/api/reviews/:review_id", updateReviewById);
 //Basket
 app.post("/api/add_to_basket", addToBasket);
+app.delete("/api/remove_from_basket/:book_id", deleteFromBasketByBookId);
 
 app.all("/*", (req, res) => {
   res.status(404).send({ msg: "Not found" });
