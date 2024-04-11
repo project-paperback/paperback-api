@@ -8,10 +8,80 @@
     "queries": "No queries needed for this endpoint",
     "exampleResponse": {
       "user": {
-        "userFirstName": "",
-        "userLastName": "",
-        "userEmail": ""
+        "userFirstName": "John",
+        "userLastName": "Williams",
+        "userEmail": "j_williams@example.com"
       }
+    }
+  },
+  "POST /api/sign_in": {
+    "description": "Returns an object representing the user upon successful request",
+    "queries": "No queries needed for this endpoint",
+    "exampleResponse": {
+      "loggedIn": {
+        "userEmail": "lohobi3577@acname.com",
+        "msg": "Logged in!"
+      }
+    }
+  },
+
+  "POST /api/sign_out": {
+    "description": "Returns a confirmation message upon successful request",
+    "queries": "No queries needed for this endpoint",
+    "exampleResponse": {
+      "loggedIn": {
+        "msg": "User logged out"
+      }
+    }
+  },
+  "PATCH /api/account_details ": {
+    "description": "Returns an object representing the user upon successful request",
+    "queries": "No queries needed for this endpoint",
+    "exampleResponse": {
+      "updatedUser": {
+        "userFirstName": "Mango",
+        "userLastName": "Cafe",
+        "userEmail": "lohobi3577@acname.com"
+      }
+    }
+  },
+  "GET /api/books ": {
+    "description": "Returns an array of book objects upon successful request",
+    "queries": "No queries needed for this endpoint yet",
+    "exampleResponse": {
+      "books": [
+        {
+          "_id": "book_id",
+          "title": "The Routledge International Handbook of the Sociology of Education",
+          "authors": [
+            "Michael W. Apple",
+            "Stephen J. Ball",
+            "Luis Armando Gandin"
+          ],
+          "publisher": "Routledge",
+          "publishedDate": "2009-12-16",
+          "description": "This collection ...",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_13",
+              "identifier": "9781135179717"
+            },
+            {
+              "type": "ISBN_10",
+              "identifier": "1135179719"
+            }
+          ],
+          "pageCount": 447,
+          "printType": "BOOK",
+          "categories": ["Education"],
+          "language": "en",
+          "price": 0.18,
+          "quantity": 50,
+          "rating": 0,
+          "timesRated": 0,
+          "__v": 0
+        }
+      ]
     }
   }
 }
