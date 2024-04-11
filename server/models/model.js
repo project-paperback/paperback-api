@@ -4,6 +4,11 @@ const {
   signIn,
   signOut,
   deleteUser,
+  sendEmailVerification,
+  EmailAuthProvider,
+  reauthenticateWithCredential,
+  verifyBeforeUpdateEmail,
+  updatePassword,
 } = require("../../Firebase/Manage_Users/FBauthentication.js");
 const {
   Book,
@@ -13,8 +18,18 @@ const {
 } = require("../../database/schema/schemaIndex.js");
 const { connectToDb } = require("../../database/connection/dbConnection.js");
 const { updateBookRating } = require("../utilities/utils.js");
+const endpoints = require("../../endpoints.json");
 
 connectToDb();
+
+async function fetchEndpoints() {
+  try {
+    return endpoints;
+  } catch (error) {
+    console.log("🚀 ~ fetchEndpoints ~ error:", error);
+    return error;
+  }
+}
 
 //=================== [  USER MODELS  ] ===================//
 
@@ -41,8 +56,9 @@ async function saveNewUser(userFirstName, userLastName, userEmail, password) {
         msg: "Name and last name are required to sign up",
       });
     }
-    const addUser = await newUser(auth, userEmail, password);
 
+    const addUser = await newUser(auth, userEmail, password);
+    await sendEmailVerification(addUser.user); // this line is going to send the verification email
     const newUserMongo = new User({
       fbUid: addUser.user.uid,
       userFirstName: userFirstName,
@@ -61,20 +77,22 @@ async function saveNewUser(userFirstName, userLastName, userEmail, password) {
 async function removeUserProfile() {
   try {
     const user = auth.currentUser;
-    const accessKey = user.accessToken;
-    if (accessKey) {
-      const userInfo = user.reloadUserInfo;
-      const fireUid = userInfo.localId;
-      const userToRemove = await User.find({ fbUid: fireUid });
-      const userId = userToRemove[0]._id;
-      const userRemoved = await User.findByIdAndDelete(userId);
 
+    if (user) {
+      const fireUid = user.uid;
+      const userRemoved = await User.findOneAndDelete({ fbUid: fireUid });
+      const basketRemoved = await Basket.findOneAndDelete({ fbUid: fireUid });
       await deleteUser(user);
-
       return userRemoved;
+    } else {
+      throw new Error("Unauthorized request");
     }
   } catch (error) {
-    return Promise.reject({ status: 401, msg: "Unauthorized request" });
+    if (error.message === "Unauthorized request") {
+      return Promise.reject({ status: 401, msg: "Unauthorized request" });
+    } else {
+      console.log(error);
+    }
   }
 }
 async function userLogIn(email, password) {
@@ -90,40 +108,47 @@ async function userLogIn(email, password) {
       });
     }
     const signUserIn = await signIn(auth, email, password);
-    const userInfo = {
-      uid: signUserIn._tokenResponse.localId,
-      email: signUserIn._tokenResponse.email,
-    };
-    return { userInf: userInfo, msg: "Logged in!" };
+
+    return { userEmail: signUserIn.user.email, msg: "Logged in!" };
   } catch (error) {
-    if (error) {
+    if (error.code === "auth/invalid-credential") {
       return Promise.reject({
         status: 401,
         msg: "Wrong credentials. Are you signed up?",
       });
+    } else {
+      console.log(error);
+      return Promise.reject({ status: 500, msg: "Internal server error" });
     }
   }
 }
 async function userLogOut() {
   try {
     const user = auth.currentUser;
-    const accessKey = user.accessToken;
-    if (accessKey) {
+    if (!user) {
+      throw new Error("Opps, you are not logged in!");
+    } else {
       await signOut(auth);
       return "User logged out";
     }
   } catch (error) {
-    return error;
+    if (error.message === "Opps, you are not logged in!") {
+      console.log(error.message);
+      return Promise.reject({
+        status: 400,
+        msg: "Opps, you are not logged in!",
+      });
+    } else {
+      console.log(error);
+      return Promise.reject({ status: 500, msg: "Internal server error" });
+    }
   }
 }
 async function changeAccountDetails(firstName, lastName) {
   try {
-    console.log(firstName, lastName);
     const user = auth.currentUser;
-    const accessKey = user.accessToken;
-    if (accessKey) {
+    if (user) {
       const fbUid = user.uid;
-
       const findUser = await User.find({ fbUid: fbUid });
 
       if (findUser) {
@@ -132,21 +157,109 @@ async function changeAccountDetails(firstName, lastName) {
           userFirstName: firstName,
           userLastName: lastName,
         });
-        console.log(updatedUser, "from model line 123");
+        const userReviews = await Review.find({ uid: fbUid });
+
+        if (userReviews.length > 0) {
+          const userName = {
+            userName: `${findUser.userFirstName} ${findUser.userLastName}`,
+          };
+          const filter = { uid: fbUid };
+          await Review.updateMany(filter);
+        }
         return updatedUser;
       }
+    } else {
+      throw new Error("You need to be logged in to change your details");
     }
   } catch (error) {
-    return Promise.reject({
-      status: 401,
-      msg: "You need to be logged in to change your details",
-    });
+    if (error.message === "You need to be logged in to change your details") {
+      return Promise.reject({
+        status: 401,
+        msg: "You need to be logged in to change your details",
+      });
+    } else {
+      console.log(error);
+      return Promise.reject({ status: 500, msg: "Internal server error" });
+    }
   }
 }
-async function changeAccountCredentials() {
+async function changeAccountPassword(
+  newPassword,
+  currentPassword,
+  confirmPassword
+) {
   try {
-  } catch (error) {}
-} //In progress
+    //Validate Old Password
+    const user = auth.currentUser;
+    console.log(user);
+    if (user) {
+      if (newPassword === confirmPassword) {
+        const userEmail = user.email;
+        const credentials = EmailAuthProvider.credential(
+          userEmail,
+          currentPassword
+        );
+        //Reuthenticate user before updating the password due to the security risk of unauthorized modifications
+        await reauthenticateWithCredential(user, credentials);
+        //Update password
+        await updatePassword(user, newPassword);
+        return "Password has been updates successfully!";
+      } else {
+        return Promise.reject({
+          status: 400,
+          msg: "The passwords you entered don't match.",
+        });
+      }
+    } else {
+      throw new Error(
+        "You need to be logged in to change your password details"
+      );
+    }
+  } catch (error) {
+    if (
+      error.message ===
+      "You need to be logged in to change your password details"
+    ) {
+      return Promise.reject({
+        status: 401,
+        msg: "You need to be logged in to change your password details",
+      });
+    } else if (error.code === "auth/too-many-requests") {
+      return Promise.reject({
+        status: 403,
+        msg: "Access to this account has been temporarily disabled",
+      });
+    } else {
+      console.log(error);
+      return Promise.reject({ status: 500, msg: "Internal server error" });
+    }
+  }
+} //work on this endpoint further
+async function changeAccountEmail(newEmailAdress) {
+  try {
+    const user = auth.currentUser;
+    if (user) {
+      console.log(user);
+      await verifyBeforeUpdateEmail(user, newEmailAdress);
+
+      return "Check your email inbox and click on the verification link to finish the update";
+    } else {
+      throw new Error("You need to be logged in to change your email details");
+    }
+  } catch (error) {
+    if (
+      error.message === "You need to be logged in to change your email details"
+    ) {
+      return Promise.reject({
+        status: 401,
+        msg: "You need to be logged in to change your email details",
+      });
+    } else {
+      console.log(error);
+      return Promise.reject({ status: 500, msg: "Internal server error" });
+    }
+  }
+}
 
 //=================== [  BOOK MODELS  ] ===================//
 
@@ -212,10 +325,8 @@ async function fetchReviewsByBookId(book_id) {
 async function sendBookReview(book_id, reviewBody, rating) {
   try {
     const user = auth.currentUser;
-    const uid = user.uid;
-    const accessKey = user.accessToken;
-
-    if (accessKey) {
+    if (user) {
+      const uid = user.uid;
       const userMgdb = await User.find({ fbUid: uid });
       const userName =
         userMgdb[0].userFirstName + " " + userMgdb[0].userLastName;
@@ -242,31 +353,36 @@ async function sendBookReview(book_id, reviewBody, rating) {
         reviewBody: reviewBody,
         createdAt: new Date(),
         rating: rating,
-        uid: uid,
+        fbUid: uid,
       });
       await review.save();
       await updateBookRating(book_id);
       return review;
+    } else {
+      throw new Error("You need to be logged in to leave a review");
     }
   } catch (error) {
-    return Promise.reject({
-      status: 401,
-      msg: "You need to be logged in to leave a review",
-    });
+    if (error.message === "You need to be logged in to leave a review") {
+      return Promise.reject({
+        status: 401,
+        msg: "You need to be logged in to leave a review",
+      });
+    } else {
+      console.log(error);
+    }
   }
 }
 
 async function removeReviewById(review_id) {
   try {
     const user = auth.currentUser;
-    const accessKey = user.accessToken;
-    if (accessKey) {
+    if (user) {
       const uid = user.uid;
       const findReview = await Review.findById(review_id);
       if (!findReview) {
         return Promise.reject({ status: 404, msg: "Review not found" });
       }
-      if (findReview.uid !== uid) {
+      if (findReview.fbUid !== uid) {
         return Promise.reject({
           status: 401,
           msg: "You are not allowed to delete other user's reviews",
@@ -276,15 +392,22 @@ async function removeReviewById(review_id) {
       const deletedReview = await Review.findByIdAndDelete(review_id);
       await updateBookRating(bookId);
       return deletedReview;
+    } else {
+      throw new Error("You need to be logged in to delete a review");
     }
   } catch (error) {
     if (error.kind === "ObjectId") {
       return Promise.reject({ status: 400, msg: "Invalid review Id" });
-    } else {
+    } else if (
+      error.message === "You need to be logged in to delete a review"
+    ) {
       return Promise.reject({
         status: 401,
         msg: "You need to be logged in to delete a review",
       });
+    } else {
+      console.log(error);
+      return Promise.reject({ status: 500, msg: "Internal server error" });
     }
   }
 }
@@ -292,16 +415,15 @@ async function removeReviewById(review_id) {
 async function amendReviewById(review_id, reviewBody, rating) {
   try {
     const user = auth.currentUser;
-    const accessKey = user.accessToken;
 
-    if (accessKey) {
+    if (user) {
       const uid = user.uid;
-
       const findReview = await Review.findById(review_id);
+      console.log(findReview);
       if (!findReview) {
         return Promise.reject({ status: 404, msg: "Review not found" });
       }
-      if (findReview.uid !== uid) {
+      if (findReview.fbUid !== uid) {
         return Promise.reject({
           status: 401,
           msg: "You are not allowed to modify other user's reviews",
@@ -316,15 +438,22 @@ async function amendReviewById(review_id, reviewBody, rating) {
       );
       await updateBookRating(bookId);
       return updatedReview;
+    } else {
+      throw new Error("You need to be logged in to modify a review");
     }
   } catch (error) {
     if (error.kind === "ObjectId") {
       return Promise.reject({ status: 400, msg: "Invalid review Id" });
-    } else {
+    } else if (
+      error.message === "You need to be logged in to modify a review"
+    ) {
       return Promise.reject({
         status: 401,
         msg: "You need to be logged in to modify a review",
       });
+    } else {
+      console.log(error);
+      return Promise.reject({ status: 500, msg: "Internal server error" });
     }
   }
 }
@@ -429,10 +558,13 @@ async function removeFromBasketById(book_id){
 }
 
 module.exports = {
+  fetchEndpoints,
   saveNewUser,
   userLogIn,
   userLogOut,
   changeAccountDetails,
+  changeAccountEmail,
+  changeAccountPassword,
   removeUserProfile,
   fetchBooks,
   fetchBookById,

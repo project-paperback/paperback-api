@@ -1,11 +1,13 @@
 // const { auth } = require("../../Firebase/Manage_Users/FBauthentication");
 const {
+  fetchEndpoints,
   saveNewUser,
   userLogIn,
   userLogOut,
   removeUserProfile,
   changeAccountDetails,
-  changeAccountCredentials,
+  changeAccountEmail,
+  changeAccountPassword,
   fetchBooks,
   fetchBookById,
   sendBookReview,
@@ -16,6 +18,16 @@ const {
   sendToBasket,
   removeFromBasketById,
 } = require("../models/model");
+
+async function getEndpoints(req, res, next) {
+  try {
+    const data = await fetchEndpoints();
+    res.status(200).send({ endpoints: data });
+  } catch (error) {
+    console.log("🚀 ~ getEndpoints ~ error:", error);
+    return error;
+  }
+}
 
 //=================== [  USER CONTROLLERS  ] ===================//
 
@@ -31,7 +43,12 @@ async function postNewUser(req, res, next) {
     );
 
     const basket = await createBasket(newUser);
-    res.status(201).send({ user: newUser });
+    const userResponse = {
+      userFirstName: newUser.userFirstName,
+      userLastName: newUser.userLastName,
+      userEmail: newUser.userEmail,
+    };
+    res.status(201).send({ user: userResponse });
   } catch (error) {
     next(error);
   }
@@ -41,6 +58,7 @@ async function userSignIn(req, res, next) {
     const { email, password } = req.body;
 
     const logIn = await userLogIn(email, password);
+
     res.status(200).send({ loggedIn: logIn });
   } catch (error) {
     next(error);
@@ -48,8 +66,8 @@ async function userSignIn(req, res, next) {
 }
 async function userSignOut(req, res, next) {
   try {
-    await userLogOut();
-    res.status(200).send({ msg: "User logged out" });
+    const loggedOut = await userLogOut();
+    res.status(200).send({ msg: loggedOut });
   } catch (error) {
     next(error);
   }
@@ -72,11 +90,24 @@ async function modifyAccountDetails(req, res, next) {
     next(error);
   }
 }
-async function modifyAccountCredentials() {
+async function modifyAccountPassword(req, res, next) {
   try {
-    await changeAccountCredentials();
-  } catch (error) {}
-} //In progress
+    const { newPassword, currentPassword, confirmPassword } = req.body;
+    await changeAccountPassword(newPassword, currentPassword, confirmPassword);
+  } catch (error) {
+    next(error);
+  }
+}
+async function modifyAccountEmail(req, res, next) {
+  try {
+    const { newEmailAddress } = req.body;
+
+    const updateEmail = await changeAccountEmail(newEmailAddress);
+    res.status(200).send({ msg: updateEmail });
+  } catch (error) {
+    next(error);
+  }
+}
 
 //=================== [  BOOKS CONTROLLERS  ] ===================//
 
@@ -171,10 +202,12 @@ async function deleteFromBasketByBookId(req, res, next) {
 }
 
 module.exports = {
+  getEndpoints,
   postNewUser,
   userSignIn,
   modifyAccountDetails,
-  modifyAccountCredentials,
+  modifyAccountPassword,
+  modifyAccountEmail,
   userSignOut,
   deleteUserProfile,
   getBooks,

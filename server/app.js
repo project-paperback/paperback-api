@@ -1,10 +1,13 @@
 const express = require("express");
+const cors = require("cors");
 const {
+  getEndpoints,
   postNewUser,
   userSignIn,
   userSignOut,
   modifyAccountDetails,
-  modifyAccountCredentials,
+  modifyAccountPassword,
+  modifyAccountEmail,
   deleteUserProfile,
   getBooks,
   getBookById,
@@ -18,13 +21,18 @@ const {
 const customErrorHandler = require("./utilities/customErrors");
 const app = express();
 app.use(express.json());
+app.use(cors());
+// Endpoints
+app.get("/api", getEndpoints);
 
 //Users and Authentication
 app.post("/api/create_account", postNewUser);
 app.post("/api/sign_in", userSignIn);
 app.post("/api/sign_out", userSignOut);
 app.patch("/api/account_details", modifyAccountDetails);
-app.patch("/api/account_credentials", modifyAccountCredentials);
+app.patch("/api/change_email", modifyAccountEmail);
+app.patch("/api/change_password", modifyAccountPassword);
+
 app.delete("/api/delete_account", deleteUserProfile);
 // Books
 app.get("/api/books", getBooks);
@@ -38,6 +46,9 @@ app.patch("/api/reviews/:review_id", updateReviewById);
 app.post("/api/add_to_basket", addToBasket);
 app.delete("/api/remove_from_basket/:book_id", deleteFromBasketByBookId);
 
+app.all("/*", (req, res) => {
+  res.status(404).send({ msg: "Not found" });
+});
 app.use(customErrorHandler);
 
 module.exports = app;

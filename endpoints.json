@@ -1,0 +1,17 @@
+{
+  "GET /api": {
+    "description": "Serves up a json representation of the available endpoints of the api"
+  },
+
+  "POST /api/create_account": {
+    "description": "Returns an object representing the user upon successful request",
+    "queries": "No queries needed for this endpoint",
+    "exampleResponse": {
+      "user": {
+        "userFirstName": "",
+        "userLastName": "",
+        "userEmail": ""
+      }
+    }
+  }
+}

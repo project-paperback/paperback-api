@@ -21,7 +21,7 @@ npm install
 The following section is a description of the tools used and how to install them individually. All of them are included in this project already and will work once you install the node modules. See the **Installation** section if in doubt about how to install the node modules.
 
 ### Firebase  
-Firebase allowed this project to add authentication functionalities. It also provided storage services to upload images for user profile.
+Firebase allowed this project to add authentication and email verification functionalities.
 
 The [Firebase documentation](https://firebase.google.com/docs/build) provides a clear guidance on authentication and storage services.
 
@@ -32,7 +32,7 @@ npm install firebase
 ```
 
 ### Database
-This project uses MongoDB as primary database. Other services were used to store images, like Firebase storage. To know more about them, go to the relevant sections and find links to documentation.
+This project uses MongoDB as primary database. To know more about them, go to the relevant sections and find links to documentation.
 
 To install MongoDB run the following command on your terminal:
 
@@ -74,6 +74,5 @@ Follow these links to access the relevant documentation:
 | MongoDB    | Database                                             | `npm install mongodb`              |
 | Mongoose   | Interface for interacting with MongoDB database      | `npm install mongoose --save`      |
 | Firebase   | Backend application development platforms            | `npm install firebase`             |
-| Multer     | Node.js middleware for handling multipart/form-data  | `npm install --save multer`        |
 | Jest       | A JavaScript Testing Framework                       | `npm install --save-dev jest`      |
 | Supertest  | A JavaScript HTTP client for Node.js and the browser | `npm install supertest --save-dev` |
