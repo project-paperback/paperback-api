@@ -166,7 +166,12 @@ async function changeAccountDetails(firstName, lastName) {
           const filter = { uid: fbUid };
           await Review.updateMany(filter);
         }
-        return updatedUser;
+        const appResponse = {
+          userFirstName: updatedUser.userFirstName,
+          userLastName: updatedUser.userLastName,
+          userEmail: updatedUser.userEmail,
+        };
+        return appResponse;
       }
     } else {
       throw new Error("You need to be logged in to change your details");
@@ -520,7 +525,7 @@ async function sendToBasket(productId, quantity) {
   }
 }
 
-async function removeFromBasketById(book_id){
+async function removeFromBasketById(book_id) {
   try {
     const user = auth.currentUser;
     if (!user) {
@@ -531,12 +536,15 @@ async function removeFromBasketById(book_id){
     }
     const fbUid = user.uid;
     const basket = await Basket.findOne({ fbUid: fbUid });
-    if (!basket) return Promise.reject({ status: 404, msg: "Shopping cart not found" });
-    if (basket.items.length === 0) throw(new Error("No books in the basket"));
+    if (!basket)
+      return Promise.reject({ status: 404, msg: "Shopping cart not found" });
+    if (basket.items.length === 0) throw new Error("No books in the basket");
 
-    const foundItem = basket.items.filter((item) => item.product.toString() === book_id);
-    if (foundItem.length === 0) throw(new Error("Book not found"));
-    basket.items.forEach(item => {
+    const foundItem = basket.items.filter(
+      (item) => item.product.toString() === book_id
+    );
+    if (foundItem.length === 0) throw new Error("Book not found");
+    basket.items.forEach((item) => {
       if (item.product.toString() === book_id) {
         const bookIndexToDelete = basket.items.indexOf(item);
         basket.items.splice(bookIndexToDelete, 1);
@@ -544,17 +552,18 @@ async function removeFromBasketById(book_id){
     });
     await basket.save();
   } catch (error) {
-    if (error.message === "Book not found"){
+    if (error.message === "Book not found") {
       return Promise.reject({
         status: 404,
         msg: "Book not found",
       });
-    } else if (error.message === "No books in the basket"){
+    } else if (error.message === "No books in the basket") {
       return Promise.reject({
         status: 404,
         msg: "No books in the basket",
       });
-  }}
+    }
+  }
 }
 
 module.exports = {
@@ -574,5 +583,5 @@ module.exports = {
   amendReviewById,
   createBasket,
   sendToBasket,
-  removeFromBasketById
+  removeFromBasketById,
 };
