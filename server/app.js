@@ -1,5 +1,6 @@
 const express = require("express");
 const {
+  getEndpoints,
   postNewUser,
   userSignIn,
   userSignOut,
@@ -18,6 +19,9 @@ const {
 const customErrorHandler = require("./utilities/customErrors");
 const app = express();
 app.use(express.json());
+
+// Endpoints
+app.get("/api", getEndpoints);
 
 //Users and Authentication
 app.post("/api/create_account", postNewUser);

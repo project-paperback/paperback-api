@@ -1,5 +1,6 @@
 // const { auth } = require("../../Firebase/Manage_Users/FBauthentication");
 const {
+  fetchEndpoints,
   saveNewUser,
   userLogIn,
   userLogOut,
@@ -16,6 +17,16 @@ const {
   createBasket,
   sendToBasket,
 } = require("../models/model");
+
+async function getEndpoints(req, res, next) {
+  try {
+    const data = await fetchEndpoints();
+    res.status(200).send({ endpoints: data });
+  } catch (error) {
+    console.log("🚀 ~ getEndpoints ~ error:", error);
+    return error;
+  }
+}
 
 //=================== [  USER CONTROLLERS  ] ===================//
 
@@ -180,6 +191,7 @@ async function addToBasket(req, res, next) {
 }
 
 module.exports = {
+  getEndpoints,
   postNewUser,
   userSignIn,
   modifyAccountDetails,
