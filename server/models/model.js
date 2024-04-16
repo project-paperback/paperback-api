@@ -585,6 +585,22 @@ async function payment() {
       return Promise.reject({ status: 400, msg : "No items in the basket"})
     }
 
+    const booksInBasket = await Promise.all (
+      items.map(async item => {
+      return await fetchBookById(item.product.toString())
+    }))
+    console.log(items)
+    booksInBasket.forEach((book, index) => {
+      if (book.quantity >= items[index].quantity){
+        book.quantity -= items[index].quantity
+      } else{
+        console.log("Item not available")
+        return Promise.reject({ status : 400, msg: "Item not available"})
+      }
+    })
+    
+    console.log(booksInBasket, "<<<<<<<<< 591");
+
     const createdProducts = await Promise.all(
       items.map(async (book) => {
         const bookInDb = await fetchBookById(book.product.toString());
@@ -620,6 +636,7 @@ async function payment() {
         };
       }),
       mode: "payment",
+      expires_at: Math.floor(Date.now() / 1000) + (30 * 60), // Expires in 30 minutes
       shipping_address_collection: {
         allowed_countries: ["GB"], // Specify allowed countries for shipping
       },
