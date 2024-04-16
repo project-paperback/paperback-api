@@ -20,6 +20,8 @@ const basketSchema = new Schema({
         required: true,
         default: 1,
       },
+      description: String,
+      price: Number
     },
   ],
 });

@@ -17,6 +17,7 @@ const {
   createBasket,
   sendToBasket,
   removeFromBasketById,
+  payment,
 } = require("../models/model");
 
 async function getEndpoints(req, res, next) {
@@ -201,6 +202,17 @@ async function deleteFromBasketByBookId(req, res, next) {
   }
 }
 
+//=================== [  CHECKOUT CONTROLLERS  ] ===================//
+
+async function checkoutBasket(req, res, next) {
+  try {
+    const paymentURL = await payment();
+    console.log(paymentURL);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 module.exports = {
   getEndpoints,
   postNewUser,
@@ -217,5 +229,6 @@ module.exports = {
   deleteReviewById,
   updateReviewById,
   addToBasket,
-  deleteFromBasketByBookId
+  deleteFromBasketByBookId,
+  checkoutBasket
 };
