@@ -19,6 +19,7 @@ const {
 const { connectToDb } = require("../../database/connection/dbConnection.js");
 const { updateBookRating, filters } = require("../utilities/utils.js");
 const endpoints = require("../../endpoints.json");
+const stripe = require("stripe")(process.env.STRIPE_API_KEY);
 
 connectToDb();
 
@@ -525,7 +526,7 @@ async function sendToBasket(productId, quantity) {
       existingItem.quantity += quantity;
     } else {
       // If the item doesn't exist, add it to the items array
-      basket.items.push({ product: productId, quantity: quantity });
+      basket.items.push({ product: productId, quantity: quantity, description: book.title, price: book.price });
     }
 
     await basket.save();
@@ -584,6 +585,71 @@ async function removeFromBasketById(book_id) {
   }
 }
 
+async function payment() {
+  try {
+    const user = auth.currentUser;
+    if (!user) {
+      return Promise.reject({
+        status: 401,
+        msg: "You need to be logged in to checkout the basket",
+      });
+    }
+    const fbUid = user.uid;
+    const basket = await Basket.findOne({ fbUid: fbUid });
+    if (!basket)
+      return Promise.reject({ status: 404, msg: "Shopping cart not found" });
+    const items = basket.items
+    if (items.length === 0) {
+      return Promise.reject({ status: 400, msg : "No items in the basket"})
+    }
+
+    const createdProducts = await Promise.all(
+      items.map(async (book) => {
+        const bookInDb = await fetchBookById(book.product.toString());
+        return await stripe.products.create({
+          name: bookInDb.title,
+          images: [
+            "https://i.pinimg.com/564x/08/97/ac/0897ac613a913be42c85408bd8dd2012.jpg",
+          ],
+          shippable: true,
+        });
+      })
+    );
+    const createdPrices = await Promise.all(
+      createdProducts.map(async (product, index) => {
+        return await stripe.prices.create({
+          unit_amount: items[index].price * 100,
+          currency: "gbp",
+          product: product.id,
+        });
+      })
+    );
+
+
+    const session = await stripe.checkout.sessions.create({
+      success_url:
+        "https://i.pinimg.com/564x/ad/58/d5/ad58d5fa341bb0de51d29dc1c7b18fe1.jpg",
+      cancel_url:
+        "https://i.pinimg.com/564x/ad/58/d5/ad58d5fa341bb0de51d29dc1c7b18fe1.jpg",
+      line_items: createdPrices.map((item, index) => {
+        return {
+          price: item.id,
+          quantity: items[index].quantity,
+        };
+      }),
+      mode: "payment",
+      shipping_address_collection: {
+        allowed_countries: ["GB"], // Specify allowed countries for shipping
+      },
+      // Pass shipping address here
+    });
+    return session.url
+
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 module.exports = {
   fetchEndpoints,
   saveNewUser,
@@ -602,4 +668,5 @@ module.exports = {
   createBasket,
   sendToBasket,
   removeFromBasketById,
+  payment
 };

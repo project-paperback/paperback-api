@@ -20,6 +20,7 @@ const {
   updateReviewById,
   addToBasket,
   deleteFromBasketByBookId,
+  checkoutBasket,
 } = require("./controllers/controller");
 const customErrorHandler = require("./utilities/customErrors");
 const app = express();
@@ -28,7 +29,7 @@ app.use(cors());
 // Endpoints
 app.get("/api", getEndpoints);
 
-//Users and Authentication
+// Users and Authentication
 app.post("/api/create_account", postNewUser);
 app.post("/api/sign_in", userSignIn);
 app.post("/api/sign_out", userSignOut);
@@ -45,9 +46,11 @@ app.post("/api/reviews/:book_id", postReviewByBookId);
 app.get("/api/reviews/:book_id", getReviewsByBookId);
 app.delete("/api/reviews/:review_id", deleteReviewById);
 app.patch("/api/reviews/:review_id", updateReviewById);
-//Basket
+// Basket
 app.post("/api/add_to_basket", addToBasket);
 app.delete("/api/remove_from_basket/:book_id", deleteFromBasketByBookId);
+// Checkout
+app.post("/api/checkout", checkoutBasket);
 
 //payment
 app.post("/api/checkout", async (req, res) => {
