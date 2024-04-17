@@ -84,7 +84,11 @@ async function removeUserProfile() {
       const userRemoved = await User.findOneAndDelete({ fbUid: fireUid });
       const basketRemoved = await Basket.findOneAndDelete({ fbUid: fireUid });
       await deleteUser(user);
-      return userRemoved;
+      return {
+        userFirstName: userRemoved.userFirstName,
+        userLastName: userRemoved.userLastName,
+        userEmail: userRemoved.userEmail,
+      };
     } else {
       throw new Error("Unauthorized request");
     }
@@ -245,7 +249,6 @@ async function changeAccountEmail(newEmailAdress) {
   try {
     const user = auth.currentUser;
     if (user) {
-      console.log(user);
       await verifyBeforeUpdateEmail(user, newEmailAdress);
 
       return "Check your email inbox and click on the verification link to finish the update";
@@ -331,7 +334,10 @@ async function fetchReviewsByBookId(book_id) {
     if (isBookInCollection === null) {
       return Promise.reject({ status: 404, msg: "Book not found" });
     }
-    const reviews = await Review.find({ bookId: book_id });
+    const reviews = await Review.find(
+      { bookId: book_id },
+      "userName reviewBody createdAt rating bookId"
+    );
     if (reviews.length === 0) {
       return Promise.reject({
         status: 200,
@@ -381,7 +387,14 @@ async function sendBookReview(book_id, reviewBody, rating) {
       });
       await review.save();
       await updateBookRating(book_id);
-      return review;
+      return {
+        _id: review._id,
+        bookId: review.bookId,
+        userName: review.userName,
+        reviewBody: review.reviewBody,
+        createdAt: review.createdAt,
+        rating: review.rating,
+      };
     } else {
       throw new Error("You need to be logged in to leave a review");
     }
@@ -415,7 +428,14 @@ async function removeReviewById(review_id) {
       const bookId = findReview.bookId;
       const deletedReview = await Review.findByIdAndDelete(review_id);
       await updateBookRating(bookId);
-      return deletedReview;
+      return {
+        _id: deletedReview._id,
+        bookId: deletedReview.bookId,
+        userName: deletedReview.userName,
+        reviewBody: deletedReview.reviewBody,
+        createdAt: deletedReview.createdAt,
+        rating: deletedReview.rating,
+      };
     } else {
       throw new Error("You need to be logged in to delete a review");
     }
@@ -443,7 +463,6 @@ async function amendReviewById(review_id, reviewBody, rating) {
     if (user) {
       const uid = user.uid;
       const findReview = await Review.findById(review_id);
-      console.log(findReview);
       if (!findReview) {
         return Promise.reject({ status: 404, msg: "Review not found" });
       }
@@ -461,7 +480,14 @@ async function amendReviewById(review_id, reviewBody, rating) {
         { new: true }
       );
       await updateBookRating(bookId);
-      return updatedReview;
+      return {
+        _id: updatedReview._id,
+        bookId: updatedReview.bookId,
+        userName: updatedReview.userName,
+        reviewBody: updatedReview.reviewBody,
+        createdAt: updatedReview.createdAt,
+        rating: updatedReview.rating,
+      };
     } else {
       throw new Error("You need to be logged in to modify a review");
     }

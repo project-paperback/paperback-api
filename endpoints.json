@@ -37,11 +37,40 @@
   "PATCH /api/account_details ": {
     "description": "Returns an object representing the user upon successful request",
     "queries": "No queries needed for this endpoint",
+    "important": "You need to be logged in to use this endpoint",
     "exampleResponse": {
       "updatedUser": {
         "userFirstName": "Mango",
         "userLastName": "Cafe",
         "userEmail": "lohobi3577@acname.com"
+      }
+    }
+  },
+  "PATCH /api/change_email": {
+    "description": "Sends a verification email upon successful request",
+    "queries": "No queries needed for this endpoint",
+    "important": "You need to be logged in to use this endpoint",
+    "exampleResponse": {
+      "msg": "Check your email inbox and click on the verification link to finish the update"
+    }
+  },
+  "PATCH /api/change_password": {
+    "description": "Returns a confirmation message upon successful request",
+    "queries": "No queries needed for this endpoint",
+    "important": "You need to be logged in to use this endpoint",
+    "exampleResponse": {
+      "msg": "Password has been updates successfully!"
+    }
+  },
+  "DELETE api/delete_account": {
+    "description": "Returns an object representing the deleted user upon successful request",
+    "queries": "No queries needed for this endpoint",
+    "important": "You need to be logged in to use this endpoint",
+    "exampleResponse": {
+      "removed": {
+        "userFirstName": "Josh",
+        "userLastName": "Taylor",
+        "userEmail": "yojet41754@rartg.com"
       }
     }
   },
@@ -82,6 +111,103 @@
           "__v": 0
         }
       ]
+    }
+  },
+  "GET /api/books/:book_id ": {
+    "description": "Returns a book object upon successful request",
+    "queries": "No queries needed for this endpoint, uses params instead",
+    "exampleResponse": {
+      "book": {
+        "_id": "book_id",
+        "title": "The Routledge International Handbook of the Sociology of Education",
+        "authors": [
+          "Michael W. Apple",
+          "Stephen J. Ball",
+          "Luis Armando Gandin"
+        ],
+        "publisher": "Routledge",
+        "publishedDate": "2009-12-16",
+        "description": "This collection ...",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781135179717"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1135179719"
+          }
+        ],
+        "pageCount": 447,
+        "printType": "BOOK",
+        "categories": ["Education"],
+        "language": "en",
+        "price": 0.18,
+        "quantity": 50,
+        "rating": 0,
+        "timesRated": 0,
+        "__v": 0
+      }
+    }
+  },
+  "GET /api/reviews/:book_id ": {
+    "description": "Returns a book object upon successful request",
+    "queries": "No queries needed for this endpoint, uses params instead",
+    "exampleResponse": {
+      "reviews": [
+        {
+          "_id": "6616c10e43f0029e992cc5d6",
+          " bookId": "660f2648fe68600fce64dc5b",
+          "userName": "Noah Moore",
+          "reviewBody": "This book is a slog. Dense writing and heavy on details. I got lost in the jargon and struggled to finish it.",
+          "createdAt": "2024-04-10T16:40:46.082Z",
+          "rating": 2
+        }
+      ]
+    }
+  },
+  "POST /api/reviews/:book_id": {
+    "description": "Returns the posted review object back",
+    "queries": "No queries needed for this endpoint, uses params instead",
+    "important": "You need to be logged in to use this endpoint",
+    "exampleResponse": {
+      "review": {
+        "bookId": "660f2648fe68600fce64dc67",
+        "userName": "Amelia Rodriguez",
+        "reviewBody": "Art as Experience is a wonderful book!",
+        "createdAt": "2024-04-17T19:31:25.884Z",
+        "rating": 5
+      }
+    }
+  },
+  "DELETE /api/reviews/:review_id": {
+    "description": "Returns the deleted review object back",
+    "queries": "No queries needed for this endpoint, uses params instead",
+    "important": "You need to be logged in to use this endpoint",
+    "exampleResponse": {
+      "deletedReview": {
+        "_id": "6616c575c3d614ea715bb40c",
+        "bookId": "660f2648fe68600fce64dc5b",
+        "userName": "Amelia Rodriguez",
+        "reviewBody": "Great book for those new to medieval philosophy. Explains the key concepts in a clear and concise way. Would benefit from including some primary sources though.",
+        "createdAt": "2024-04-10T16:40:48.978Z",
+        "rating": 4
+      }
+    }
+  },
+  "PATCH /api/reviews/:review_id": {
+    "description": "Returns the updated review object back",
+    "queries": "No queries needed for this endpoint, uses params instead",
+    "important": "You need to be logged in to use this endpoint",
+    "exampleResponse": {
+      "updatedReview": {
+        "_id": "6616c575c3d614ea715bb40c",
+        "bookId": "660f2648fe68600fce64dc5f",
+        "userName": "Sakura Nakamura",
+        "reviewBody": "Buen plot, buenos personajes",
+        "createdAt": "2024-04-10T16:59:33.024Z",
+        "rating": 4
+      }
     }
   }
 }

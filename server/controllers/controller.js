@@ -92,7 +92,12 @@ async function modifyAccountDetails(req, res, next) {
 async function modifyAccountPassword(req, res, next) {
   try {
     const { newPassword, currentPassword, confirmPassword } = req.body;
-    await changeAccountPassword(newPassword, currentPassword, confirmPassword);
+    const changePassword = await changeAccountPassword(
+      newPassword,
+      currentPassword,
+      confirmPassword
+    );
+    res.status(200).send({ msg: changePassword });
   } catch (error) {
     next(error);
   }
