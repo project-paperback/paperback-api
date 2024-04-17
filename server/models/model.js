@@ -589,18 +589,12 @@ async function payment() {
       items.map(async item => {
       return await fetchBookById(item.product.toString())
     }))
-    console.log(items)
     booksInBasket.forEach((book, index) => {
-      if (book.quantity >= items[index].quantity){
-        book.quantity -= items[index].quantity
-      } else{
-        console.log("Item not available")
-        return Promise.reject({ status : 400, msg: "Item not available"})
+      if (items[index].quantity > book.quantity){
+        throw new Error("Item not available")
       }
     })
-    
-    console.log(booksInBasket, "<<<<<<<<< 591");
-
+ 
     const createdProducts = await Promise.all(
       items.map(async (book) => {
         const bookInDb = await fetchBookById(book.product.toString());
@@ -613,6 +607,7 @@ async function payment() {
         });
       })
     );
+
     const createdPrices = await Promise.all(
       createdProducts.map(async (product, index) => {
         return await stripe.prices.create({
@@ -646,6 +641,28 @@ async function payment() {
 
   } catch (error) {
     console.log(error);
+    if(error.message === "Item not available"){
+      return Promise.reject({status : 400, msg: "Item not available"})
+    }
+  }
+}
+
+async function amendStock(event){
+  console.log(event.type)
+  if(event.type === "payment_intent.succeeded"){
+    const user = auth.currentUser;
+    const fbUid = user.uid;
+    const basket = await Basket.findOne({ fbUid: fbUid });
+
+    const booksInBasket = await Promise.all (
+      basket.items.map(async item => {
+      return await fetchBookById(item.product.toString())
+    }))
+
+    booksInBasket.forEach((book, index) => {
+        book.quantity -= basket.items[index].quantity
+        book.save()
+    })
   }
 }
 
@@ -667,5 +684,6 @@ module.exports = {
   createBasket,
   sendToBasket,
   removeFromBasketById,
-  payment
+  payment,
+  amendStock
 };

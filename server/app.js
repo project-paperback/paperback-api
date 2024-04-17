@@ -18,6 +18,7 @@ const {
   addToBasket,
   deleteFromBasketByBookId,
   checkoutBasket,
+  updateStock,
 } = require("./controllers/controller");
 const customErrorHandler = require("./utilities/customErrors");
 const app = express();
@@ -48,38 +49,7 @@ app.post("/api/add_to_basket", addToBasket);
 app.delete("/api/remove_from_basket/:book_id", deleteFromBasketByBookId);
 // Checkout
 app.post("/api/checkout", checkoutBasket);
-
-
-const stripe = require("stripe")(process.env.STRIPE_API_KEY);
-const endpointSecret = 'whsec_3e0b4eb83e012f294c436adf4de5e7021c34f246a70bb8a9b1b3acc9df6f695c'; // Obtain from your Stripe Dashboard
-
-// Webhook endpoint
-app.post('/webhook', (req, res) => {
-  const event = req.body
-  // Handle the event
-  switch (event.type) {
-    case 'checkout.session.completed':
-      console.log('COMPLETED')
-      break;
-    case 'checkout.session.failed':
-      console.log('FAILED')
-      break;
-    case 'checkout.session.cancelled':
-      console.log('CANCELLED')
-      break;
-    case 'checkout.session.expired':
-      console.log('EXPIRED');
-      break;
-    default:
-      // Unexpected event type
-      console.log('DEFAULT VALUE')
-      return res.status(400).end();
-  }
-
-  // Return a 200 response to acknowledge receipt of the event
-  res.json({ received: true });
-});
-
+app.post("/webhook", updateStock);
 
 app.all("/*", (req, res) => {
   res.status(404).send({ msg: "Not found" });
