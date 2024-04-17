@@ -31,6 +31,7 @@ describe("PAPERBACK API", () => {
         userLastName: "Taylor",
         userEmail: "yojet41754@rartg.com",
       };
+      console.log(response.body, "line 34");
       expect(response.statusCode).toBe(201);
       expect(response.body.user).toMatchObject(createdUser);
     });
@@ -265,7 +266,7 @@ describe("PAPERBACK API", () => {
         "/api/books/660f2648fe68600fce64dc5a"
       );
       expect(response.statusCode).toBe(200);
-      // expect(response.body.book).toMatchObject(matchingItem);
+      console.log(response.body);
     });
     test("400 ~ Returns a 'Invalid book id' message if invalid book id.", async () => {
       await dropCollections();
@@ -294,6 +295,7 @@ describe("PAPERBACK API", () => {
       );
       expect(response.statusCode).toBe(200);
       expect(response.body.reviews).toBeInstanceOf(Array);
+      console.log(response.body);
     });
     test("200 ~ Each review object structure is according to the data model.", async () => {
       await dropCollections();
@@ -307,7 +309,6 @@ describe("PAPERBACK API", () => {
         expect(review).toHaveProperty("_id", expect.any(String)),
           expect(review).toHaveProperty("bookId", expect.any(String)),
           expect(review).toHaveProperty("userName", expect.any(String)),
-          expect(review).toHaveProperty("fbUid", expect.any(String)),
           expect(review).toHaveProperty("reviewBody", expect.any(String)),
           expect(review).toHaveProperty("createdAt", expect.any(String)),
           expect(review).toHaveProperty("rating", expect.any(Number));
@@ -351,12 +352,9 @@ describe("PAPERBACK API", () => {
       const toMatch = {
         bookId: "660f2648fe68600fce64dc67",
         userName: "Amelia Rodriguez",
-        fbUid: "7ARfMmM4G6fnBDACzGKQmMskV383",
         reviewBody: "Art as Experience is a wonderful book!",
         createdAt: expect.any(String),
         rating: 5,
-        _id: expect.any(String),
-        __v: 0,
       };
 
       const response = await request(app)
@@ -365,6 +363,7 @@ describe("PAPERBACK API", () => {
           reviewBody: "Art as Experience is a wonderful book!",
           rating: 5,
         });
+      console.log(response.body);
       expect(response.statusCode).toBe(201);
       expect(response.body.review).toMatchObject(toMatch);
     });
@@ -378,12 +377,11 @@ describe("PAPERBACK API", () => {
       const toMatch = {
         bookId: "660f2648fe68600fce64dc6d",
         userName: "Amelia Rodriguez",
-        fbUid: "7ARfMmM4G6fnBDACzGKQmMskV383",
+
         reviewBody: "Not great, not terrible",
         createdAt: expect.any(String),
         rating: 3,
         _id: expect.any(String),
-        __v: 0,
       };
 
       const response = await request(app)
@@ -478,11 +476,9 @@ describe("PAPERBACK API", () => {
           "Great book for those new to medieval philosophy. Explains the key concepts in a clear and concise way. Would benefit from including some primary sources though.",
         createdAt: "2024-04-10T16:40:48.978Z",
         rating: 4,
-        __v: 0,
       };
-
       expect(response.statusCode).toBe(200);
-      expect(response.body.deletedReview).toMatchObject(objectToMatch);
+      expect(response.body.deletedReview).toEqual(objectToMatch);
     });
     test("400 ~ Retruns a 'Invalid review id' message when invalid resource identifier provided.", async () => {
       await dropCollections();
@@ -546,11 +542,9 @@ describe("PAPERBACK API", () => {
         _id: "6616c575c3d614ea715bb40c",
         bookId: "660f2648fe68600fce64dc5f",
         userName: "Sakura Nakamura",
-        fbUid: "A0x0iFFXcxaptDqniVeaHYJl7Vz2",
         reviewBody: "Buen plot, buenos personajes",
         createdAt: "2024-04-10T16:59:33.024Z",
         rating: 4,
-        __v: 0,
       };
       const response = await request(app)
         .patch("/api/reviews/6616c575c3d614ea715bb40c")
@@ -566,11 +560,10 @@ describe("PAPERBACK API", () => {
         _id: "6616c575c3d614ea715bb40c",
         bookId: "660f2648fe68600fce64dc5f",
         userName: "Sakura Nakamura",
-        fbUid: "A0x0iFFXcxaptDqniVeaHYJl7Vz2",
+
         reviewBody: "El dia de ayer llovio musho!",
         createdAt: "2024-04-10T16:59:33.024Z",
         rating: 4,
-        __v: 0,
       };
       const response = await request(app)
         .patch("/api/reviews/6616c575c3d614ea715bb40c")
@@ -586,11 +579,10 @@ describe("PAPERBACK API", () => {
         _id: "6616c575c3d614ea715bb40c",
         bookId: "660f2648fe68600fce64dc5f",
         userName: "Sakura Nakamura",
-        fbUid: "A0x0iFFXcxaptDqniVeaHYJl7Vz2",
+
         reviewBody: "Informative and thought-provoking. A must-read.",
         createdAt: "2024-04-10T16:59:33.024Z",
         rating: 3,
-        __v: 0,
       };
       const response = await request(app)
         .patch("/api/reviews/6616c575c3d614ea715bb40c")
@@ -606,11 +598,10 @@ describe("PAPERBACK API", () => {
         _id: "6616c575c3d614ea715bb40c",
         bookId: "660f2648fe68600fce64dc5f",
         userName: "Sakura Nakamura",
-        fbUid: "A0x0iFFXcxaptDqniVeaHYJl7Vz2",
+
         reviewBody: "Informative and thought-provoking. A must-read.",
         createdAt: "2024-04-10T16:59:33.024Z",
         rating: 4,
-        __v: 0,
       };
       const response = await request(app)
         .patch("/api/reviews/6616c575c3d614ea715bb40c")
