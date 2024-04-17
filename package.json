@@ -18,7 +18,8 @@
     "express": "^4.19.1",
     "firebase": "^10.9.0",
     "mongodb": "^6.5.0",
-    "mongoose": "^8.2.2"
+    "mongoose": "^8.2.2",
+    "stripe": "^15.1.0"
   },
   "devDependencies": {
     "jest": "^29.7.0",

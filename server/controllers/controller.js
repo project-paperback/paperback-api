@@ -1,4 +1,3 @@
-// const { auth } = require("../../Firebase/Manage_Users/FBauthentication");
 const {
   fetchEndpoints,
   saveNewUser,
@@ -34,7 +33,6 @@ async function getEndpoints(req, res, next) {
 async function postNewUser(req, res, next) {
   try {
     const { userFirstName, userLastName, userEmail, password } = req.body;
-    console.log(req.body, "from controller 21");
     const newUser = await saveNewUser(
       userFirstName,
       userLastName,
@@ -113,7 +111,25 @@ async function modifyAccountEmail(req, res, next) {
 
 async function getBooks(req, res, next) {
   try {
-    const books = await fetchBooks();
+    const {
+      publisher,
+      rating,
+      categories,
+      year_from,
+      year_to,
+      min_price,
+      max_price,
+    } = req.query;
+
+    const books = await fetchBooks(
+      publisher,
+      rating,
+      categories,
+      year_from,
+      year_to,
+      min_price,
+      max_price
+    );
 
     res.status(200).send({ books: books });
   } catch (error) {
@@ -197,7 +213,7 @@ async function deleteFromBasketByBookId(req, res, next) {
     const deletedBook = await removeFromBasketById(book_id);
     res.status(200).send({ msg: "Item removed from the basket successfully!" });
   } catch (error) {
-    next(error)
+    next(error);
   }
 }
 
@@ -217,5 +233,5 @@ module.exports = {
   deleteReviewById,
   updateReviewById,
   addToBasket,
-  deleteFromBasketByBookId
+  deleteFromBasketByBookId,
 };

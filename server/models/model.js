@@ -17,7 +17,7 @@ const {
   Basket,
 } = require("../../database/schema/schemaIndex.js");
 const { connectToDb } = require("../../database/connection/dbConnection.js");
-const { updateBookRating } = require("../utilities/utils.js");
+const { updateBookRating, filters } = require("../utilities/utils.js");
 const endpoints = require("../../endpoints.json");
 
 connectToDb();
@@ -268,9 +268,27 @@ async function changeAccountEmail(newEmailAdress) {
 
 //=================== [  BOOK MODELS  ] ===================//
 
-async function fetchBooks() {
+async function fetchBooks(
+  publisher,
+  rating,
+  categories,
+  year_from,
+  year_to,
+  min_price,
+  max_price
+) {
   try {
-    const books = await Book.find({});
+    const queries = filters(
+      publisher,
+      rating,
+      categories,
+      year_from,
+      year_to,
+      min_price,
+      max_price
+    );
+    console.log(queries);
+    const books = await Book.find(queries).limit(10);
     if (books.length === 0) {
       return Promise.reject({
         status: 200,
