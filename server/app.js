@@ -49,7 +49,7 @@ app.post("/api/add_to_basket", addToBasket);
 app.delete("/api/remove_from_basket/:book_id", deleteFromBasketByBookId);
 // Checkout
 app.post("/api/checkout", checkoutBasket);
-app.post("/webhook", updateStock);
+app.post("/api/webhook/update_stock", updateStock);
 
 app.all("/*", (req, res) => {
   res.status(404).send({ msg: "Not found" });

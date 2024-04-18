@@ -621,9 +621,9 @@ async function payment() {
 
     const session = await stripe.checkout.sessions.create({
       success_url:
-        "https://i.pinimg.com/564x/ad/58/d5/ad58d5fa341bb0de51d29dc1c7b18fe1.jpg",
+        "https://i.pinimg.com/564x/ad/58/d5/ad58d5fa341bb0de51d29dc1c7b18fe1.jpg", // TO BE CHANGED
       cancel_url:
-        "https://i.pinimg.com/564x/ad/58/d5/ad58d5fa341bb0de51d29dc1c7b18fe1.jpg",
+        "https://i.pinimg.com/564x/ad/58/d5/ad58d5fa341bb0de51d29dc1c7b18fe1.jpg", // TO BE CHANGED
       line_items: createdPrices.map((item, index) => {
         return {
           price: item.id,
