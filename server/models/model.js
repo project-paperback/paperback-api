@@ -695,10 +695,7 @@ async function payment() {
 }
 
 async function amendStock(event){
-  // let event;
-  
-  // event = stripe.webhooks.constructEvent(payload, sig, process.env.STRIPE_WEBHOOK_SECRET);
-  console.log(event.type, "I AM THE EVENT FROM LINE 701")
+  console.log(event.type)
 
   if(event.type === "payment_intent.succeeded"){
     const user = auth.currentUser;
