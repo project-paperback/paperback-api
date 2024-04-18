@@ -37,7 +37,6 @@ app.post("/api/sign_out", userSignOut);
 app.patch("/api/account_details", modifyAccountDetails);
 app.patch("/api/change_email", modifyAccountEmail);
 app.patch("/api/change_password", modifyAccountPassword);
-
 app.delete("/api/delete_account", deleteUserProfile);
 // Books
 app.get("/api/books", getBooks);

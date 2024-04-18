@@ -18,6 +18,7 @@ const {
   removeFromBasketById,
   payment,
   amendStock,
+  createShoppingHistory,
 } = require("../models/model");
 
 async function getEndpoints(req, res, next) {
@@ -43,6 +44,7 @@ async function postNewUser(req, res, next) {
     );
 
     const basket = await createBasket(newUser);
+    const shoppingHistory = await createShoppingHistory(newUser);
     const userResponse = {
       userFirstName: newUser.userFirstName,
       userLastName: newUser.userLastName,
@@ -229,21 +231,21 @@ async function deleteFromBasketByBookId(req, res, next) {
 async function checkoutBasket(req, res, next) {
   try {
     const paymentURL = await payment();
-    res.status(200).redirect(paymentURL)
+    res.status(200).redirect(paymentURL);
     console.log(paymentURL);
   } catch (error) {
     console.log(error);
-    next(error)
+    next(error);
   }
 }
 
 async function updateStock(req, res, next) {
   try {
     const event = req.body;
-    await amendStock(event)
+    await amendStock(event);
     res.json({ received: true });
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 
@@ -265,5 +267,5 @@ module.exports = {
   addToBasket,
   deleteFromBasketByBookId,
   checkoutBasket,
-  updateStock
+  updateStock,
 };

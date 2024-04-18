@@ -6,6 +6,7 @@ const userSchema = new Schema({
   userLastName: String,
   userEmail: String,
   basketId: { type: Schema.Types.ObjectId },
+  shoppingHistoryId: { type: Schema.Types.ObjectId },
 });
 const User = model("User", userSchema);
 

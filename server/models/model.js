@@ -15,6 +15,7 @@ const {
   Review,
   User,
   Basket,
+  ShoppingHistory,
 } = require("../../database/schema/schemaIndex.js");
 const { connectToDb } = require("../../database/connection/dbConnection.js");
 const { updateBookRating, filters } = require("../utilities/utils.js");
@@ -83,6 +84,9 @@ async function removeUserProfile() {
       const fireUid = user.uid;
       const userRemoved = await User.findOneAndDelete({ fbUid: fireUid });
       const basketRemoved = await Basket.findOneAndDelete({ fbUid: fireUid });
+      const shoppingHistoryRemoved = await ShoppingHistory.findOneAndDelete({
+        fbUid: fireUid,
+      });
       await deleteUser(user);
       return {
         userFirstName: userRemoved.userFirstName,
@@ -524,6 +528,19 @@ async function createBasket(userNew) {
     console.log(error);
   }
 }
+async function createShoppingHistory(userNew) {
+  try {
+    const shoppingHistory = await ShoppingHistory.create({
+      userEmail: userNew.userEmail,
+      fbUid: userNew.fbUid,
+      userId: userNew._id,
+      purchasedItems: [],
+    });
+    return shoppingHistory;
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 async function sendToBasket(productId, quantity) {
   try {
@@ -552,7 +569,12 @@ async function sendToBasket(productId, quantity) {
       existingItem.quantity += quantity;
     } else {
       // If the item doesn't exist, add it to the items array
-      basket.items.push({ product: productId, quantity: quantity, description: book.title, price: book.price });
+      basket.items.push({
+        product: productId,
+        quantity: quantity,
+        description: book.title,
+        price: book.price,
+      });
     }
 
     await basket.save();
@@ -624,24 +646,24 @@ async function payment() {
     const basket = await Basket.findOne({ fbUid: fbUid });
     if (!basket)
       return Promise.reject({ status: 404, msg: "Shopping cart not found" });
-    const items = basket.items
+    const items = basket.items;
     if (items.length === 0) {
-      return Promise.reject({ status: 400, msg : "No items in the basket"})
+      return Promise.reject({ status: 400, msg: "No items in the basket" });
     }
 
-    const booksInBasket = await Promise.all (
-      items.map(async item => {
-          
-      const book = await fetchBookById(item.product.toString())
-      console.log(book, "I am the book from line 636");
-      return book
-    }))
+    const booksInBasket = await Promise.all(
+      items.map(async (item) => {
+        const book = await fetchBookById(item.product.toString());
+        console.log(book, "I am the book from line 636");
+        return book;
+      })
+    );
     booksInBasket.forEach((book, index) => {
-      if (items[index].quantity > book.quantity){
-        throw new Error("Item not available")
+      if (items[index].quantity > book.quantity) {
+        throw new Error("Item not available");
       }
-    })
- 
+    });
+
     const createdProducts = await Promise.all(
       items.map(async (book) => {
         const bookInDb = await fetchBookById(book.product.toString());
@@ -665,7 +687,6 @@ async function payment() {
       })
     );
 
-
     const session = await stripe.checkout.sessions.create({
       success_url:
         "https://i.pinimg.com/564x/ad/58/d5/ad58d5fa341bb0de51d29dc1c7b18fe1.jpg", // TO BE CHANGED
@@ -678,40 +699,49 @@ async function payment() {
         };
       }),
       mode: "payment",
-      expires_at: Math.floor(Date.now() / 1000) + (30 * 60), // Expires in 30 minutes
+      expires_at: Math.floor(Date.now() / 1000) + 30 * 60, // Expires in 30 minutes
       shipping_address_collection: {
         allowed_countries: ["GB"], // Specify allowed countries for shipping
       },
       // Pass shipping address here
     });
-    return session.url
-
+    return session.url;
   } catch (error) {
     console.log(error);
-    if(error.message === "Item not available"){
-      return Promise.reject({status : 400, msg: "Item not available"})
+    if (error.message === "Item not available") {
+      return Promise.reject({ status: 400, msg: "Item not available" });
     }
   }
 }
 
-async function amendStock(event){
-  console.log(event.type)
+async function amendStock(event) {
+  console.log(event.type);
 
-  if(event.type === "payment_intent.succeeded"){
+  if (event.type === "payment_intent.succeeded") {
     const user = auth.currentUser;
     const fbUid = user.uid;
     const basket = await Basket.findOne({ fbUid: fbUid });
+    const shoppingHistory = await ShoppingHistory.findOne({ fbUid: fbUid });
 
-    const booksInBasket = await Promise.all (
-      basket.items.map(async item => {
-      return await fetchBookById(item.product.toString())
-    }))
+    const booksInBasket = await Promise.all(
+      basket.items.map(async (item) => {
+        return await fetchBookById(item.product.toString());
+      })
+    );
 
     booksInBasket.forEach((book, index) => {
-        book.quantity -= basket.items[index].quantity
-        book.save()
-    })
-
+      book.quantity -= basket.items[index].quantity;
+      shoppingHistory.purchasedItems.push({
+        product: book.id,
+        quantity: basket.items[index].quantity,
+        description: book.title,
+        price: book.price,
+      });
+      book.save();
+    });
+    shoppingHistory.purchaseDate = new Date();
+    shoppingHistory.invoiceUrl = "";
+    shoppingHistory.save();
     basket.items = [];
     basket.save();
   }
@@ -736,5 +766,6 @@ module.exports = {
   sendToBasket,
   removeFromBasketById,
   payment,
-  amendStock
+  amendStock,
+  createShoppingHistory,
 };
