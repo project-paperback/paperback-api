@@ -631,7 +631,10 @@ async function payment() {
 
     const booksInBasket = await Promise.all (
       items.map(async item => {
-      return await fetchBookById(item.product.toString())
+          
+      const book = await fetchBookById(item.product.toString())
+      console.log(book, "I am the book from line 636");
+      return book
     }))
     booksInBasket.forEach((book, index) => {
       if (items[index].quantity > book.quantity){
