@@ -239,7 +239,16 @@ async function checkoutBasket(req, res, next) {
 
 async function updateStock(req, res, next) {
   try {
-    const event = req.body;
+
+    const payload = req.body;
+    const sig = req.headers['stripe-signature'];
+  
+    let event;
+  
+    event = stripe.webhooks.constructEvent(payload, sig, process.env.STRIPE_WEBHOOK_SECRET);
+    console.log(event, "I AM THE EVENT FROM LINE 249")
+
+    // const event = req.body;
     await amendStock(event)
     res.json({ received: true });
   } catch (error) {
