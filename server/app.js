@@ -21,6 +21,7 @@ const {
   addToBasket,
   deleteFromBasketByBookId,
   checkoutBasket,
+  updateStock,
 } = require("./controllers/controller");
 const customErrorHandler = require("./utilities/customErrors");
 const app = express();
@@ -51,6 +52,7 @@ app.post("/api/add_to_basket", addToBasket);
 app.delete("/api/remove_from_basket/:book_id", deleteFromBasketByBookId);
 // Checkout
 app.post("/api/checkout", checkoutBasket);
+app.post("/api/webhook/update_stock", updateStock);
 
 //payment
 app.post("/api/checkout", async (req, res) => {

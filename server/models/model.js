@@ -629,6 +629,16 @@ async function payment() {
       return Promise.reject({ status: 400, msg : "No items in the basket"})
     }
 
+    const booksInBasket = await Promise.all (
+      items.map(async item => {
+      return await fetchBookById(item.product.toString())
+    }))
+    booksInBasket.forEach((book, index) => {
+      if (items[index].quantity > book.quantity){
+        throw new Error("Item not available")
+      }
+    })
+ 
     const createdProducts = await Promise.all(
       items.map(async (book) => {
         const bookInDb = await fetchBookById(book.product.toString());
@@ -641,6 +651,7 @@ async function payment() {
         });
       })
     );
+
     const createdPrices = await Promise.all(
       createdProducts.map(async (product, index) => {
         return await stripe.prices.create({
@@ -654,9 +665,9 @@ async function payment() {
 
     const session = await stripe.checkout.sessions.create({
       success_url:
-        "https://i.pinimg.com/564x/ad/58/d5/ad58d5fa341bb0de51d29dc1c7b18fe1.jpg",
+        "https://i.pinimg.com/564x/ad/58/d5/ad58d5fa341bb0de51d29dc1c7b18fe1.jpg", // TO BE CHANGED
       cancel_url:
-        "https://i.pinimg.com/564x/ad/58/d5/ad58d5fa341bb0de51d29dc1c7b18fe1.jpg",
+        "https://i.pinimg.com/564x/ad/58/d5/ad58d5fa341bb0de51d29dc1c7b18fe1.jpg", // TO BE CHANGED
       line_items: createdPrices.map((item, index) => {
         return {
           price: item.id,
@@ -664,6 +675,7 @@ async function payment() {
         };
       }),
       mode: "payment",
+      expires_at: Math.floor(Date.now() / 1000) + (30 * 60), // Expires in 30 minutes
       shipping_address_collection: {
         allowed_countries: ["GB"], // Specify allowed countries for shipping
       },
@@ -673,6 +685,28 @@ async function payment() {
 
   } catch (error) {
     console.log(error);
+    if(error.message === "Item not available"){
+      return Promise.reject({status : 400, msg: "Item not available"})
+    }
+  }
+}
+
+async function amendStock(event){
+  console.log(event.type)
+  if(event.type === "payment_intent.succeeded"){
+    const user = auth.currentUser;
+    const fbUid = user.uid;
+    const basket = await Basket.findOne({ fbUid: fbUid });
+
+    const booksInBasket = await Promise.all (
+      basket.items.map(async item => {
+      return await fetchBookById(item.product.toString())
+    }))
+
+    booksInBasket.forEach((book, index) => {
+        book.quantity -= basket.items[index].quantity
+        book.save()
+    })
   }
 }
 
@@ -694,5 +728,6 @@ module.exports = {
   createBasket,
   sendToBasket,
   removeFromBasketById,
-  payment
+  payment,
+  amendStock
 };

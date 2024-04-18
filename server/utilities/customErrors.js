@@ -76,6 +76,10 @@ function customErrorHandler(error, request, response, next) {
         msg: "Invalid book Id, input must be a 24 character hex string, 12 byte Uint8Array, or an integer",
       });
     }
+    //checkout
+    if (error.msg === "Item not available"){
+      response.status(400).send({ msg : "Item not available"});
+    }
   }
 
   //==================== [ 401 ERRORS ] ====================//

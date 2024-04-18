@@ -17,6 +17,7 @@ const {
   sendToBasket,
   removeFromBasketById,
   payment,
+  amendStock,
 } = require("../models/model");
 
 async function getEndpoints(req, res, next) {
@@ -228,9 +229,21 @@ async function deleteFromBasketByBookId(req, res, next) {
 async function checkoutBasket(req, res, next) {
   try {
     const paymentURL = await payment();
+    res.status(200).redirect(paymentURL)
     console.log(paymentURL);
   } catch (error) {
     console.log(error);
+    next(error)
+  }
+}
+
+async function updateStock(req, res, next) {
+  try {
+    const event = req.body;
+    await amendStock(event)
+    res.json({ received: true });
+  } catch (error) {
+    console.log(error)
   }
 }
 
@@ -251,5 +264,6 @@ module.exports = {
   updateReviewById,
   addToBasket,
   deleteFromBasketByBookId,
-  checkoutBasket
+  checkoutBasket,
+  updateStock
 };
