@@ -711,6 +711,9 @@ async function amendStock(event){
         book.quantity -= basket.items[index].quantity
         book.save()
     })
+
+    basket.items = [];
+    basket.save();
   }
 }
 
