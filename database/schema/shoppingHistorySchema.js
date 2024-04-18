@@ -8,7 +8,7 @@ const shoppingHistorySchema = new Schema({
     ref: "User",
     required: true,
   },
-  purchasedItems: [
+  purchaseHistory: [
     {
       product: {
         type: Schema.Types.ObjectId,
@@ -24,8 +24,6 @@ const shoppingHistorySchema = new Schema({
       price: Number,
     },
   ],
-  purchaseDate: Date,
-  invoiceUrl: String,
 });
 
 const ShoppingHistory = model("ShoppingHistory", shoppingHistorySchema);

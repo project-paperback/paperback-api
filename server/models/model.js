@@ -732,10 +732,12 @@ async function amendStock(event) {
     booksInBasket.forEach((book, index) => {
       book.quantity -= basket.items[index].quantity;
       shoppingHistory.purchasedItems.push({
-        product: book.id,
-        quantity: basket.items[index].quantity,
-        description: book.title,
-        price: book.price,
+        purchase: {
+          product: book.id,
+          quantity: basket.items[index].quantity,
+          description: book.title,
+          price: book.price,
+        },
       });
       book.save();
     });
