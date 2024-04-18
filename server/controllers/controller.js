@@ -239,7 +239,7 @@ async function checkoutBasket(req, res, next) {
 
 async function updateStock(req, res, next) {
   try {
-    const payload = req.body;
+    const payload = req.rawBody;
     const payloadString = JSON.stringify(payload);
     const sig = req.headers['stripe-signature'];
 
