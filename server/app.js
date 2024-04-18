@@ -54,36 +54,6 @@ app.delete("/api/remove_from_basket/:book_id", deleteFromBasketByBookId);
 app.post("/api/checkout", checkoutBasket);
 app.post("/api/webhook/update_stock", updateStock);
 
-//payment
-app.post("/api/checkout", async (req, res) => {
-  const product = await stripe.products.create({
-    name: "Harry Potter",
-    description: "Harry Potter 1st Book, hardcover",
-  });
-
-  const price = await stripe.prices.create({
-    unit_amount: 1000,
-    currency: "gbp",
-    product: product.id,
-  });
-
-  console.log(price.id);
-
-  const session = await stripe.checkout.sessions.create({
-    line_items: [
-      {
-        price: price.id,
-        quantity: 1,
-      },
-    ],
-    mode: "payment",
-    success_url: `http://localhost:8080/api/books`,
-    cancel_url: `http://localhost:8080/api/books`,
-  });
-  console.log(session.url);
-  res.redirect(303, session.url);
-});
-
 app.all("/*", (req, res) => {
   res.status(404).send({ msg: "Not found" });
 });
