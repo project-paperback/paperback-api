@@ -239,13 +239,13 @@ async function checkoutBasket(req, res, next) {
 
 async function updateStock(req, res, next) {
   try {
-    const payload = req.rawBody;
-    const payloadString = JSON.stringify(payload);
-    const sig = req.headers['stripe-signature'];
+    // const payload = req.rawBody;
+    // const payloadString = JSON.stringify(payload);
+    // const sig = req.headers['stripe-signature'];
 
-    // const event = req.body;
-    // await amendStock(event)
-    await amendStock(payloadString, sig)
+    const event = req.body;
+    await amendStock(event)
+    // await amendStock(payloadString, sig)
     res.json({ received: true });
   } catch (error) {
     console.log(error)

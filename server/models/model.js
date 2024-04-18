@@ -694,10 +694,10 @@ async function payment() {
   }
 }
 
-async function amendStock(payload, sig){
-  let event;
+async function amendStock(event){
+  // let event;
   
-  event = stripe.webhooks.constructEvent(payload, sig, process.env.STRIPE_WEBHOOK_SECRET);
+  // event = stripe.webhooks.constructEvent(payload, sig, process.env.STRIPE_WEBHOOK_SECRET);
   console.log(event.type, "I AM THE EVENT FROM LINE 701")
 
   if(event.type === "payment_intent.succeeded"){
