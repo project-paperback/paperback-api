@@ -658,7 +658,6 @@ async function payment() {
     const booksInBasket = await Promise.all(
       items.map(async (item) => {
         const book = await fetchBookById(item.product.toString());
-        console.log(book, "I am the book from line 636");
         return book;
       })
     );
@@ -684,7 +683,7 @@ async function payment() {
     const createdPrices = await Promise.all(
       createdProducts.map(async (product, index) => {
         return await stripe.prices.create({
-          unit_amount: items[index].price * 100,
+          unit_amount: Math.floor(items[index].price * 100),
           currency: "gbp",
           product: product.id,
         });
@@ -719,11 +718,9 @@ async function payment() {
 }
 
 async function amendStock(event) {
-  // console.log(event.data.object, "line 719");
-
-  if (event.type === "payment_intent.succeeded") {
-    const user = auth.currentUser;
-    const fbUid = user.uid;
+  const user = auth.currentUser;
+  const fbUid = user.uid;
+  if (event.type === "charge.succeeded") {
     const basket = await Basket.findOne({ fbUid: fbUid });
     const shoppingHistory = await ShoppingHistory.findOne({ fbUid: fbUid });
 
@@ -748,8 +745,9 @@ async function amendStock(event) {
       fbUid,
       productsBought: products,
       purchaseDate: new Date(),
+      invoiceUrl: event.data.object.receipt_url,
     });
-
+    console.log(order, "line 750");
     await order.save();
     await shoppingHistory.updateOne({ $push: { purchaseHistory: order } });
     basket.items = [];
