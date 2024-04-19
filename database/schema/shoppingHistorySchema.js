@@ -8,22 +8,7 @@ const shoppingHistorySchema = new Schema({
     ref: "User",
     required: true,
   },
-  purchaseHistory: [
-    {
-      product: {
-        type: Schema.Types.ObjectId,
-        ref: "Book",
-        required: true,
-      },
-      quantity: {
-        type: Number,
-        required: true,
-        default: 1,
-      },
-      description: String,
-      price: Number,
-    },
-  ],
+  purchaseHistory: [{ order: { type: Schema.Types.ObjectId, ref: "Orders" } }],
 });
 
 const ShoppingHistory = model("ShoppingHistory", shoppingHistorySchema);
