@@ -3,6 +3,7 @@ const Review = require("./reviewSchema");
 const User = require("./userSchema");
 const Basket = require("./basketShema");
 const ShoppingHistory = require("./shoppingHistorySchema");
+const Orders = require("./ordersSchema");
 
 module.exports = {
   Book,
@@ -10,4 +11,5 @@ module.exports = {
   User,
   Basket,
   ShoppingHistory,
+  Orders,
 };

@@ -16,6 +16,7 @@ const {
   User,
   Basket,
   ShoppingHistory,
+  Orders,
 } = require("../../database/schema/schemaIndex.js");
 const { connectToDb } = require("../../database/connection/dbConnection.js");
 const { updateBookRating, filters } = require("../utilities/utils.js");
@@ -536,6 +537,9 @@ async function createShoppingHistory(userNew) {
       userId: userNew._id,
       purchasedItems: [],
     });
+    await User.findByIdAndUpdate(userNew._id, {
+      shoppingHistoryId: shoppingHistory._id,
+    });
     return shoppingHistory;
   } catch (error) {
     console.log(error);
@@ -715,7 +719,7 @@ async function payment() {
 }
 
 async function amendStock(event) {
-  console.log(event.type);
+  // console.log(event.data.object, "line 719");
 
   if (event.type === "payment_intent.succeeded") {
     const user = auth.currentUser;
@@ -729,21 +733,25 @@ async function amendStock(event) {
       })
     );
 
-    booksInBasket.forEach((book, index) => {
+    booksInBasket.forEach(async (book, index) => {
       book.quantity -= basket.items[index].quantity;
-      shoppingHistory.purchasedItems.push({
-        purchase: {
-          product: book.id,
-          quantity: basket.items[index].quantity,
-          description: book.title,
-          price: book.price,
-        },
-      });
       book.save();
     });
-    shoppingHistory.purchaseDate = new Date();
-    shoppingHistory.invoiceUrl = "";
-    shoppingHistory.save();
+    const products = booksInBasket.map((item, index) => ({
+      product: item._id,
+      quantity: basket.items[index].quantity,
+      description: item.title, // Assuming 'title' is the property for book description
+      price: item.price,
+    }));
+
+    const order = new Orders({
+      fbUid,
+      productsBought: products,
+      purchaseDate: new Date(),
+    });
+
+    await order.save();
+    await shoppingHistory.updateOne({ $push: { purchaseHistory: order } });
     basket.items = [];
     basket.save();
   }
