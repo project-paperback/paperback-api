@@ -7,7 +7,7 @@ This API is the foundation for the Paperback project. In this repository you wil
 Clone this repository by running the following command on your terminal:
 
 ```
-git clone https://github.com/AlfredoGvz/paperback.git
+git clone https://github.com/project-paperback/paperback-api.git
 ```
 
 Once cloned, get into the root directory of the project and run the following command on the terminal to install the node modules:
