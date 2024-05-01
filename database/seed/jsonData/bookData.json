@@ -23,10 +23,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.4.0.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=Us-MAgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=Us-MAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/06/9e/a6/069ea64d9ceb2592d7c14dd1a4fecb4d.jpg",
+      "https://i.pinimg.com/736x/8e/be/dd/8ebeddf131f66d3dce3eaf94819c8c1b.jpg",
+      "https://i.pinimg.com/564x/f6/3c/c8/f63cc85193a3e165d4eb519e04f0d3a5.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=Us-MAgAAQBAJ&printsec=frontcover&dq=subject:education&hl=&cd=1&source=gbs_api",
@@ -62,10 +61,9 @@
     "allowAnonLogging": false,
     "contentVersion": "4.3.4.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=UB0Tao4oikEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=UB0Tao4oikEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/c3/fd/d4/c3fdd4c861ba65cc6784574728aad073.jpg",
+      "https://i.pinimg.com/564x/cf/a6/15/cfa61564ddbfc2f27cdbe40d9f6aadcd.jpg",
+      "https://i.pinimg.com/564x/8a/ef/6d/8aef6db57884a44b8cd52c0a81bb876f.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=UB0Tao4oikEC&printsec=frontcover&dq=subject:education&hl=&cd=2&source=gbs_api",
@@ -101,10 +99,9 @@
     "allowAnonLogging": false,
     "contentVersion": "1.5.7.0.preview.3",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=DaOY4DQ-MKAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=DaOY4DQ-MKAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/61/87/22/6187229d4202fcad2b7b07d971b01f99.jpg",
+      "https://i.pinimg.com/564x/46/98/61/469861407f71c7f99e9c5c28cde6219e.jpg",
+      "https://i.pinimg.com/564x/e7/77/97/e7779754f58d7ba9926a1edbc5a5b5df.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=DaOY4DQ-MKAC&printsec=frontcover&dq=subject:education&hl=&cd=3&source=gbs_api",
@@ -140,10 +137,9 @@
     "allowAnonLogging": true,
     "contentVersion": "1.9.2.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=8YX2QwGgD8AC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=8YX2QwGgD8AC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/31/72/81/31728195768c82c9946217c6bb47fe8c.jpg",
+      "https://i.pinimg.com/564x/0e/93/04/0e9304e3152f27466b9c4aa6fc6bd98a.jpg",
+      "https://i.pinimg.com/564x/5b/d9/cf/5bd9cfd56cdeb1a529302df849208334.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=8YX2QwGgD8AC&printsec=frontcover&dq=subject:education&hl=&cd=4&source=gbs_api",
@@ -179,10 +175,9 @@
     "allowAnonLogging": false,
     "contentVersion": "1.17.3.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=b0d_BwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=b0d_BwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/41/df/a6/41dfa6a1de89f1892c6e881447160a5a.jpg",
+      "https://i.pinimg.com/564x/ee/8d/30/ee8d309acb82fdeadc4cc0c0c8a338a7.jpg",
+      "https://i.pinimg.com/564x/42/c9/8b/42c98b7738ef3b2ff34c6e3ed38fb350.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=b0d_BwAAQBAJ&printsec=frontcover&dq=subject:education&hl=&cd=5&source=gbs_api",
@@ -218,10 +213,9 @@
     "allowAnonLogging": true,
     "contentVersion": "1.4.5.0.preview.3",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=dS5oGk1733gC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=dS5oGk1733gC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/c3/fd/d4/c3fdd4c861ba65cc6784574728aad073.jpg",
+      "https://i.pinimg.com/564x/1b/a3/e1/1ba3e15eb3b7b7270608ea098092d74b.jpg",
+      "https://i.pinimg.com/564x/81/a0/e8/81a0e81cb7b9b47d6a578a3c007d2ea6.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=dS5oGk1733gC&printsec=frontcover&dq=subject:education&hl=&cd=6&source=gbs_api",
@@ -257,10 +251,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.1.0.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=uOgTDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=uOgTDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/06/9e/a6/069ea64d9ceb2592d7c14dd1a4fecb4d.jpg",
+      "https://i.pinimg.com/736x/8e/be/dd/8ebeddf131f66d3dce3eaf94819c8c1b.jpg",
+      "https://i.pinimg.com/564x/f6/3c/c8/f63cc85193a3e165d4eb519e04f0d3a5.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=uOgTDAAAQBAJ&printsec=frontcover&dq=subject:education&hl=&cd=7&source=gbs_api",
@@ -296,10 +289,9 @@
     "allowAnonLogging": true,
     "contentVersion": "0.2.3.0.preview.3",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=_XtqDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=_XtqDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/c3/fd/d4/c3fdd4c861ba65cc6784574728aad073.jpg",
+      "https://i.pinimg.com/564x/cf/a6/15/cfa61564ddbfc2f27cdbe40d9f6aadcd.jpg",
+      "https://i.pinimg.com/564x/8a/ef/6d/8aef6db57884a44b8cd52c0a81bb876f.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=_XtqDwAAQBAJ&printsec=frontcover&dq=subject:education&hl=&cd=8&source=gbs_api",
@@ -335,10 +327,9 @@
     "allowAnonLogging": true,
     "contentVersion": "1.5.7.0.preview.3",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=-rgSoUm0ptYC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=-rgSoUm0ptYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/61/87/22/6187229d4202fcad2b7b07d971b01f99.jpg",
+      "https://i.pinimg.com/564x/46/98/61/469861407f71c7f99e9c5c28cde6219e.jpg",
+      "https://i.pinimg.com/564x/e7/77/97/e7779754f58d7ba9926a1edbc5a5b5df.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=-rgSoUm0ptYC&printsec=frontcover&dq=subject:education&hl=&cd=9&source=gbs_api",
@@ -374,10 +365,9 @@
     "allowAnonLogging": true,
     "contentVersion": "preview-1.0.0",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=8UEjEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=8UEjEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/3b/25/9d/3b259d809171999bb2f3b7b724765bed.jpg",
+      "https://i.pinimg.com/564x/d7/57/19/d75719d859ed05e358f3c9a239ae76a2.jpg",
+      "https://i.pinimg.com/564x/50/64/f4/5064f4131d05915019f9e0875e90bdcb.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=8UEjEAAAQBAJ&printsec=frontcover&dq=subject:education&hl=&cd=10&source=gbs_api",
@@ -413,10 +403,9 @@
     "allowAnonLogging": true,
     "contentVersion": "2.3.4.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=eq0n9Ck79ysC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=eq0n9Ck79ysC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/31/72/81/31728195768c82c9946217c6bb47fe8c.jpg",
+      "https://i.pinimg.com/564x/0e/93/04/0e9304e3152f27466b9c4aa6fc6bd98a.jpg",
+      "https://i.pinimg.com/564x/5b/d9/cf/5bd9cfd56cdeb1a529302df849208334.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=eq0n9Ck79ysC&printsec=frontcover&dq=subject:art&hl=&cd=1&source=gbs_api",
@@ -452,10 +441,9 @@
     "allowAnonLogging": true,
     "contentVersion": "1.9.9.0.preview.2",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=BwO5BAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=BwO5BAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/e8/e4/90/e8e4909553f91c9e4c11b8797e02e110.jpg",
+      "https://i.pinimg.com/736x/bc/37/dd/bc37dde87f37c52529ad49427cab23e2.jpg",
+      "https://i.pinimg.com/736x/43/6c/92/436c92104e560a1b2c7bc01b53b574a1.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=BwO5BAAAQBAJ&printsec=frontcover&dq=subject:art&hl=&cd=2&source=gbs_api",
@@ -491,10 +479,9 @@
     "allowAnonLogging": true,
     "contentVersion": "2.8.9.0.preview.3",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=ZC3DAgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=ZC3DAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/28/a7/80/28a780ab8c88a09d4a3330f2e8024b9f.jpg",
+      "https://i.pinimg.com/564x/4a/c9/7f/4ac97f0fba6b2466f3f6c55b3935fb81.jpg",
+      "https://i.pinimg.com/564x/3b/1a/26/3b1a26adf4bec46c8ee273358685f30c.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=ZC3DAgAAQBAJ&printsec=frontcover&dq=subject:art&hl=&cd=3&source=gbs_api",
@@ -530,10 +517,9 @@
     "allowAnonLogging": false,
     "contentVersion": "1.2.1.0.preview.0",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=hJtPEAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=hJtPEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-      }
+      "https://i.pinimg.com/736x/85/35/de/8535de3aab44e6dd93d74e54980d9fcf.jpg",
+      "https://i.pinimg.com/564x/25/9a/18/259a1897151136a959da384fd626dc82.jpg",
+      "https://i.pinimg.com/564x/34/f3/bb/34f3bb545bd3bd541dc866a389e4b21b.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=hJtPEAAAQBAJ&dq=subject:art&hl=&cd=4&source=gbs_api",
@@ -569,10 +555,9 @@
     "allowAnonLogging": false,
     "contentVersion": "preview-1.0.0",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=6H9eDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=6H9eDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/03/90/fd/0390fd80a363694f30303cf68edd3813.jpg",
+      "https://i.pinimg.com/736x/b3/0d/53/b30d531588acc423234b21844efb890d.jpg",
+      "https://i.pinimg.com/564x/0f/56/13/0f56136a2bbdaf602b4beb07ea64ef91.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=6H9eDwAAQBAJ&printsec=frontcover&dq=subject:art&hl=&cd=5&source=gbs_api",
@@ -608,10 +593,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.6.9.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=bbPOIDcQ69MC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=bbPOIDcQ69MC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/c3/fd/d4/c3fdd4c861ba65cc6784574728aad073.jpg",
+      "https://i.pinimg.com/564x/1b/a3/e1/1ba3e15eb3b7b7270608ea098092d74b.jpg",
+      "https://i.pinimg.com/564x/81/a0/e8/81a0e81cb7b9b47d6a578a3c007d2ea6.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=bbPOIDcQ69MC&printsec=frontcover&dq=subject:art&hl=&cd=6&source=gbs_api",
@@ -643,10 +627,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.1.1.0.preview.3",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=IOl1EAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=IOl1EAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/41/df/a6/41dfa6a1de89f1892c6e881447160a5a.jpg",
+      "https://i.pinimg.com/564x/ee/8d/30/ee8d309acb82fdeadc4cc0c0c8a338a7.jpg",
+      "https://i.pinimg.com/564x/42/c9/8b/42c98b7738ef3b2ff34c6e3ed38fb350.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=IOl1EAAAQBAJ&printsec=frontcover&dq=subject:art&hl=&cd=7&source=gbs_api",
@@ -682,10 +665,9 @@
     "allowAnonLogging": false,
     "contentVersion": "preview-1.0.0",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=mlByDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=mlByDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/06/9e/a6/069ea64d9ceb2592d7c14dd1a4fecb4d.jpg",
+      "https://i.pinimg.com/736x/8e/be/dd/8ebeddf131f66d3dce3eaf94819c8c1b.jpg",
+      "https://i.pinimg.com/564x/f6/3c/c8/f63cc85193a3e165d4eb519e04f0d3a5.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=mlByDwAAQBAJ&printsec=frontcover&dq=subject:art&hl=&cd=8&source=gbs_api",
@@ -721,10 +703,9 @@
     "allowAnonLogging": false,
     "contentVersion": "1.2.2.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=UkA3EX8WZMIC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=UkA3EX8WZMIC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/c3/fd/d4/c3fdd4c861ba65cc6784574728aad073.jpg",
+      "https://i.pinimg.com/564x/cf/a6/15/cfa61564ddbfc2f27cdbe40d9f6aadcd.jpg",
+      "https://i.pinimg.com/564x/8a/ef/6d/8aef6db57884a44b8cd52c0a81bb876f.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=UkA3EX8WZMIC&printsec=frontcover&dq=subject:art&hl=&cd=9&source=gbs_api",
@@ -760,10 +741,9 @@
     "allowAnonLogging": false,
     "contentVersion": "2.5.5.0.preview.3",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=nFaQ2fVI1hwC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=nFaQ2fVI1hwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/61/87/22/6187229d4202fcad2b7b07d971b01f99.jpg",
+      "https://i.pinimg.com/564x/46/98/61/469861407f71c7f99e9c5c28cde6219e.jpg",
+      "https://i.pinimg.com/564x/e7/77/97/e7779754f58d7ba9926a1edbc5a5b5df.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=nFaQ2fVI1hwC&printsec=frontcover&dq=subject:art&hl=&cd=10&source=gbs_api",
@@ -799,10 +779,9 @@
     "allowAnonLogging": false,
     "contentVersion": "1.4.11.0.preview.3",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=WdM_qxJq8T8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=WdM_qxJq8T8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/3b/25/9d/3b259d809171999bb2f3b7b724765bed.jpg",
+      "https://i.pinimg.com/564x/d7/57/19/d75719d859ed05e358f3c9a239ae76a2.jpg",
+      "https://i.pinimg.com/564x/50/64/f4/5064f4131d05915019f9e0875e90bdcb.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=WdM_qxJq8T8C&printsec=frontcover&dq=subject:fantasy&hl=&cd=1&source=gbs_api",
@@ -838,10 +817,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.11.9.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=Mo7D3Je7_DMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=Mo7D3Je7_DMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/31/72/81/31728195768c82c9946217c6bb47fe8c.jpg",
+      "https://i.pinimg.com/564x/0e/93/04/0e9304e3152f27466b9c4aa6fc6bd98a.jpg",
+      "https://i.pinimg.com/564x/5b/d9/cf/5bd9cfd56cdeb1a529302df849208334.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=Mo7D3Je7_DMC&printsec=frontcover&dq=subject:fantasy&hl=&cd=2&source=gbs_api",
@@ -877,10 +855,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.6.6.0.preview.3",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=1FrJqcRILaoC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=1FrJqcRILaoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/e8/e4/90/e8e4909553f91c9e4c11b8797e02e110.jpg",
+      "https://i.pinimg.com/736x/bc/37/dd/bc37dde87f37c52529ad49427cab23e2.jpg",
+      "https://i.pinimg.com/736x/43/6c/92/436c92104e560a1b2c7bc01b53b574a1.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=1FrJqcRILaoC&printsec=frontcover&dq=subject:fantasy&hl=&cd=4&source=gbs_api",
@@ -916,10 +893,9 @@
     "allowAnonLogging": false,
     "contentVersion": "1.3.3.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=D8GIcKPGNR8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=D8GIcKPGNR8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/28/a7/80/28a780ab8c88a09d4a3330f2e8024b9f.jpg",
+      "https://i.pinimg.com/564x/4a/c9/7f/4ac97f0fba6b2466f3f6c55b3935fb81.jpg",
+      "https://i.pinimg.com/564x/3b/1a/26/3b1a26adf4bec46c8ee273358685f30c.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=D8GIcKPGNR8C&printsec=frontcover&dq=subject:fantasy&hl=&cd=6&source=gbs_api",
@@ -951,10 +927,9 @@
     "allowAnonLogging": false,
     "contentVersion": "1.2.2.0.preview.0",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=bIZiAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=bIZiAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-      }
+      "https://i.pinimg.com/736x/85/35/de/8535de3aab44e6dd93d74e54980d9fcf.jpg",
+      "https://i.pinimg.com/564x/25/9a/18/259a1897151136a959da384fd626dc82.jpg",
+      "https://i.pinimg.com/564x/34/f3/bb/34f3bb545bd3bd541dc866a389e4b21b.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=bIZiAAAAMAAJ&dq=subject:fantasy&hl=&cd=7&source=gbs_api",
@@ -990,10 +965,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.4.2.0.preview.0",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=6hzSk8MupCYC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=6hzSk8MupCYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/c3/fd/d4/c3fdd4c861ba65cc6784574728aad073.jpg",
+      "https://i.pinimg.com/564x/1b/a3/e1/1ba3e15eb3b7b7270608ea098092d74b.jpg",
+      "https://i.pinimg.com/564x/81/a0/e8/81a0e81cb7b9b47d6a578a3c007d2ea6.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=6hzSk8MupCYC&printsec=frontcover&dq=subject:fantasy&hl=&cd=8&source=gbs_api",
@@ -1029,10 +1003,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.1.1.0.preview.2",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=80oscBYjQZEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=80oscBYjQZEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/06/9e/a6/069ea64d9ceb2592d7c14dd1a4fecb4d.jpg",
+      "https://i.pinimg.com/736x/8e/be/dd/8ebeddf131f66d3dce3eaf94819c8c1b.jpg",
+      "https://i.pinimg.com/564x/f6/3c/c8/f63cc85193a3e165d4eb519e04f0d3a5.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=80oscBYjQZEC&printsec=frontcover&dq=subject:fantasy&hl=&cd=10&source=gbs_api",
@@ -1068,10 +1041,9 @@
     "allowAnonLogging": false,
     "contentVersion": "1.7.12.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=WADDM36d3TAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=WADDM36d3TAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/c3/fd/d4/c3fdd4c861ba65cc6784574728aad073.jpg",
+      "https://i.pinimg.com/564x/cf/a6/15/cfa61564ddbfc2f27cdbe40d9f6aadcd.jpg",
+      "https://i.pinimg.com/564x/8a/ef/6d/8aef6db57884a44b8cd52c0a81bb876f.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=WADDM36d3TAC&printsec=frontcover&dq=subject:history&hl=&cd=1&source=gbs_api",
@@ -1107,10 +1079,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.1.1.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=SVR2cjWptCAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=SVR2cjWptCAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/61/87/22/6187229d4202fcad2b7b07d971b01f99.jpg",
+      "https://i.pinimg.com/564x/46/98/61/469861407f71c7f99e9c5c28cde6219e.jpg",
+      "https://i.pinimg.com/564x/e7/77/97/e7779754f58d7ba9926a1edbc5a5b5df.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=SVR2cjWptCAC&printsec=frontcover&dq=subject:history&hl=&cd=2&source=gbs_api",
@@ -1146,10 +1117,9 @@
     "allowAnonLogging": false,
     "contentVersion": "1.7.6.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=H5pyUIY4THYC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=H5pyUIY4THYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/3b/25/9d/3b259d809171999bb2f3b7b724765bed.jpg",
+      "https://i.pinimg.com/564x/d7/57/19/d75719d859ed05e358f3c9a239ae76a2.jpg",
+      "https://i.pinimg.com/564x/50/64/f4/5064f4131d05915019f9e0875e90bdcb.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=H5pyUIY4THYC&printsec=frontcover&dq=subject:history&hl=&cd=3&source=gbs_api",
@@ -1185,10 +1155,9 @@
     "allowAnonLogging": false,
     "contentVersion": "1.4.5.0.preview.3",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=9F7i5u4sOtgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=9F7i5u4sOtgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/31/72/81/31728195768c82c9946217c6bb47fe8c.jpg",
+      "https://i.pinimg.com/564x/0e/93/04/0e9304e3152f27466b9c4aa6fc6bd98a.jpg",
+      "https://i.pinimg.com/564x/5b/d9/cf/5bd9cfd56cdeb1a529302df849208334.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=9F7i5u4sOtgC&printsec=frontcover&dq=subject:history&hl=&cd=4&source=gbs_api",
@@ -1224,10 +1193,9 @@
     "allowAnonLogging": false,
     "contentVersion": "4.3.4.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=UB0Tao4oikEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=UB0Tao4oikEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/31/72/81/31728195768c82c9946217c6bb47fe8c.jpg",
+      "https://i.pinimg.com/564x/0e/93/04/0e9304e3152f27466b9c4aa6fc6bd98a.jpg",
+      "https://i.pinimg.com/564x/5b/d9/cf/5bd9cfd56cdeb1a529302df849208334.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=UB0Tao4oikEC&printsec=frontcover&dq=subject:history&hl=&cd=5&source=gbs_api",
@@ -1268,10 +1236,9 @@
     "allowAnonLogging": false,
     "contentVersion": "2.2.2.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=iOoGH4GckQgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=iOoGH4GckQgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/28/a7/80/28a780ab8c88a09d4a3330f2e8024b9f.jpg",
+      "https://i.pinimg.com/564x/4a/c9/7f/4ac97f0fba6b2466f3f6c55b3935fb81.jpg",
+      "https://i.pinimg.com/564x/3b/1a/26/3b1a26adf4bec46c8ee273358685f30c.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=iOoGH4GckQgC&printsec=frontcover&dq=subject:history&hl=&cd=6&source=gbs_api",
@@ -1307,10 +1274,9 @@
     "allowAnonLogging": false,
     "contentVersion": "preview-1.0.0",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=UTjUAwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=UTjUAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/41/df/a6/41dfa6a1de89f1892c6e881447160a5a.jpg",
+      "https://i.pinimg.com/564x/ee/8d/30/ee8d309acb82fdeadc4cc0c0c8a338a7.jpg",
+      "https://i.pinimg.com/564x/42/c9/8b/42c98b7738ef3b2ff34c6e3ed38fb350.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=UTjUAwAAQBAJ&printsec=frontcover&dq=subject:history&hl=&cd=7&source=gbs_api",
@@ -1346,10 +1312,9 @@
     "allowAnonLogging": true,
     "contentVersion": "0.4.4.0.preview.3",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=WK_mPzxMFfoC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=WK_mPzxMFfoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/c3/fd/d4/c3fdd4c861ba65cc6784574728aad073.jpg",
+      "https://i.pinimg.com/564x/1b/a3/e1/1ba3e15eb3b7b7270608ea098092d74b.jpg",
+      "https://i.pinimg.com/564x/81/a0/e8/81a0e81cb7b9b47d6a578a3c007d2ea6.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=WK_mPzxMFfoC&printsec=frontcover&dq=subject:history&hl=&cd=8&source=gbs_api",
@@ -1385,10 +1350,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.5.0.0.preview.0",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=La1CWinaDR4C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=La1CWinaDR4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/03/90/fd/0390fd80a363694f30303cf68edd3813.jpg",
+      "https://i.pinimg.com/736x/b3/0d/53/b30d531588acc423234b21844efb890d.jpg",
+      "https://i.pinimg.com/564x/0f/56/13/0f56136a2bbdaf602b4beb07ea64ef91.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=La1CWinaDR4C&printsec=frontcover&dq=subject:history&hl=&cd=9&source=gbs_api",
@@ -1429,10 +1393,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.9.8.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=3yUkzNLiY4oC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=3yUkzNLiY4oC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/736x/85/35/de/8535de3aab44e6dd93d74e54980d9fcf.jpg",
+      "https://i.pinimg.com/564x/25/9a/18/259a1897151136a959da384fd626dc82.jpg",
+      "https://i.pinimg.com/564x/34/f3/bb/34f3bb545bd3bd541dc866a389e4b21b.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=3yUkzNLiY4oC&printsec=frontcover&dq=subject:history&hl=&cd=10&source=gbs_api",
@@ -1473,10 +1436,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.3.1.0.preview.0",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=gvB1DQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=gvB1DQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/06/9e/a6/069ea64d9ceb2592d7c14dd1a4fecb4d.jpg",
+      "https://i.pinimg.com/736x/8e/be/dd/8ebeddf131f66d3dce3eaf94819c8c1b.jpg",
+      "https://i.pinimg.com/564x/f6/3c/c8/f63cc85193a3e165d4eb519e04f0d3a5.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=gvB1DQAAQBAJ&printsec=frontcover&dq=subject:horror&hl=&cd=1&source=gbs_api",
@@ -1512,10 +1474,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.5.1.0.preview.0",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=1YP-hfna5ewC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=1YP-hfna5ewC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/c3/fd/d4/c3fdd4c861ba65cc6784574728aad073.jpg",
+      "https://i.pinimg.com/564x/cf/a6/15/cfa61564ddbfc2f27cdbe40d9f6aadcd.jpg",
+      "https://i.pinimg.com/564x/8a/ef/6d/8aef6db57884a44b8cd52c0a81bb876f.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=1YP-hfna5ewC&dq=subject:horror&hl=&cd=2&source=gbs_api",
@@ -1551,10 +1512,9 @@
     "allowAnonLogging": false,
     "contentVersion": "1.6.3.0.preview.2",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=Rwcpd5zqrrkC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=Rwcpd5zqrrkC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/c3/fd/d4/c3fdd4c861ba65cc6784574728aad073.jpg",
+      "https://i.pinimg.com/564x/cf/a6/15/cfa61564ddbfc2f27cdbe40d9f6aadcd.jpg",
+      "https://i.pinimg.com/564x/8a/ef/6d/8aef6db57884a44b8cd52c0a81bb876f.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=Rwcpd5zqrrkC&printsec=frontcover&dq=subject:horror&hl=&cd=3&source=gbs_api",
@@ -1590,10 +1550,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.1.2.0.preview.0",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=F1MdBAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=F1MdBAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/61/87/22/6187229d4202fcad2b7b07d971b01f99.jpg",
+      "https://i.pinimg.com/564x/46/98/61/469861407f71c7f99e9c5c28cde6219e.jpg",
+      "https://i.pinimg.com/564x/e7/77/97/e7779754f58d7ba9926a1edbc5a5b5df.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=F1MdBAAAQBAJ&printsec=frontcover&dq=subject:horror&hl=&cd=4&source=gbs_api",
@@ -1625,10 +1584,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.3.2.0.preview.0",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=xFIN97PzxxYC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=xFIN97PzxxYC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/61/87/22/6187229d4202fcad2b7b07d971b01f99.jpg",
+      "https://i.pinimg.com/564x/46/98/61/469861407f71c7f99e9c5c28cde6219e.jpg",
+      "https://i.pinimg.com/564x/e7/77/97/e7779754f58d7ba9926a1edbc5a5b5df.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=xFIN97PzxxYC&dq=subject:horror&hl=&cd=7&source=gbs_api",
@@ -1664,10 +1622,9 @@
     "allowAnonLogging": false,
     "contentVersion": "preview-1.0.0",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=hlMdBAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=hlMdBAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/3b/25/9d/3b259d809171999bb2f3b7b724765bed.jpg",
+      "https://i.pinimg.com/564x/d7/57/19/d75719d859ed05e358f3c9a239ae76a2.jpg",
+      "https://i.pinimg.com/564x/50/64/f4/5064f4131d05915019f9e0875e90bdcb.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=hlMdBAAAQBAJ&printsec=frontcover&dq=subject:horror&hl=&cd=8&source=gbs_api",
@@ -1703,10 +1660,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.3.1.0.preview.0",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=4dHXkNcpIXgC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=4dHXkNcpIXgC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/31/72/81/31728195768c82c9946217c6bb47fe8c.jpg",
+      "https://i.pinimg.com/564x/0e/93/04/0e9304e3152f27466b9c4aa6fc6bd98a.jpg",
+      "https://i.pinimg.com/564x/5b/d9/cf/5bd9cfd56cdeb1a529302df849208334.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=4dHXkNcpIXgC&dq=subject:horror&hl=&cd=9&source=gbs_api",
@@ -1747,10 +1703,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.2.1.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=v4kmDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=v4kmDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/28/a7/80/28a780ab8c88a09d4a3330f2e8024b9f.jpg",
+      "https://i.pinimg.com/564x/4a/c9/7f/4ac97f0fba6b2466f3f6c55b3935fb81.jpg",
+      "https://i.pinimg.com/564x/3b/1a/26/3b1a26adf4bec46c8ee273358685f30c.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=v4kmDwAAQBAJ&printsec=frontcover&dq=subject:horror&hl=&cd=10&source=gbs_api",
@@ -1786,10 +1741,9 @@
     "allowAnonLogging": false,
     "contentVersion": "1.3.3.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=dW8M0BD4ozMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=dW8M0BD4ozMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/736x/85/35/de/8535de3aab44e6dd93d74e54980d9fcf.jpg",
+      "https://i.pinimg.com/564x/25/9a/18/259a1897151136a959da384fd626dc82.jpg",
+      "https://i.pinimg.com/564x/34/f3/bb/34f3bb545bd3bd541dc866a389e4b21b.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=dW8M0BD4ozMC&printsec=frontcover&dq=subject:literature&hl=&cd=1&source=gbs_api",
@@ -1825,10 +1779,9 @@
     "allowAnonLogging": false,
     "contentVersion": "1.4.4.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=bfpaLNJhassC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=bfpaLNJhassC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/03/90/fd/0390fd80a363694f30303cf68edd3813.jpg",
+      "https://i.pinimg.com/736x/b3/0d/53/b30d531588acc423234b21844efb890d.jpg",
+      "https://i.pinimg.com/564x/0f/56/13/0f56136a2bbdaf602b4beb07ea64ef91.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=bfpaLNJhassC&printsec=frontcover&dq=subject:literature&hl=&cd=2&source=gbs_api",
@@ -1860,10 +1813,9 @@
     "allowAnonLogging": false,
     "contentVersion": "2.3.2.0.preview.0",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=h8tlAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=h8tlAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/41/df/a6/41dfa6a1de89f1892c6e881447160a5a.jpg",
+      "https://i.pinimg.com/564x/ee/8d/30/ee8d309acb82fdeadc4cc0c0c8a338a7.jpg",
+      "https://i.pinimg.com/564x/42/c9/8b/42c98b7738ef3b2ff34c6e3ed38fb350.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=h8tlAAAAMAAJ&dq=subject:literature&hl=&cd=3&source=gbs_api",
@@ -1899,10 +1851,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.4.3.0.preview.3",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=KMGYBgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=KMGYBgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/06/9e/a6/069ea64d9ceb2592d7c14dd1a4fecb4d.jpg",
+      "https://i.pinimg.com/736x/8e/be/dd/8ebeddf131f66d3dce3eaf94819c8c1b.jpg",
+      "https://i.pinimg.com/564x/f6/3c/c8/f63cc85193a3e165d4eb519e04f0d3a5.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=KMGYBgAAQBAJ&printsec=frontcover&dq=subject:literature&hl=&cd=5&source=gbs_api",
@@ -1938,10 +1889,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.2.2.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=hym_DAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=hym_DAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/c3/fd/d4/c3fdd4c861ba65cc6784574728aad073.jpg",
+      "https://i.pinimg.com/564x/cf/a6/15/cfa61564ddbfc2f27cdbe40d9f6aadcd.jpg",
+      "https://i.pinimg.com/564x/8a/ef/6d/8aef6db57884a44b8cd52c0a81bb876f.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=hym_DAAAQBAJ&printsec=frontcover&dq=subject:literature&hl=&cd=6&source=gbs_api",
@@ -1977,10 +1927,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.2.0.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=AajtCwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=AajtCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/61/87/22/6187229d4202fcad2b7b07d971b01f99.jpg",
+      "https://i.pinimg.com/564x/46/98/61/469861407f71c7f99e9c5c28cde6219e.jpg",
+      "https://i.pinimg.com/564x/e7/77/97/e7779754f58d7ba9926a1edbc5a5b5df.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=AajtCwAAQBAJ&printsec=frontcover&dq=subject:literature&hl=&cd=7&source=gbs_api",
@@ -2012,10 +1961,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.4.2.0.preview.0",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=gvxgAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=gvxgAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/3b/25/9d/3b259d809171999bb2f3b7b724765bed.jpg",
+      "https://i.pinimg.com/564x/d7/57/19/d75719d859ed05e358f3c9a239ae76a2.jpg",
+      "https://i.pinimg.com/564x/50/64/f4/5064f4131d05915019f9e0875e90bdcb.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=gvxgAAAAMAAJ&dq=subject:literature&hl=&cd=8&source=gbs_api",
@@ -2051,10 +1999,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.2.0.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=UwQUDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=UwQUDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/31/72/81/31728195768c82c9946217c6bb47fe8c.jpg",
+      "https://i.pinimg.com/564x/0e/93/04/0e9304e3152f27466b9c4aa6fc6bd98a.jpg",
+      "https://i.pinimg.com/564x/5b/d9/cf/5bd9cfd56cdeb1a529302df849208334.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=UwQUDAAAQBAJ&printsec=frontcover&dq=subject:literature&hl=&cd=10&source=gbs_api",
@@ -2090,10 +2037,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.1.1.0.preview.3",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=JwXUEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=JwXUEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/e8/e4/90/e8e4909553f91c9e4c11b8797e02e110.jpg",
+      "https://i.pinimg.com/736x/bc/37/dd/bc37dde87f37c52529ad49427cab23e2.jpg",
+      "https://i.pinimg.com/736x/43/6c/92/436c92104e560a1b2c7bc01b53b574a1.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=JwXUEAAAQBAJ&printsec=frontcover&dq=subject:science&hl=&cd=1&source=gbs_api",
@@ -2129,10 +2075,9 @@
     "allowAnonLogging": true,
     "contentVersion": "2.44.36.0.preview.2",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=dWYyCwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=dWYyCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/28/a7/80/28a780ab8c88a09d4a3330f2e8024b9f.jpg",
+      "https://i.pinimg.com/564x/4a/c9/7f/4ac97f0fba6b2466f3f6c55b3935fb81.jpg",
+      "https://i.pinimg.com/564x/3b/1a/26/3b1a26adf4bec46c8ee273358685f30c.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=dWYyCwAAQBAJ&printsec=frontcover&dq=subject:science&hl=&cd=2&source=gbs_api",
@@ -2168,10 +2113,9 @@
     "allowAnonLogging": true,
     "contentVersion": "3.7.4.0.preview.3",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=JqB6Qy9z3TcC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=JqB6Qy9z3TcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/41/df/a6/41dfa6a1de89f1892c6e881447160a5a.jpg",
+      "https://i.pinimg.com/564x/ee/8d/30/ee8d309acb82fdeadc4cc0c0c8a338a7.jpg",
+      "https://i.pinimg.com/564x/42/c9/8b/42c98b7738ef3b2ff34c6e3ed38fb350.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=JqB6Qy9z3TcC&printsec=frontcover&dq=subject:science&hl=&cd=3&source=gbs_api",
@@ -2207,10 +2151,9 @@
     "allowAnonLogging": false,
     "contentVersion": "0.2.2.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=2V1tHqi4hLEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=2V1tHqi4hLEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/06/9e/a6/069ea64d9ceb2592d7c14dd1a4fecb4d.jpg",
+      "https://i.pinimg.com/736x/8e/be/dd/8ebeddf131f66d3dce3eaf94819c8c1b.jpg",
+      "https://i.pinimg.com/564x/f6/3c/c8/f63cc85193a3e165d4eb519e04f0d3a5.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=2V1tHqi4hLEC&printsec=frontcover&dq=subject:science&hl=&cd=4&source=gbs_api",
@@ -2251,10 +2194,9 @@
     "allowAnonLogging": true,
     "contentVersion": "1.12.13.0.preview.3",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=EUvOviwwc2cC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=EUvOviwwc2cC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/61/87/22/6187229d4202fcad2b7b07d971b01f99.jpg",
+      "https://i.pinimg.com/564x/46/98/61/469861407f71c7f99e9c5c28cde6219e.jpg",
+      "https://i.pinimg.com/564x/e7/77/97/e7779754f58d7ba9926a1edbc5a5b5df.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=EUvOviwwc2cC&printsec=frontcover&dq=subject:science&hl=&cd=5&source=gbs_api",
@@ -2290,10 +2232,9 @@
     "allowAnonLogging": false,
     "contentVersion": "1.4.6.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=JTdUXI9fz2kC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=JTdUXI9fz2kC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/e8/e4/90/e8e4909553f91c9e4c11b8797e02e110.jpg",
+      "https://i.pinimg.com/736x/bc/37/dd/bc37dde87f37c52529ad49427cab23e2.jpg",
+      "https://i.pinimg.com/736x/43/6c/92/436c92104e560a1b2c7bc01b53b574a1.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=JTdUXI9fz2kC&printsec=frontcover&dq=subject:science&hl=&cd=6&source=gbs_api",
@@ -2329,10 +2270,9 @@
     "allowAnonLogging": false,
     "contentVersion": "4.3.4.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=UB0Tao4oikEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=UB0Tao4oikEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/3b/25/9d/3b259d809171999bb2f3b7b724765bed.jpg",
+      "https://i.pinimg.com/564x/d7/57/19/d75719d859ed05e358f3c9a239ae76a2.jpg",
+      "https://i.pinimg.com/564x/50/64/f4/5064f4131d05915019f9e0875e90bdcb.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=UB0Tao4oikEC&printsec=frontcover&dq=subject:science&hl=&cd=7&source=gbs_api",
@@ -2368,10 +2308,9 @@
     "allowAnonLogging": false,
     "contentVersion": "1.1.1.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=RReJCgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=RReJCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/c3/fd/d4/c3fdd4c861ba65cc6784574728aad073.jpg",
+      "https://i.pinimg.com/564x/cf/a6/15/cfa61564ddbfc2f27cdbe40d9f6aadcd.jpg",
+      "https://i.pinimg.com/564x/8a/ef/6d/8aef6db57884a44b8cd52c0a81bb876f.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=RReJCgAAQBAJ&printsec=frontcover&dq=subject:science&hl=&cd=8&source=gbs_api",
@@ -2407,10 +2346,9 @@
     "allowAnonLogging": false,
     "contentVersion": "3.4.3.0.preview.1",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=yxRyOf8jFeQC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=yxRyOf8jFeQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/61/87/22/6187229d4202fcad2b7b07d971b01f99.jpg",
+      "https://i.pinimg.com/564x/46/98/61/469861407f71c7f99e9c5c28cde6219e.jpg",
+      "https://i.pinimg.com/564x/e7/77/97/e7779754f58d7ba9926a1edbc5a5b5df.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=yxRyOf8jFeQC&printsec=frontcover&dq=subject:science&hl=&cd=9&source=gbs_api",
@@ -2442,10 +2380,9 @@
     "allowAnonLogging": false,
     "contentVersion": "1.4.1.0.preview.0",
     "imageLinks": [
-      {
-        "smallThumbnail": "http://books.google.com/books/content?id=v8DaAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-        "thumbnail": "http://books.google.com/books/content?id=v8DaAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-      }
+      "https://i.pinimg.com/564x/3b/25/9d/3b259d809171999bb2f3b7b724765bed.jpg",
+      "https://i.pinimg.com/564x/d7/57/19/d75719d859ed05e358f3c9a239ae76a2.jpg",
+      "https://i.pinimg.com/564x/50/64/f4/5064f4131d05915019f9e0875e90bdcb.jpg"
     ],
     "language": "en",
     "previewLink": "http://books.google.co.uk/books?id=v8DaAAAAMAAJ&dq=subject:science&hl=&cd=10&source=gbs_api",

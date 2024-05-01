@@ -200,15 +200,15 @@ async function changeAccountDetails(firstName, lastName) {
 }
 async function changeAccountPassword(
   newPassword,
-  currentPassword,
-  confirmPassword
+  confirmNewPassword,
+  currentPassword
 ) {
   try {
     //Validate Old Password
     const user = auth.currentUser;
     console.log(user);
     if (user) {
-      if (newPassword === confirmPassword) {
+      if (newPassword === confirmNewPassword) {
         const userEmail = user.email;
         const credentials = EmailAuthProvider.credential(
           userEmail,
@@ -297,7 +297,7 @@ async function fetchBooks(
       max_price
     );
     console.log(queries);
-    const books = await Book.find(queries).limit(10);
+    const books = await Book.find(queries).skip(1).limit(12);
     if (books.length === 0) {
       return Promise.reject({
         status: 200,
