@@ -297,7 +297,7 @@ async function fetchBooks(
       max_price
     );
     console.log(queries);
-    const books = await Book.find(queries).skip(1).limit(12);
+    const books = await Book.find(queries).skip(0).limit(12);
     if (books.length === 0) {
       return Promise.reject({
         status: 200,
