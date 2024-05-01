@@ -284,7 +284,8 @@ async function fetchBooks(
   year_from,
   year_to,
   min_price,
-  max_price
+  max_price,
+  page_number
 ) {
   try {
     const queries = filters(
@@ -294,12 +295,13 @@ async function fetchBooks(
       year_from,
       year_to,
       min_price,
-      max_price,
-      page_number
+      max_price
     );
     console.log(queries);
 
-    const books = await Book.find(queries).skip(page_number).limit(12);
+    const books = await Book.find(queries)
+      .skip(page_number - 1)
+      .limit(12);
     if (books.length === 0) {
       return Promise.reject({
         status: 200,
