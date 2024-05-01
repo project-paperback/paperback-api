@@ -128,6 +128,7 @@ async function getBooks(req, res, next) {
       year_to,
       min_price,
       max_price,
+      page_number,
     } = req.query;
 
     const books = await fetchBooks(
@@ -137,7 +138,8 @@ async function getBooks(req, res, next) {
       year_from,
       year_to,
       min_price,
-      max_price
+      max_price,
+      page_number
     );
 
     res.status(200).send({ books: books });
