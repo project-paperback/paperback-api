@@ -4,7 +4,6 @@ require("dotenv").config({
   path: `.env.${ENV}`, //Adjust path depending on environment we execute the app
 }); //.config() will help you read the .env file
 const DATABASE = process.env.MONGO_DATABASE;
-
 async function connectToDb() {
   try {
     await mongoose.connect(DATABASE);
