@@ -106,6 +106,7 @@ async function removeUserProfile() {
   }
 }
 async function userLogIn(email, password) {
+  console.log(email, password);
   try {
     if (!email && !password) {
       return Promise.reject({ status: 400, msg: "Email and password missing" });
