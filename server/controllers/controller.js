@@ -221,6 +221,7 @@ async function addToBasket(req, res, next) {
 async function deleteFromBasketByBookId(req, res, next) {
   try {
     const { book_id } = req.params;
+    console.log(book_id);
     const deletedBook = await removeFromBasketById(book_id);
     res.status(200).send({ msg: "Item removed from the basket successfully!" });
   } catch (error) {
