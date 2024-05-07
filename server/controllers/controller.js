@@ -58,6 +58,7 @@ async function postNewUser(req, res, next) {
 async function userSignIn(req, res, next) {
   try {
     const { email, password } = req.body;
+    console.log(email);
 
     const logIn = await userLogIn(email, password);
 
