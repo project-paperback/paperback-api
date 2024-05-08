@@ -19,6 +19,7 @@ const {
   payment,
   amendStock,
   createShoppingHistory,
+  retrieveBasket,
 } = require("../models/model");
 
 async function getEndpoints(req, res, next) {
@@ -208,6 +209,15 @@ async function updateReviewById(req, res, next) {
 
 //=================== [  BASKET CONTROLLERS  ] ===================//
 
+async function getBasket(req, res, next) {
+  try {
+    const basketItems = await retrieveBasket();
+    res.status(200).send({ basketItems: basketItems });
+  } catch (error) {
+    next(error);
+  }
+}
+
 async function addToBasket(req, res, next) {
   try {
     const { productId } = req.body;
@@ -272,4 +282,5 @@ module.exports = {
   deleteFromBasketByBookId,
   checkoutBasket,
   updateStock,
+  getBasket,
 };

@@ -77,8 +77,8 @@ function customErrorHandler(error, request, response, next) {
       });
     }
     //checkout
-    if (error.msg === "Item not available"){
-      response.status(400).send({ msg : "Item not available"});
+    if (error.msg === "Item not available") {
+      response.status(400).send({ msg: "Item not available" });
     }
   }
 
@@ -139,10 +139,18 @@ function customErrorHandler(error, request, response, next) {
       response
         .status(401)
         .send({ msg: "You need to be logged in to add items to the basket" });
-    } else if (error.msg === "You need to be logged in to remove items from the basket") {
+    } else if (
+      error.msg === "You need to be logged in to remove items from the basket"
+    ) {
       response
         .status(401)
-        .send({ msg: "You need to be logged in to remove items from the basket" });
+        .send({
+          msg: "You need to be logged in to remove items from the basket",
+        });
+    } else if (error.msg === "You need to be logged in to access your basket") {
+      response
+        .status(401)
+        .send({ msg: "You need to be logged in to access your basket" });
     }
   }
 
@@ -159,9 +167,9 @@ function customErrorHandler(error, request, response, next) {
     } else if (error.msg === "Shopping cart not found") {
       response.status(404).send({ msg: "Shopping cart not found" });
     } else if (error.msg === "No books in the basket") {
-      response.status(404).send({ msg: "No books in the basket"});
+      response.status(404).send({ msg: "No books in the basket" });
     }
-   }
+  }
 }
 
 module.exports = customErrorHandler;

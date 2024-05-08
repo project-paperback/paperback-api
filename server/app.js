@@ -22,6 +22,7 @@ const {
   deleteFromBasketByBookId,
   checkoutBasket,
   updateStock,
+  getBasket,
 } = require("./controllers/controller");
 const customErrorHandler = require("./utilities/customErrors");
 const app = express();
@@ -47,6 +48,7 @@ app.get("/api/reviews/:book_id", getReviewsByBookId);
 app.delete("/api/reviews/:review_id", deleteReviewById);
 app.patch("/api/reviews/:review_id", updateReviewById);
 // Basket
+app.get("/api/basket", getBasket);
 app.post("/api/add_to_basket", addToBasket);
 app.delete("/api/remove_from_basket/:book_id", deleteFromBasketByBookId);
 // Checkout

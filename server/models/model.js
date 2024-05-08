@@ -532,6 +532,7 @@ async function createBasket(userNew) {
     console.log(error);
   }
 }
+
 async function createShoppingHistory(userNew) {
   try {
     const shoppingHistory = await ShoppingHistory.create({
@@ -544,6 +545,26 @@ async function createShoppingHistory(userNew) {
       shoppingHistoryId: shoppingHistory._id,
     });
     return shoppingHistory;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function retrieveBasket() {
+  try {
+    const user = auth.currentUser;
+    if (!user) {
+      return Promise.reject({
+        status: 401,
+        msg: "You need to be logged in to access your basket",
+      });
+    }
+    const fbUid = user.uid;
+    const basket = await Basket.findOne({ fbUid: fbUid });
+    if (!basket) {
+      return Promise.reject({ status: 404, msg: "Shopping cart not found" });
+    }
+    return basket.items;
   } catch (error) {
     console.log(error);
   }
@@ -781,4 +802,5 @@ module.exports = {
   payment,
   amendStock,
   createShoppingHistory,
+  retrieveBasket,
 };
