@@ -602,6 +602,7 @@ async function sendToBasket(productId, quantity) {
         quantity: quantity,
         description: book.title,
         price: book.price,
+        thumbnails: book.imageLinks,
       });
     }
 
