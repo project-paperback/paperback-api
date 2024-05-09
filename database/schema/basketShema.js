@@ -21,7 +21,8 @@ const basketSchema = new Schema({
         default: 1,
       },
       description: String,
-      price: Number
+      price: Number,
+      thumbnails: Array,
     },
   ],
 });
