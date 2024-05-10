@@ -20,6 +20,7 @@ const {
   amendStock,
   createShoppingHistory,
   retrieveBasket,
+  addOneToQty,
 } = require("../models/model");
 
 async function getEndpoints(req, res, next) {
@@ -229,6 +230,21 @@ async function addToBasket(req, res, next) {
   }
 }
 
+async function increaseQtyByOne(req, res, next) {
+  try {
+    const { productId } = req.body;
+    const itemQty = await addOneToQty(productId);
+    res
+      .status(200)
+      .send({
+        msg: "Item's quantity has been increased by one",
+        quantity: itemQty,
+      });
+  } catch (error) {
+    next(error);
+  }
+}
+
 async function deleteFromBasketByBookId(req, res, next) {
   try {
     const { book_id } = req.params;
@@ -283,4 +299,5 @@ module.exports = {
   checkoutBasket,
   updateStock,
   getBasket,
+  increaseQtyByOne,
 };

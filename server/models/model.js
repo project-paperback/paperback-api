@@ -621,6 +621,43 @@ async function sendToBasket(productId, quantity) {
   }
 }
 
+async function addOneToQty(productId) {
+  try {
+    const user = auth.currentUser;
+    if (!user) {
+      return Promise.reject({
+        status: 401,
+        msg: "You need to be logged in to add items to the basket",
+      });
+    }
+    const fbUid = user.uid;
+    const basket = await Basket.findOne({ fbUid: fbUid });
+    if (!basket) {
+      return Promise.reject({ status: 404, msg: "Shopping cart not found" });
+    }
+    const existingItem = basket.items.find(
+      (item) => item.product.toString() === productId
+    );
+
+    if (existingItem) {
+      if (existingItem.quantity < 99) {
+        existingItem.quantity += 1;
+      } else {
+        return Promise.reject({
+          status: 400,
+          msg: "Item exceeding maximum orderable amount",
+        });
+      }
+    } else {
+      return Promise.reject({ status: 400, msg: "Item not in shopping cart" });
+    }
+    await basket.save();
+    return existingItem.quantity;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 async function removeFromBasketById(book_id) {
   try {
     const user = auth.currentUser;
@@ -804,4 +841,5 @@ module.exports = {
   amendStock,
   createShoppingHistory,
   retrieveBasket,
+  addOneToQty,
 };
