@@ -21,6 +21,7 @@ const {
   createShoppingHistory,
   retrieveBasket,
   addOneToQty,
+  removeOneFromQty,
 } = require("../models/model");
 
 async function getEndpoints(req, res, next) {
@@ -234,12 +235,23 @@ async function increaseQtyByOne(req, res, next) {
   try {
     const { productId } = req.body;
     const itemQty = await addOneToQty(productId);
-    res
-      .status(200)
-      .send({
-        msg: "Item's quantity has been increased by one",
-        quantity: itemQty,
-      });
+    res.status(200).send({
+      msg: "Item's quantity has been increased by one",
+      quantity: itemQty,
+    });
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function decreaseQtyByOne(req, res, next) {
+  try {
+    const { productId } = req.body;
+    const itemQty = await removeOneFromQty(productId);
+    res.status(200).send({
+      msg: "Item's quantity has been decreased by one",
+      quantity: itemQty,
+    });
   } catch (error) {
     next(error);
   }
@@ -300,4 +312,5 @@ module.exports = {
   updateStock,
   getBasket,
   increaseQtyByOne,
+  decreaseQtyByOne,
 };

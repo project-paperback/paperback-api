@@ -87,6 +87,8 @@ function customErrorHandler(error, request, response, next) {
         .send({ msg: "Item exceeding maximum orderable amount" });
     } else if (error.msg === "Item not in shopping cart") {
       response.status(400).send({ msg: "Item not in shopping cart" });
+    } else if (error.msg === "Cannot go below 1") {
+      response.status(400).send({ msg: "Cannot go below 1" });
     }
   }
 
