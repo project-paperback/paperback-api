@@ -89,6 +89,12 @@ function customErrorHandler(error, request, response, next) {
       response.status(400).send({ msg: "Item not in shopping cart" });
     } else if (error.msg === "Cannot go below 1") {
       response.status(400).send({ msg: "Cannot go below 1" });
+    } else if (error.msg === "Please provide a quantity") {
+      response.status(400).send({ msg: "Please provide a quantity" });
+    } else if (error.msg === "Please provide a quantity between 1 and 99") {
+      response.status(400).send({
+        msg: "Please provide a quantity between 1 and 99",
+      });
     }
   }
 
@@ -159,6 +165,12 @@ function customErrorHandler(error, request, response, next) {
       response
         .status(401)
         .send({ msg: "You need to be logged in to access your basket" });
+    } else if (
+      error.msg === "You need to be logged in to change the quantity of an item"
+    ) {
+      response.status(401).send({
+        msg: "You need to be logged in to change the quantity of an item",
+      });
     }
   }
 

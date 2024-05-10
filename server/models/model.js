@@ -695,6 +695,46 @@ async function removeOneFromQty(productId) {
   }
 }
 
+async function setQty(productId, quantity) {
+  try {
+    const user = auth.currentUser;
+    if (!user) {
+      return Promise.reject({
+        status: 401,
+        msg: "You need to be logged in to change the quantity of an item",
+      });
+    }
+    const fbUid = user.uid;
+    const basket = await Basket.findOne({ fbUid: fbUid });
+    if (!basket) {
+      return Promise.reject({ status: 404, msg: "Shopping cart not found" });
+    }
+    const existingItem = basket.items.find(
+      (item) => item.product.toString() === productId
+    );
+
+    if (quantity === undefined) {
+      return Promise.reject({ status: 400, msg: "Please provide a quantity" });
+    }
+    if (quantity < 1 || quantity > 99) {
+      return Promise.reject({
+        status: 400,
+        msg: "Please provide a quantity between 1 and 99",
+      });
+    }
+    if (existingItem) {
+      existingItem.quantity = quantity;
+    } else {
+      return Promise.reject({ status: 400, msg: "Item not in shopping cart" });
+    }
+
+    await basket.save();
+    return existingItem.quantity;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 async function removeFromBasketById(book_id) {
   try {
     const user = auth.currentUser;
@@ -880,4 +920,5 @@ module.exports = {
   retrieveBasket,
   addOneToQty,
   removeOneFromQty,
+  setQty,
 };

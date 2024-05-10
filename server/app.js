@@ -25,6 +25,7 @@ const {
   getBasket,
   increaseQtyByOne,
   decreaseQtyByOne,
+  changeQty,
 } = require("./controllers/controller");
 const customErrorHandler = require("./utilities/customErrors");
 const app = express();
@@ -54,6 +55,7 @@ app.get("/api/basket", getBasket);
 app.post("/api/add_to_basket", addToBasket);
 app.patch("/api/basket/increase_qty_by_one", increaseQtyByOne);
 app.patch("/api/basket/decrease_qty_by_one", decreaseQtyByOne);
+app.patch("/api/basket/change_qty", changeQty);
 app.delete("/api/remove_from_basket/:book_id", deleteFromBasketByBookId);
 // Checkout
 app.post("/api/checkout", checkoutBasket);

@@ -22,6 +22,7 @@ const {
   retrieveBasket,
   addOneToQty,
   removeOneFromQty,
+  setQty,
 } = require("../models/model");
 
 async function getEndpoints(req, res, next) {
@@ -257,6 +258,19 @@ async function decreaseQtyByOne(req, res, next) {
   }
 }
 
+async function changeQty(req, res, next) {
+  try {
+    const { productId, quantity } = req.body;
+    const itemQty = await setQty(productId, quantity);
+    res.status(200).send({
+      msg: "Item's quantity has been updated",
+      quantity: itemQty,
+    });
+  } catch (error) {
+    next(error);
+  }
+}
+
 async function deleteFromBasketByBookId(req, res, next) {
   try {
     const { book_id } = req.params;
@@ -313,4 +327,5 @@ module.exports = {
   getBasket,
   increaseQtyByOne,
   decreaseQtyByOne,
+  changeQty,
 };
