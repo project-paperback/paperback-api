@@ -235,6 +235,7 @@ async function addToBasket(req, res, next) {
 async function increaseQtyByOne(req, res, next) {
   try {
     const { productId } = req.body;
+    console.log(productId, "increase");
     const itemQty = await addOneToQty(productId);
     res.status(200).send({
       msg: "Item's quantity has been increased by one",
@@ -248,6 +249,8 @@ async function increaseQtyByOne(req, res, next) {
 async function decreaseQtyByOne(req, res, next) {
   try {
     const { productId } = req.body;
+    console.log(productId, "decrease");
+
     const itemQty = await removeOneFromQty(productId);
     res.status(200).send({
       msg: "Item's quantity has been decreased by one",
