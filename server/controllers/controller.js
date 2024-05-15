@@ -290,7 +290,7 @@ async function deleteFromBasketByBookId(req, res, next) {
 async function checkoutBasket(req, res, next) {
   try {
     const paymentURL = await payment();
-    res.status(200).redirect(paymentURL);
+    res.status(200).send(paymentURL);
     console.log(paymentURL);
   } catch (error) {
     console.log(error);
