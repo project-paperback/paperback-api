@@ -812,9 +812,7 @@ async function payment() {
         const bookInDb = await fetchBookById(book.product.toString());
         return await stripe.products.create({
           name: bookInDb.title,
-          images: [
-            "https://i.pinimg.com/564x/08/97/ac/0897ac613a913be42c85408bd8dd2012.jpg",
-          ],
+          images: [book.thumbnails[1]],
           shippable: true,
         });
       })
