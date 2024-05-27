@@ -297,8 +297,7 @@ async function fetchBooks(
       min_price,
       max_price
     );
-
-    console.log(page_number);
+    console.log(page_number, "model");
     const pageSkip = (page_number - 1) * 12;
 
     const books = await Book.find(queries).skip(pageSkip).limit(12);
