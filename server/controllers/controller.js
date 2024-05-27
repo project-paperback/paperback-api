@@ -133,9 +133,9 @@ async function getBooks(req, res, next) {
       year_to,
       min_price,
       max_price,
-      page_number,
+      page,
     } = req.query;
-
+    console.log(page);
     const books = await fetchBooks(
       publisher,
       rating,
@@ -144,7 +144,7 @@ async function getBooks(req, res, next) {
       year_to,
       min_price,
       max_price,
-      page_number
+      page
     );
 
     res.status(200).send({ books: books });
