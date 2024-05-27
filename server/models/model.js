@@ -300,14 +300,18 @@ async function fetchBooks(
     console.log(page_number, "model");
     const pageSkip = (page_number - 1) * 12;
 
-    const books = await Book.find(queries).skip(pageSkip).limit(12);
-    if (books.length === 0) {
+    const bookStack = await Book.find(queries).skip(pageSkip).limit(12);
+    const allBooks = await Book.find(queries);
+    if (bookStack.length === 0) {
       return Promise.reject({
         status: 200,
         msg: "More books coming soon!",
       });
     }
-
+    const books = {
+      bookStack,
+      allBooks,
+    };
     return books;
   } catch (error) {
     if (error.name === "ValidationError") {
