@@ -828,7 +828,7 @@ async function payment() {
     );
 
     const session = await stripe.checkout.sessions.create({
-      success_url: "http://localhost:5173/success", // TO BE CHANGED
+      success_url: "https://paperback-books.netlify.app/", // TO BE CHANGED
       cancel_url: "http://localhost:5173/shopping-cart", // TO BE CHANGED
       line_items: createdPrices.map((item, index) => {
         return {
