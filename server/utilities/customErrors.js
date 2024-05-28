@@ -33,12 +33,9 @@ function customErrorHandler(error, request, response, next) {
       response
         .status(400)
         .send({ msg: "Name and last name are required to sign up" });
-    } else if (
-      error.msg ===
-      "Looks like some fields are missing! Please fill out all required fields to complete your sign-up."
-    ) {
+    } else if (error.msg === "Looks like some details are missing") {
       response.status(400).send({
-        msg: "Looks like some fields are missing! Please fill out all required fields to complete your sign-up.",
+        msg: "Looks like some details are missing",
       });
     } else if (error.msg === "EMAIL_EXISTS") {
       response.status(400).send({ msg: "Email already in use" });

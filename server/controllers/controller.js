@@ -136,7 +136,6 @@ async function getBooks(req, res, next) {
       page_number,
     } = req.query;
 
-    console.log(page_number, "controller");
     const books = await fetchBooks(
       publisher,
       rating,
