@@ -38,26 +38,26 @@ async function fetchEndpoints() {
 
 async function saveNewUser(userFirstName, userLastName, userEmail, password) {
   try {
-    if (!userFirstName && !userLastName && !userEmail && !password) {
+    if (!userFirstName || !userLastName || !userEmail || !password) {
       return Promise.reject({
         status: 400,
-        msg: "Looks like some fields are missing! Please fill out all required fields to complete your sign-up.",
+        msg: "Looks like some details are missing",
       });
-    } else if (!password) {
-      return Promise.reject({
-        status: 400,
-        msg: "Password is required to sign up",
-      });
-    } else if (!userEmail) {
-      return Promise.reject({
-        status: 400,
-        msg: "Email is required to sign up",
-      });
-    } else if (!userFirstName) {
-      return Promise.reject({
-        status: 400,
-        msg: "Name and last name are required to sign up",
-      });
+      // } else if (!password) {
+      //   return Promise.reject({
+      //     status: 400,
+      //     msg: "Password is required to sign up",
+      //   });
+      // } else if (!userEmail) {
+      //   return Promise.reject({
+      //     status: 400,
+      //     msg: "Email is required to sign up",
+      //   });
+      // } else if (!userFirstName) {
+      //   return Promise.reject({
+      //     status: 400,
+      //     msg: "Name and last name are required to sign up",
+      //   });
     }
 
     const addUser = await newUser(auth, userEmail, password);
@@ -300,13 +300,18 @@ async function fetchBooks(
     const pageSkip = (page_number - 1) * 12;
 
     const books = await Book.find(queries).skip(pageSkip).limit(12);
+
     if (books.length === 0) {
       return Promise.reject({
         status: 200,
         msg: "More books coming soon!",
       });
     }
-
+    const allBooks = Book.find(queries);
+    const booksResponse = {
+      books,
+      allBooks,
+    };
     return books;
   } catch (error) {
     if (error.name === "ValidationError") {
@@ -829,7 +834,7 @@ async function payment() {
 
     const session = await stripe.checkout.sessions.create({
       success_url: "https://paperback-books.netlify.app/", // TO BE CHANGED
-      cancel_url: "http://localhost:5173/shopping-cart", // TO BE CHANGED
+      cancel_url: "https://paperback-books.netlify.app/shopping-cart", // TO BE CHANGED
       line_items: createdPrices.map((item, index) => {
         return {
           price: item.id,
