@@ -310,7 +310,7 @@ async function fetchBooks(
     const allBooks = await Book.find(queries);
     const booksResponse = {
       books,
-      length: allBooks.length,
+      lengthOfCollection: allBooks.length,
     };
 
     return booksResponse;
