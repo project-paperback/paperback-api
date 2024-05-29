@@ -312,7 +312,7 @@ async function fetchBooks(
       books,
       allBooks,
     };
-    return books;
+    return booksResponse;
   } catch (error) {
     if (error.name === "ValidationError") {
       return { status: 400, message: "Invalid request parameters" };
