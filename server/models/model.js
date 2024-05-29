@@ -312,6 +312,7 @@ async function fetchBooks(
       books,
       allBooks,
     };
+    console.log(booksResponse);
     return booksResponse;
   } catch (error) {
     if (error.name === "ValidationError") {
