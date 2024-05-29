@@ -307,10 +307,10 @@ async function fetchBooks(
         msg: "More books coming soon!",
       });
     }
-    const allBooks = Book.find(queries);
+    const allBooks = await Book.find(queries);
     const booksResponse = {
       books,
-      allBooks,
+      length: allBooks.length,
     };
 
     return booksResponse;
