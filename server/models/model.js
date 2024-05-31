@@ -177,8 +177,8 @@ async function changeAccountDetails(firstName, lastName) {
           await Review.updateMany(filter);
         }
         const appResponse = {
-          userFirstName: updatedUser.userFirstName,
-          userLastName: updatedUser.userLastName,
+          userFirstName: firstName,
+          userLastName: lastName,
           userEmail: updatedUser.userEmail,
         };
         return appResponse;
