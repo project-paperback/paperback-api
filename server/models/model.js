@@ -280,7 +280,7 @@ async function changeAccountEmail(newEmailAdress) {
 async function fetchBooks(
   publisher,
   rating,
-  category,
+  categories,
   year_from,
   year_to,
   min_price,
@@ -288,38 +288,18 @@ async function fetchBooks(
   page_number
 ) {
   try {
-    console.log(publisher);
-    console.log(category);
-    const queries = {
-      publisher: publisher
-        ? publisher.split(",").map((item) => item.trim().replace(/\+/g, " "))
-        : [],
-      // rating: 4, // Example rating value
-      categories: category
-        ? category.split(",").map((item) => item.trim().replace(/\+/g, " "))
-        : null,
-      // year_from: 2000, // Example starting year
-      // year_to: 2022, // Example ending year
-      // min_price: 10, // Example minimum price
-      // max_price: 50, // Example maximum price
-    };
-    console.log(queries);
+    const queries = filters(
+      publisher,
+      rating,
+      categories,
+      year_from,
+      year_to,
+      min_price,
+      max_price
+    );
     const pageSkip = (page_number - 1) * 12;
 
-    const filterCriteria = {};
-
-    // Construct the filter criteria object
-    for (const key in queries) {
-      if (queries[key]) {
-        if (Array.isArray(queries[key])) {
-          filterCriteria[key] = { $in: queries[key] }; // Use $in for array values
-        } else {
-          filterCriteria[key] = queries[key];
-        }
-      }
-    }
-
-    const books = await Book.find(filterCriteria).skip(pageSkip).limit(12);
+    const books = await Book.find(queries).skip(pageSkip).limit(12);
 
     if (books.length === 0) {
       return Promise.reject({

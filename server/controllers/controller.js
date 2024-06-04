@@ -128,7 +128,7 @@ async function getBooks(req, res, next) {
     const {
       publisher,
       rating,
-      category,
+      categories,
       year_from,
       year_to,
       min_price,
@@ -139,19 +139,20 @@ async function getBooks(req, res, next) {
     const books = await fetchBooks(
       publisher,
       rating,
-      category,
+      categories,
       year_from,
       year_to,
       min_price,
       max_price,
       page_number
     );
-    // console.log(books);
+    console.log(books);
     res.status(200).send({ books: books });
   } catch (error) {
     next(error);
   }
 }
+
 async function getBookById(req, res, next) {
   try {
     const { book_id } = req.params;
