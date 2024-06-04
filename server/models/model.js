@@ -277,29 +277,16 @@ async function changeAccountEmail(newEmailAdress) {
 
 //=================== [  BOOK MODELS  ] ===================//
 
-async function fetchBooks(
-  publisher,
-  rating,
-  category,
-  year_from,
-  year_to,
-  min_price,
-  max_price,
-  page_number
-) {
+async function fetchBooks(publisher, category, page_number) {
   try {
     const queries = {
       publisher: publisher
         ? publisher.split(",").map((item) => item.trim().replace(/\+/g, " "))
         : null,
-      rating,
-      category: category
+
+      categories: category
         ? category.split(",").map((item) => item.trim().replace(/\+/g, " "))
         : null,
-      year_from,
-      year_to,
-      min_price,
-      max_price,
     };
     console.log(queries);
     const pageSkip = (page_number - 1) * 12;
@@ -324,7 +311,7 @@ async function fetchBooks(
         msg: "More books coming soon!",
       });
     }
-    const allBooks = await Book.find(queries);
+    const allBooks = await Book.find(filterCriteria);
     const booksResponse = {
       books,
       lengthOfCollection: allBooks.length,
