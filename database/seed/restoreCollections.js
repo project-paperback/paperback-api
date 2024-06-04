@@ -40,12 +40,13 @@ async function restoreBasketCollection() {
 async function restoreColletions() {
   try {
     await restoreBookCollection();
-    await restoreReviewCollection();
-    await restoreBasketCollection();
-    await restoreUserCollection();
+    // await restoreReviewCollection();
+    // await restoreBasketCollection();
+    // await restoreUserCollection();
     console.log("🟢 ~ All collections were restored succesfully.");
   } catch (error) {
     console.log("🔴 ~ restoreColletions ~ error:", error);
   }
 }
+
 module.exports = restoreColletions;
