@@ -125,27 +125,9 @@ async function modifyAccountEmail(req, res, next) {
 
 async function getBooks(req, res, next) {
   try {
-    const {
-      publisher,
-      rating,
-      category,
-      year_from,
-      year_to,
-      min_price,
-      max_price,
-      page_number,
-    } = req.query;
+    const { publisher, category, page_number } = req.query;
 
-    const books = await fetchBooks(
-      publisher,
-      rating,
-      category,
-      year_from,
-      year_to,
-      min_price,
-      max_price,
-      page_number
-    );
+    const books = await fetchBooks(publisher, category, page_number);
 
     res.status(200).send({ books: books });
   } catch (error) {
