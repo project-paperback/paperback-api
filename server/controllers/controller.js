@@ -128,25 +128,25 @@ async function getBooks(req, res, next) {
     const {
       publisher,
       rating,
-      categories,
+      category,
       year_from,
       year_to,
       min_price,
       max_price,
       page_number,
     } = req.query;
-    console.log(page_number, publisher);
+
     const books = await fetchBooks(
       publisher,
       rating,
-      categories,
+      category,
       year_from,
       year_to,
       min_price,
       max_price,
       page_number
     );
-    console.log(books);
+
     res.status(200).send({ books: books });
   } catch (error) {
     next(error);
