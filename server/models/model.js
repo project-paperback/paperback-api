@@ -300,7 +300,7 @@ async function fetchBooks(publisher, category, page_number) {
           if (key === "categories") {
             filterCriteria[key] = { $all: queries[key] }; // Use $all for matching all elements of the array
           } else {
-            filterCriteria[key] = { $in: queries[key] }; // Use $in for other fields
+            filterCriteria[key] = { $all: queries[key] }; // Use $in for other fields
           }
         } else {
           filterCriteria[key] = queries[key];
