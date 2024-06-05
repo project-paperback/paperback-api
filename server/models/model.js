@@ -296,14 +296,8 @@ async function fetchBooks(publisher, category, page_number) {
     for (const key in queries) {
       if (queries[key]) {
         if (Array.isArray(queries[key])) {
+          filterCriteria[key] = { $in: queries[key] };
           // Check if key is 'categories' and handle it accordingly
-          if (key === "categories") {
-            filterCriteria[key] = { $all: queries[key] }; // Use $all for matching all elements of the array
-          } else {
-            filterCriteria[key] = { $all: queries[key] }; // Use $in for other fields
-          }
-        } else {
-          filterCriteria[key] = queries[key];
         }
       }
     }
